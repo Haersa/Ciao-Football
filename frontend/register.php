@@ -41,6 +41,13 @@ include('../components/header.php');
                <label for="confirmPassword">Confirm Password</label>
                <input type="password" id="confirmPassword" name="confirmPassword" required minlength="8" maxlength="20" placeholder="Password..."> <!-- confirm password input field -->
            </div>
+
+           <div class="form-group terms-group">
+                <div class="terms-container">
+                    <p>I agree to the <a rel="noopener noreferrer" href="terms.php">Terms & Conditions</a></p>
+                    <input type="checkbox" id="terms" name="terms" required>
+                </div>
+            </div>
            
            <button class="register-button" type="submit">Create Account</button> <!-- submit button -->
 

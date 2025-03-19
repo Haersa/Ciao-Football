@@ -20,7 +20,7 @@
                         <ul>    
                             <li><a href="privacy.php">Privacy Policy</a></li>
                             <li><a href="deliverypolicy.php">Delivery Policy</a></li>
-                            <li><a href="terms.php">Terms and Conditions</a></li>
+                            <li><a href="terms.php">Terms & Conditions</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">

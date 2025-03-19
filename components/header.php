@@ -78,7 +78,6 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
     <li>
       <a rel="noopener noreferrer" href="equipment.php">Equipment</a>
     </li><!--page link-->
-    <li><a rel="noopener noreferrer" href="newproducts.php">New in</a></li><!--page link-->
     <li>
       <a rel="noopener noreferrer" id="shopby" href="products.php">Shop By</a>
     </li><!--page link-->
@@ -183,74 +182,70 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
           <div class="megabox-content">
             <!-- Main category tabs -->
             <div class="megabox-row">
-              <a href = "replicakits.php" rel = "noopener noreferrer" class="megabox-title">Replica Kits</a>
+            <a href = "shirts.php" rel = "noopener noreferrer" class="megabox-title">All Shirts</a>
+              <a href = "replicakits.php" rel = "noopener noreferrer" class="megabox-title">Replica Shirts</a>
               <a href = "retrokits.php" rel = "noopener noreferrer" class="megabox-title">Retro Replica's</a>
-              <a  href = "specialistkits.php" rel = "noopener noreferrer" class="megabox-title">Specialist</a>
+              <a  href = "specialistkits.php" rel = "noopener noreferrer" class="megabox-title">Specialist Shirts</a>
               <a href = "equipment.php" rel="noopener noreferrer" class="megabox-title">Equipment</a>
             </div>
-            
-            <!-- Content organized in columns -->
-            <div class="content-box">
-              <!-- Column 1 -->
-              <div class="category-column">
-                <h4 class="category-heading">Premier League</h4>
-                <ul class="category-list">
-                  <li class="category-item"><a href="#" class="category-link">Manchester United</a></li>
-                  <li class="category-item"><a href="#" class="category-link">Liverpool</a></li>
-                  <li class="category-item"><a href="#" class="category-link">Arsenal</a></li>
-                  <li class="category-item"><a href="#" class="category-link">Chelsea</a></li>
-                  <li class="category-item"><a href="#" class="category-link">Manchester City</a></li>
-                </ul>
-              </div>
-              
-              <!-- Column 2 -->
-              <div class="category-column">
-                <h4 class="category-heading">La Liga</h4>
-                <ul class="category-list">
-                  <li class="category-item"><a href="#" class="category-link">Barcelona</a></li>
-                  <li class="category-item"><a href="#" class="category-link">Real Madrid</a></li>
-                  <li class="category-item"><a href="#" class="category-link">Atletico Madrid</a></li>
-                  <li class="category-item"><a href="#" class="category-link">Sevilla</a></li>
-                  <li class="category-item"><a href="#" class="category-link">Valencia</a></li>
-                </ul>
-              </div>
-              
-              <!-- Column 3 -->
-              <div class="category-column">
-                <h4 class="category-heading">Serie A</h4>
-                <ul class="category-list">
-                  <li class="category-item"><a href="#" class="category-link">Juventus</a></li>
-                  <li class="category-item"><a href="#" class="category-link">AC Milan</a></li>
-                  <li class="category-item"><a href="#" class="category-link">Inter Milan</a></li>
-                  <li class="category-item"><a href="#" class="category-link">Napoli</a></li>
-                  <li class="category-item"><a href="#" class="category-link">Roma</a></li>
-                </ul>
-              </div>
-              
-              <!-- Column 4 -->
-              <div class="category-column">
-                <h4 class="category-heading">International</h4>
-                <ul class="category-list">
-                  <li class="category-item"><a href="#" class="category-link">England</a></li>
-                  <li class="category-item"><a href="#" class="category-link">Scotland</a></li>
-                  <li class="category-item"><a href="#" class="category-link">Germany</a></li>
-                  <li class="category-item"><a href="#" class="category-link">Brazil</a></li>
-                  <li class="category-item"><a href="#" class="category-link">Argentina</a></li>
-                </ul>
-              </div>
-              <div class="category-column">
-                <h4 class="category-heading">SPFL</h4>
-                <ul class="category-list">
-                  <li class="category-item"><a href="#" class="category-link">Celtic</a></li>
-                  <li class="category-item"><a href="#" class="category-link">Rangers</a></li>
-                  <li class="category-item"><a href="#" class="category-link">Hibernian</a></li>
-                  <li class="category-item"><a href="#" class="category-link">Hearts</a></li>
-                  <li class="category-item"><a href="#" class="category-link">Aberdeen</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="content-box">
+  <!-- Column 1 -->
+  <div class="category-column">
+    <h4 class="category-heading">Premier League</h4>
+    <ul class="category-list">
+      <li class="category-item"><a href="team.php?team=Manchester United" class="category-link">Manchester United</a></li>
+      <li class="category-item"><a href="team.php?team=Liverpool" class="category-link">Liverpool</a></li>
+      <li class="category-item"><a href="team.php?team=Arsenal" class="category-link">Arsenal</a></li>
+      <li class="category-item"><a href="team.php?team=Chelsea" class="category-link">Chelsea</a></li>
+      <li class="category-item"><a href="team.php?team=Manchester City" class="category-link">Manchester City</a></li>
+    </ul>
+  </div>
+  
+  <!-- Column 2 -->
+  <div class="category-column">
+    <h4 class="category-heading">La Liga</h4>
+    <ul class="category-list">
+      <li class="category-item"><a href="team.php?team=Barcelona" class="category-link">Barcelona</a></li>
+      <li class="category-item"><a href="team.php?team=Real Madrid" class="category-link">Real Madrid</a></li>
+      <li class="category-item"><a href="team.php?team=Atletico Madrid" class="category-link">Atletico Madrid</a></li>
+      <li class="category-item"><a href="team.php?team=Sevilla" class="category-link">Sevilla</a></li>
+      <li class="category-item"><a href="team.php?team=Valencia" class="category-link">Valencia</a></li>
+    </ul>
+  </div>
+  
+  <!-- Column 3 -->
+  <div class="category-column">
+    <h4 class="category-heading">Serie A</h4>
+    <ul class="category-list">
+      <li class="category-item"><a href="team.php?team=Juventus" class="category-link">Juventus</a></li>
+      <li class="category-item"><a href="team.php?team=AC Milan" class="category-link">AC Milan</a></li>
+      <li class="category-item"><a href="team.php?team=Inter Milan" class="category-link">Inter Milan</a></li>
+      <li class="category-item"><a href="team.php?team=Napoli" class="category-link">Napoli</a></li>
+      <li class="category-item"><a href="team.php?team=Roma" class="category-link">Roma</a></li>
+    </ul>
+  </div>
+  
+  <!-- Column 4 -->
+  <div class="category-column">
+    <h4 class="category-heading">International</h4>
+    <ul class="category-list">
+      <li class="category-item"><a href="team.php?team=England" class="category-link">England</a></li>
+      <li class="category-item"><a href="team.php?team=Scotland" class="category-link">Scotland</a></li>
+      <li class="category-item"><a href="team.php?team=Germany" class="category-link">Germany</a></li>
+      <li class="category-item"><a href="team.php?team=Brazil" class="category-link">Brazil</a></li>
+      <li class="category-item"><a href="team.php?team=Argentina" class="category-link">Argentina</a></li>
+    </ul>
+  </div>
+  <div class="category-column">
+    <h4 class="category-heading">SPFL</h4>
+    <ul class="category-list">
+      <li class="category-item"><a href="team.php?team=Celtic" class="category-link">Celtic</a></li>
+      <li class="category-item"><a href="team.php?team=Rangers" class="category-link">Rangers</a></li>
+      <li class="category-item"><a href="team.php?team=Hibernian" class="category-link">Hibernian</a></li>
+      <li class="category-item"><a href="team.php?team=Hearts" class="category-link">Hearts</a></li>
+      <li class="category-item"><a href="team.php?team=Aberdeen" class="category-link">Aberdeen</a></li>
+    </ul>
+  </div>
+</div>
       <!-- end of megabox-->
     </header>

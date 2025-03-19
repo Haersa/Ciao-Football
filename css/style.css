@@ -886,6 +886,30 @@ footer {
   font-family: var(--font-secondary);
 }
 
+.terms-group {
+  margin-bottom: 1.5rem;
+}
+
+.terms-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.terms-container p {
+  margin: 0;
+  font-family: var(--font-secondary);
+  font-size: var(--text-link);
+  color: var(--text-colour);
+}
+
+.terms-container input[type="checkbox"] {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-left: 1rem;
+  accent-color: var(--text-colour);
+}
+
 .register-button {
   background-color: var(--text-colour);
   color: var(--background);
@@ -907,7 +931,7 @@ footer {
   font-size: var(--text-link);
   color: var(--text-colour);
   font-weight: var(--font-weight-400);
-  text-align: left;
+  text-align: center;
 }
 
 .login-link a {
