@@ -10,7 +10,7 @@ Current work in progress e-commerce store for a hypothetical London based replic
 
 
 ## Development Notes
-In development as you read this. I am developing it at Home and in College. 
+In development as you read this. I am developing it at Home and in College. I am actively learning prepared SQL statements so if it seems a bit weird or inconsistent across pages, it is because I'm not 100% in it yet.
 
 
 ## Future Plans
