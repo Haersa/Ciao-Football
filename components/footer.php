@@ -31,6 +31,12 @@
                             <li><p>Address: 128 A, Piccadilly, London.</p></li>
                         </ul>
                     </div>
+                    <div class="footer-column">
+                        <h3>Review</h3>
+                        <ul>
+                            <li><a rel = "noopener noreferrer" href="reviewciao.php">Review Ciao Football</a></li>
+                        </ul>
+                    </div>
                 </div>
                 
                 <div class="payment-methods">

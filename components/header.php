@@ -26,13 +26,10 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
   <head>
     <meta charset="UTF-8" /> <!-- Meta Tags-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="<?php echo isset($pageDescription) ? $pageDescription : 'Ciao Football - Your destination for premium football shirts and equipment.'; ?>" />
+    <meta name="description" content="<?php echo isset($pageDescription) ? $pageDescription : ''; ?>" />
     <meta name="author" content="Ciao Football" />
-    <meta
-      name="keywords"
-      content="<?php echo isset($pageKeywords) ? $pageKeywords : 'Ciao, Football, Ciao Football, Soccer, replica, shirt, football shirts, equipment, store'; ?>"
-    />
-    <title><?php echo isset($pageTitle) ? $pageTitle . ' - ' : ''; ?>Ciao Football</title> <!--Page title-->
+    <meta name="keywords" content="<?php echo isset($pageKeywords) ? $pageKeywords : ''; ?>"/>
+    <title><?php echo isset($pageTitle) ? $pageTitle.' - ' : ''; ?>Ciao Football</title> <!--Page title-->
     <!-- Light mode favicon-->
     <link rel = "icon" type = "svg+xml" href = "../images/favicondark.svg" media = "(prefers-color-scheme: light)">
      <!-- Dark mode favicon-->
@@ -47,7 +44,7 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
         <!--start of top container-->
         <div class="top-text">
           <!--start of top text-->
-          <p>Create an Account to View Weekly Deals</p>
+          <p>Create an Account to View Sale Items</p>
         </div>
         <!--end of top text-->
       </div>
@@ -79,8 +76,13 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
       <a rel="noopener noreferrer" href="equipment.php">Equipment</a>
     </li><!--page link-->
     <li>
-      <a rel="noopener noreferrer" id="shopby" href="products.php">Shop By</a>
+      <a rel="noopener noreferrer" id="shopby" href="shirts.php">Shop By</a>
     </li><!--page link-->
+    <?php if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
+      <li>
+      <a rel="noopener noreferrer"  href="forsale.php">Sale</a>
+    </li><!--page link-->
+  <?php endif; ?>
     <?php if(!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']): ?>
       <li><a rel="noopener noreferrer" href="login.php">Sign in</a></li><!--page link-->
       <li><a rel="noopener noreferrer" href="register.php">Register</a></li><!--page link-->
