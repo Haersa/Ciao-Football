@@ -6,8 +6,10 @@ $pageKeywords = "Ciao, Football, Ciao Football, Soccer, replica, shirt, football
 
 // Include the header file
 include('../components/header.php');
-// Inlude the footer file
-include('../components/footer.php');
+?>
+<?php 
+// back to top button
+include('../components/backtotopbutton.php');
 ?>
 
 <!-- Main content of the page starts here -->
@@ -18,6 +20,11 @@ include('../components/footer.php');
   </section>
   
 </main>
+
+<?php
+// Inlude the footer file
+include('../components/footer.php');
+?>
 
 <!-- include a link to add shipping address and add payment details, payment details will also be a checkbox to be ticked inside payment form -->
 

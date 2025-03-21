@@ -7,6 +7,10 @@ $pageKeywords = "Ciao, Football, Ciao Football, Soccer, replica, shirt, football
 // Include the header file
 include('../components/header.php');
 ?>
+<?php 
+// back to top button
+include('../components/backtotopbutton.php');
+?>
 
 <!-- Main content of the page starts here -->
 <main>

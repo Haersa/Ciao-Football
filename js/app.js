@@ -43,3 +43,17 @@ document.addEventListener("DOMContentLoaded", function () {
     MegaBox.classList.remove("active");
   });
 });
+
+const backToTopButton = document.querySelector(".back-to-top-container");
+
+// Initially hide the button
+backToTopButton.style.display = "none";
+
+// Show or hide the button based on scroll position
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 300) {
+    backToTopButton.style.display = "block";
+  } else {
+    backToTopButton.style.display = "none";
+  }
+});

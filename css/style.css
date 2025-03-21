@@ -16,6 +16,10 @@ body {
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   /* fonts */
   --font-primary: "Noto Sans", sans-serif;
@@ -46,8 +50,33 @@ body {
   --text-body: clamp(0.875rem, 1.1rem, 1.25rem);
   --text-success: clamp(0.875rem, 0.95rem, 1rem);
   --text-failure: clamp(0.875rem, 0.95rem, 1rem);
-  --text-button: clamp(0.875rem, 0.95rem, 1rem);
+  --text-button: clamp(0.875rem, 1rem, 1.3rem);
   --text-small: clamp(0.75rem, 0.8rem, 0.875rem);
+}
+
+/* back to top button */
+
+.back-to-top-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.back-to-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--secondary-accent);
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.back-to-top:hover {
+  background-color: var(--text-colour);
 }
 
 /* Message Styling */
@@ -365,7 +394,8 @@ input[type="submit"] {
   transition: background-color 0.2s;
   margin-top: 5px;
   font-family: var(--font-primary);
-  font-size: var(--text-link);
+  font-size: var(--text-button);
+  font-weight: var(--font-weight-600);
 }
 
 input[type="submit"]:hover {
@@ -779,9 +809,9 @@ footer {
   margin-top: 30px;
   cursor: pointer;
   font-size: var(--text-button);
-  font-weight: var(--font-weight-400);
+  font-weight: var(--font-weight-600);
   transition: background-color 0.3s ease;
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
 }
 
 .login-form input[type="submit"]:hover {
@@ -917,6 +947,8 @@ footer {
   width: 100%;
   font-size: var(--text-button);
   transition: background-color 0.3s ease;
+  font-weight: var(--font-weight-600);
+  font-family: var(--font-primary);
 }
 
 .register-button:hover {
@@ -1306,7 +1338,6 @@ footer {
 
 .newsletter-signup {
   width: 100%;
-  border-bottom: 1px solid var(--text-colour);
   padding: 3rem 0;
   margin: 2rem 0;
   background-color: var(--background);
@@ -1334,7 +1365,7 @@ footer {
   font-family: var(--font-secondary);
   font-weight: var(--font-weight-400);
   font-size: var(--text-body);
-  color: #555;
+  color: var(--text-colour);
   line-height: 1.5;
   margin-top: 0;
   margin-bottom: 0;
@@ -1343,22 +1374,22 @@ footer {
 .newsletter-form form {
   display: grid;
   grid-template-columns: 1fr 1fr auto;
-  gap: 12px;
+  gap: 1rem;
   align-items: center;
 }
 
 .newsletter-form input {
-  padding: 12px 16px;
-  border: 1px solid #ddd;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--accent-colour);
   font-family: var(--font-secondary);
-  font-size: 15px;
+  font-size: var(--text-link);
   transition: border-color 0.2s ease;
   height: 50px;
 }
 
 .newsletter-form input:focus {
   outline: none;
-  border-color: #000;
+  border-color: var(--text-colour);
 }
 
 .newsletter-form button {
@@ -1372,7 +1403,7 @@ footer {
   cursor: pointer;
   transition: background-color 0.2s ease;
   text-transform: uppercase;
-  height: 38px;
+  height: 50px;
   border-radius: 4px;
   align-items: center;
 }
@@ -1408,6 +1439,137 @@ footer {
     grid-column: 1;
   }
 }
+
+/* navigate by team styles start */
+.team-quick-link {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.quick-link-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.quick-link-heading h2 {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-400);
+  color: var(--text-colour);
+  font-size: var(--text-h2);
+}
+
+.team-quick-navigation-container {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.quick-link-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1400px;
+  width: 100%;
+}
+
+.quick-link-grid-item {
+  height: 450px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.quick-link-grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.quick-link-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--background);
+  text-align: center;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.quick-link-grid-item:hover .quick-link-overlay {
+  /* Show overlay on hover */
+  opacity: 1;
+}
+
+.quick-link-overlay h3 {
+  color: var(--background);
+  font-weight: var(--font-weight-400);
+  font-size: var(--text-h3);
+  margin-bottom: 1.5rem;
+  font-family: var(--font-primary);
+}
+
+.quick-link-overlay a {
+  color: var(--background);
+  text-decoration: none;
+  padding: 0.7rem 1.5rem;
+  background-color: var(--text-colour);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-size: var(--text-button);
+  text-transform: uppercase;
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-600);
+}
+
+.quick-link-overlay a:hover {
+  background-color: var(--background);
+  color: var(--text-colour);
+}
+
+.quick-link-overlay h3.team-name {
+  display: block;
+}
+
+.quick-link-overlay h3.small-text {
+  display: none;
+}
+
+@media (max-width: 1028px) {
+  .quick-link-overlay {
+    opacity: 0.9;
+  }
+
+  /* Toggle Manchester United short name only */
+  .quick-link-overlay h3.team-name {
+    display: none;
+  }
+
+  .quick-link-overlay h3.small-text {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .quick-link-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .quick-link-grid-item {
+    height: 200px;
+  }
+}
+
+/* navigate by team styles ennd */
 
 /* membership benefits styles */
 .benefits-container {
@@ -1592,6 +1754,7 @@ footer {
   color: var(--text-colour);
   margin-inline: 2rem;
   text-align: center;
+  margin-top: 2rem;
 }
 
 .review-item {
@@ -1626,6 +1789,7 @@ footer {
   color: var(--text-colour);
   margin-bottom: 1rem;
   overflow-y: none;
+  text-wrap: balance;
 }
 
 .review-rating {
@@ -1758,13 +1922,220 @@ footer {
 }
 
 .review-form-group button:hover {
-  background-color: var(--background);
-  color: var(--text-colour);
+  background-color: var(--accent-colour);
+  color: var(--background);
 }
 
 @media (max-width: 768px) {
   .review-name-row {
     flex-direction: column;
     gap: 1rem;
+  }
+}
+
+/* product page styles */
+.product-hero {
+  width: 100%;
+  height: 100px;
+}
+
+.product-heading {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.product-heading h1 {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-600);
+  font-size: var(--text-h1);
+  text-decoration: uppercase;
+}
+
+.product-grid {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+}
+
+.product-card {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.product-image {
+  height: 250px;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-image img:hover {
+  transform: scale(1.05);
+}
+
+.product-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.product-team {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-400);
+  font-size: var(--text-h3);
+  color: var(--text-colour);
+}
+
+.product-year {
+  font-size: var(--text-link);
+  font-weight: var(--font-weight-400);
+  color: var(--text-colour);
+  font-family: var(--font-secondary);
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.product-type {
+  font-size: var(--text-link);
+  font-weight: var(--font-weight-400);
+  color: var(--text-colour);
+  font-family: var(--font-secondary);
+}
+.product-size {
+  font-size: var(--text-link);
+  font-weight: var(--font-weight-400);
+  color: var(--text-colour);
+  font-family: var(--font-secondary);
+}
+
+.product-bottom-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline: 0.5rem;
+  margin-block: 0.75rem;
+}
+
+.product-price {
+  font-size: var(--text-link);
+  font-weight: var(--font-weight-400);
+  color: var(--text-colour);
+  font-family: var(--font-primary);
+}
+
+.product-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.basket-button,
+.view-button {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border-radius: 6px;
+  font-weight: var(--font-weight-600);
+  font-family: var(--font-primary);
+  font-size: var(--text-button);
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.02em;
+}
+
+.basket-button {
+  background-color: var(--accent-colour);
+  color: var(--background);
+  border: none;
+}
+
+.basket-button:hover {
+  transform: translateY(-2px);
+}
+
+.view-button {
+  background-color: var(--text-colour);
+  color: var(--background);
+}
+
+.view-button:hover {
+  transform: translateY(-2px);
+}
+
+.view-button a,
+.basket-button a {
+  font-size: var(--text-button);
+  font-weight: var(--font-weight-600);
+  font-family: var(--font-primary);
+}
+
+.no-products {
+  text-align: center;
+  padding: 2rem;
+  font-size: var(--text-h2);
+  color: var(--text-colour);
+  font-weight: var(--font-weight-400);
+}
+
+@media (min-width: 1028px) and (orientation: portrait) {
+  .products-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .products-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .products-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .product-image {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-container {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card:not(:first-child) {
+    margin-top: 1rem;
+  }
+
+  .product-image {
+    height: 250px;
   }
 }

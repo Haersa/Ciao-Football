@@ -12,7 +12,9 @@
                             <li><a href="index.php" rel = "noopener noreferrer">Home</a></li>
                             <li><a href="equipment.php" rel = "noopener noreferrer">Equipment</a></li>
                             <li><a href="newproducts.php" rel = "noopener noreferrer">New in</a></li>
-                            <li><a href="products.php" rel = "noopener noreferrer">Shop</a></li>
+                            <li><a href="retrokits.php" rel = "noopener noreferrer">Retro Kits</a></li>
+                            <li><a href="replicakits.php" rel = "noopener noreferrer">Retro Replica's</a></li>
+                            <li><a href="specialistkits.php" rel = "noopener noreferrer">Specialist Kits</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -40,7 +42,7 @@
                 </div>
                 
                 <div class="payment-methods">
-                    <h3>Payment Methods</h3>
+                    <h3>We Accept:</h3>
                     <div class="card-icons">
                         <div class="card-icon"><img src="../images/mastercard.svg" alt="Mastercard"></div>
                         <div class="card-icon"><img src="../images/visa.svg" alt="Visa"></div>

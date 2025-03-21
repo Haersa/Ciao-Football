@@ -5,12 +5,12 @@
     <div class="reviews-container">
         <?php
         // SQL statement
-        $sql = "SELECT name, surname, rating, review FROM ciaoreviews ORDER BY review_date DESC LIMIT ?";
+        $sql = "SELECT name, surname, rating, review FROM ciaoreviews ORDER BY review_id DESC LIMIT ?";
 
         // Create prepared statement
         $stmt = $conn->prepare($sql);
 
-        // set query limit to 2
+        // set query limit to 2, so only the 2 most recent reviews are shown
         $limit = 2;
         $stmt->bind_param("i", $limit);
 

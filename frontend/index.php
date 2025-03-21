@@ -6,7 +6,9 @@ $pageKeywords = "Ciao, Football, Ciao Football, Soccer, replica, shirt, football
 // Include the header file
 include('../components/header.php');
 ?>
-
+<?php 
+include('../components/backtotopbutton.php');
+?>
 <main>
   <section class="hero"> <!-- hero section -->
   <div class="hero-image">
@@ -121,13 +123,98 @@ include('../components/header.php');
   </div>
 </section><!-- end of member benefits section -->
 
-<?php 
-include('../components/newsletter.php');
-?>
+<section class="team-quick-link"> <!-- quick team navigation starts -->
+  <div class="quick-link-heading">
+    <h2>Shop by Team</h2>
+  </div>
+  <div class="team-quick-navigation-container"> <!-- quick team container starts -->
+    <div class="quick-link-grid"> <!-- quick link grid starts -->
+      
+      <!-- Celtic FC -->
+      <div class="quick-link-grid-item">
+        <div class="quick-link-overlay">
+          <h3>Celtic FC</h3>
+          <a href="team.php?team=Celtic" rel="noopener noreferrer">Shop Now</a>
+        </div>
+        <img src="../images/celticbadge.png" alt="Celtic FC">
+      </div>
+      
+      <!-- Real Madrid -->
+      <div class="quick-link-grid-item">
+        <div class="quick-link-overlay">
+          <h3>Real Madrid</h3>
+          <a href="team.php?team=Real Madrid" rel="noopener noreferrer">Shop Now</a>
+        </div>
+        <img src="../images/realmadridbadge.png" alt="Real Madrid">
+      </div>
+      
+      <!-- Arsenal FC -->
+      <div class="quick-link-grid-item">
+        <div class="quick-link-overlay">
+          <h3>Arsenal FC</h3>
+          <a href="team.php?team=Arsenal" rel="noopener noreferrer">Shop Now</a>
+        </div>
+        <img src="../images/arsenalbadge.png" alt="Arsenal FC">
+      </div>
+      
+      <!-- Inter Milan -->
+      <div class="quick-link-grid-item">
+        <div class="quick-link-overlay">
+          <h3>Inter Milan</h3>
+          <a href="team.php?team=Inter Milan" rel="noopener noreferrer">Shop Now</a>
+        </div>
+        <img src="../images/interbadge.png" alt="Inter Milan">
+      </div>
+      
+      <!-- Barcelona -->
+      <div class="quick-link-grid-item">
+        <div class="quick-link-overlay">
+          <h3>Barcelona</h3>
+          <a href="team.php?team=Barcelona" rel="noopener noreferrer">Shop Now</a>
+        </div>
+        <img src="../images/barcabadge.png" alt="Barcelona">
+      </div>
+      
+      <!-- Liverpool FC -->
+      <div class="quick-link-grid-item">
+        <div class="quick-link-overlay">
+          <h3>Liverpool FC</h3>
+          <a href="team.php?team=Liverpool" rel="noopener noreferrer">Shop Now</a>
+        </div>
+        <img src="../images/liverpoolbadge.png" alt="Liverpool FC">
+      </div>
+      
+      <!-- Juventus -->
+      <div class="quick-link-grid-item">
+        <div class="quick-link-overlay">
+          <h3>Juventus</h3>
+          <a href="team.php?team=Juventus" rel="noopener noreferrer">Shop Now</a>
+        </div>
+        <img src="../images/juvebadge.png" alt="Juventus">
+      </div>
+      
+      <!-- Manchester United -->
+      <div class="quick-link-grid-item">
+        <div class="quick-link-overlay">
+          <h3 class="team-name">Manchester United</h3>
+          <h3 class="small-text">Man Utd</h3>
+          <a href="team.php?team=Man Utd" rel="noopener noreferrer">Shop Now</a>
+        </div>
+        <img src="../images/manutdbadge.png" alt="Manchester United">
+      </div>
+      
+    </div><!-- quick link grid ends -->
+  </div><!-- quick team container ends -->
+</section><!-- quick team navigation ends -->
+
 
 <?php
 // Inlude the reviews file
 include('../components/Ciaoreviews.php');
+?>
+
+<?php 
+include('../components/newsletter.php');
 ?>
 
 </main>

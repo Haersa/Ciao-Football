@@ -38,13 +38,14 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
     <link rel="stylesheet" href="../css/style.css" /> <!-- CSS file-->
   </head>
   <body>
+  <div id = "top"></div>
     <header>
       <!-- start of header-->
       <div class="top-container">
         <!--start of top container-->
         <div class="top-text">
           <!--start of top text-->
-          <p>Create an Account to View Sale Items</p>
+          <p>Members Gain Access To Sale Items</p>
         </div>
         <!--end of top text-->
       </div>
@@ -187,7 +188,7 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
             <a href = "shirts.php" rel = "noopener noreferrer" class="megabox-title">All Shirts</a>
               <a href = "replicakits.php" rel = "noopener noreferrer" class="megabox-title">Replica Shirts</a>
               <a href = "retrokits.php" rel = "noopener noreferrer" class="megabox-title">Retro Replica's</a>
-              <a  href = "specialistkits.php" rel = "noopener noreferrer" class="megabox-title">Specialist Shirts</a>
+              <a  href = "specialistkits.php" rel = "noopener noreferrer" class="megabox-title">Replica Specialist Shirts</a>
               <a href = "equipment.php" rel="noopener noreferrer" class="megabox-title">Equipment</a>
             </div>
 <div class="content-box">
@@ -195,7 +196,7 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
   <div class="category-column">
     <h4 class="category-heading">Premier League</h4>
     <ul class="category-list">
-      <li class="category-item"><a href="team.php?team=Manchester United" class="category-link">Manchester United</a></li>
+      <li class="category-item"><a href="team.php?team=Man Utd" class="category-link">Manchester United</a></li>
       <li class="category-item"><a href="team.php?team=Liverpool" class="category-link">Liverpool</a></li>
       <li class="category-item"><a href="team.php?team=Arsenal" class="category-link">Arsenal</a></li>
       <li class="category-item"><a href="team.php?team=Chelsea" class="category-link">Chelsea</a></li>
@@ -250,4 +251,4 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
   </div>
 </div>
       <!-- end of megabox-->
-    </header>
+</header>

@@ -6,8 +6,10 @@ $pageKeywords = "Ciao, Football, Ciao Football, Soccer, replica, shirt, football
 
 // Include the header file
 include('../components/header.php');
-// Inlude the footer file
-include('../components/footer.php');
+?>
+<?php 
+// back to top button
+include('../components/backtotopbutton.php');
 ?>
 
 <!-- Main content of the page starts here -->
@@ -19,7 +21,9 @@ include('../components/footer.php');
   
 </main>
 
-
+<?php
+include('../components/footer.php');
+?>
 
 <script src="../js/app.js"></script>
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
