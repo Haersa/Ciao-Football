@@ -249,6 +249,55 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
       <li class="category-item"><a href="team.php?team=Aberdeen" class="category-link">Aberdeen</a></li>
     </ul>
   </div>
-</div>
-      <!-- end of megabox-->
+</div>    <!-- end of megabox-->
 </header>
+
+<!-- Mobile Menu -->
+<div id="Mobile-Menu" class="mobile-menu">
+  <div class="mobile-menu-header">
+    <div class="mobile-logo">
+      <a href="index.php">Ciao Football</a>
+    </div>
+    <button id="close-burger" class="close-button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x">
+        <path d="M18 6 6 18" />
+        <path d="m6 6 12 12" />
+      </svg>
+    </button>
+  </div>
+  
+  <nav class="mobile-navigation">
+    <ul class="mobile-nav-links">
+      <li><a rel="noopener noreferrer" href="index.php">Home</a></li>
+      <li><a rel="noopener noreferrer" href="equipment.php">Equipment</a></li>
+      <li>
+        <h2>Shop By</h2>
+        <ul class="mobile-submenu">
+          <li><a href="shirts.php">All Shirts</a></li>
+          <li><a href="replicakits.php">Replica Shirts</a></li>
+          <li><a href="retrokits.php">Retro Replicas</a></li>
+          <li><a href="specialistkits.php">Replica Specialist Shirts</a></li>
+        </ul>
+      </li>
+      <?php if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
+        <li><a rel="noopener noreferrer" href="forsale.php">Sale</a></li>
+        <li><a rel="noopener noreferrer" href="profile.php">My Account</a></li>
+        <li><a rel="noopener noreferrer" href="../backend/signout.php">Sign out</a></li>
+      <?php else: ?>
+        <li><a rel="noopener noreferrer" href="login.php">Sign in</a></li>
+        <li><a rel="noopener noreferrer" href="register.php">Register</a></li>
+      <?php endif; ?>
+      <li>
+        <div class="mobile-search">
+          <input type="text" placeholder="Search..." />
+          <button type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</div><!-- end of mobile menu -->

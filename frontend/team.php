@@ -50,7 +50,7 @@ $result = $conn->query($sql);
 
 
 <!-- Main content of the page starts here -->
-<section class="hero">
+<section>
   <h1><?php echo $team; ?> Products</h1>
   <p>Explore our selection of
     <?php 
@@ -129,7 +129,7 @@ $result = $conn->query($sql);
         
         echo '</div>'; // End products container
     } else {
-        echo '<div class="no-products">No non-sale retro shirts found</div>'; // if no products are found, display this error to user
+        echo '<div class="no-products">No Products Found</div>'; // if no products are found, display this error to user
     }
 
     // Close statement

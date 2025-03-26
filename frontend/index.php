@@ -6,7 +6,9 @@ $pageKeywords = "Ciao, Football, Ciao Football, Soccer, replica, shirt, football
 // Include the header file
 include('../components/header.php');
 ?>
+
 <?php 
+// include the back to top button file
 include('../components/backtotopbutton.php');
 ?>
 <main>
@@ -20,7 +22,7 @@ include('../components/backtotopbutton.php');
 </div>
     <div class="hero-text">
   <h1 class="hero-title">Ciao Football</h1>
-  <p class="hero-description">The Premier Destination for Premium Football Shirts.</p>
+  <p class="hero-description">Where Fans Find their Perfect Kit. High Quality Replica Kits Delivered Worldwide.</p>
   <div class="hero-button">
     <a rel="noopener noreferrer" href="shirts.php">Shop Now</a>
   </div>
@@ -119,9 +121,74 @@ include('../components/backtotopbutton.php');
   </div><!-- end of benefit grid -->
 
   <div class="index-register-section">
-    <a href="register.php" rel="noopener noreferrer">Register</a>
+    <a href="register.php" rel="noopener noreferrer">Register Now</a>
   </div>
 </section><!-- end of member benefits section -->
+
+<section class="price-points"><!-- price points section startys -->
+  <!-- Section Header -->
+  <div class="price-points-heading">
+    <h2>Shop by Price</h2>
+  </div>
+  <div class="price-points-text">
+    <p>Find products that match your budget</p>
+  </div>
+  
+  <!-- Price Points Grid -->
+  <div class="price-points-grid">
+    <!-- Grid Item 1 -->
+    <div class="price-points-grid-item">
+      <div class="item-heading">
+        <h3>Under £50</h3>
+      </div>
+      <div class="item-content">
+        <p>Affordable gear without breaking the bank.</p>
+      </div>
+      <div class="price-link-container">
+          <a class = "item-link" href="shop.php?price=under50" rel="noopener noreferrer">Shop Now</a>
+      </div>
+    </div>
+    
+    <!-- Grid Item 2 -->
+    <div class="price-points-grid-item">
+      <div class="item-heading">
+        <h3>£50 - £75</h3>
+      </div>
+      <div class="item-content">
+        <p>Premium apparel at mid ranged prices.</p>
+      </div>
+      <div class="price-link-container">
+        <a class = "item-link" href="shop.php?price=50-75" rel="noopener noreferrer">Shop Now</a>
+      </div>
+    </div>
+    
+    <!-- Grid Item 3 -->
+    <div class="price-points-grid-item">
+      <div class="item-heading">
+        <h3>£75 - £100</h3>
+      </div>
+      <div class="item-content">
+        <p>High quality merchandise for dedicated fans.</p>
+      </div>
+      <div class="price-link-container">
+        <a class = "item-link" href="shop.php?price=75-100" rel="noopener noreferrer">Shop Now</a>
+      </div>
+    </div>
+    
+    <!-- Grid Item 4 -->
+    <div class="price-points-grid-item">
+      <div class="item-heading">
+        <h3>Over £100</h3>
+      </div>
+      <div class="item-content">
+        <p>Elite collection, for the true football fan.</p>
+      </div>
+      <div class="price-link-container">
+        <a class = "item-link" href="shop.php?price=over100" rel="noopener noreferrer">Shop Now</a>
+      </div>
+    </div>
+  </div>
+</section><!-- price points section ends -->
 
 <section class="team-quick-link"> <!-- quick team navigation starts -->
   <div class="quick-link-heading">
@@ -226,6 +293,7 @@ include('../components/footer.php');
 
 
 <script src="../js/app.js"></script>
+<script src = "../js/mobilemenu.js"></script>
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </body>
 </html>

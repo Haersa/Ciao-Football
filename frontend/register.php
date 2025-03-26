@@ -48,7 +48,7 @@ include('../components/backtotopbutton.php');
 
            <div class="form-group terms-group">
                 <div class="terms-container">
-                    <p>I agree to the <a rel="noopener noreferrer" href="terms.php">Terms & Conditions</a></p>
+                    <p>I agree to the <a rel="noopener noreferrer" target = "_blank" href="terms.php">Terms & Conditions</a></p>
                     <input type="checkbox" id="terms" name="terms" required>
                 </div>
             </div>
