@@ -4,7 +4,8 @@
 
 
 ## Project Overview
-Current work in progress e-commerce store for a hypothetical London based replica, retro & specialist football shirt retailer. 
+Current work in progress e-commerce store for a hypothetical London based replica, retro & specialist football shirt retailer. This is my final website to be built in college so I am going all out and really testing myself.
+Code comments will be plentiful as I will be marked on the readability, coding standards and maintainability of the source code.
 
 
 
