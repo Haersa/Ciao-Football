@@ -45,7 +45,7 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
         <!--start of top container-->
         <div class="top-text">
           <!--start of top text-->
-          <p>Members Gain Access To Sale Items</p>
+          <p>Exclusive Sales for Members</p>
         </div>
         <!--end of top text-->
       </div>
@@ -253,51 +253,135 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
 </header>
 
 <!-- Mobile Menu -->
-<div id="Mobile-Menu" class="mobile-menu">
-  <div class="mobile-menu-header">
-    <div class="mobile-logo">
-      <a href="index.php">Ciao Football</a>
-    </div>
-    <button id="close-burger" class="close-button">
+<section id="Mobile-Menu" class="mobile-menu">
+<section class="mobile-menu-header">
+  <section class="mobile-logo">
+    <a href="index.php">Ciao Football</a>
+  </section>
+  
+  <section class="menu-actions">
+    <section class="basket-icon">
+      <a rel="noopener noreferrer"  href="basket.php">
+        <!-- shopping bag/basket icon-->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#050505"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-shopping-bag"
+        >
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+          <path d="M3 6h18" />
+          <path d="M16 10a4 4 0 0 1-8 0" />
+        </svg>
+      </a>
+    </section>
+    
+    <section id="close-burger" class="close-button">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x">
         <path d="M18 6 6 18" />
         <path d="m6 6 12 12" />
       </svg>
-    </button>
-  </div>
+    </section>
+  </section>
+</section>
+
+  <section class="mobile-search"> <!-- mobile menu search bar -->
+    <input type="text" placeholder="Search..." />
+      <button type="submit">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search">
+          <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
+        </svg>
+      </button>
+  </section> <!-- end of mobile menu search bar -->
+  <section class="mobile-user-action"> <!-- start of mobile user actions -->
+  <?php if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
+        <a rel="noopener noreferrer" href="profile.php">My Account</a>
+        <a rel="noopener noreferrer" href="forsale.php">Sale items</a>
+        <a rel="noopener noreferrer" href="../backend/signout.php">Sign out</a>
+      <?php else: ?>
+        <a rel="noopener noreferrer" href="login.php">Sign in</a>
+        <a rel="noopener noreferrer" href="register.php">Register</a>
+      <?php endif; ?>
+      </section><!-- end of mobile user actions -->
   
-  <nav class="mobile-navigation">
+  <nav class="mobile-navigation"><!-- main mobile navigation -->
     <ul class="mobile-nav-links">
       <li><a rel="noopener noreferrer" href="index.php">Home</a></li>
       <li><a rel="noopener noreferrer" href="equipment.php">Equipment</a></li>
       <li>
         <h2>Shop By</h2>
         <ul class="mobile-submenu">
-          <li><a href="shirts.php">All Shirts</a></li>
-          <li><a href="replicakits.php">Replica Shirts</a></li>
-          <li><a href="retrokits.php">Retro Replicas</a></li>
-          <li><a href="specialistkits.php">Replica Specialist Shirts</a></li>
+          <li><a rel="noopener noreferrer" href="shirts.php">All Shirts</a></li>
+          <li><a rel="noopener noreferrer" href="replicakits.php">Replica Shirts</a></li>
+          <li><a rel="noopener noreferrer" href="retrokits.php">Retro Replicas</a></li>
+          <li><a rel="noopener noreferrer" href="specialistkits.php">Replica Specialist Shirts</a></li>
         </ul>
       </li>
-      <?php if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
-        <li><a rel="noopener noreferrer" href="forsale.php">Sale</a></li>
-        <li><a rel="noopener noreferrer" href="profile.php">My Account</a></li>
-        <li><a rel="noopener noreferrer" href="../backend/signout.php">Sign out</a></li>
-      <?php else: ?>
-        <li><a rel="noopener noreferrer" href="login.php">Sign in</a></li>
-        <li><a rel="noopener noreferrer" href="register.php">Register</a></li>
-      <?php endif; ?>
-      <li>
-        <div class="mobile-search">
-          <input type="text" placeholder="Search..." />
-          <button type="submit">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search">
-              <circle cx="11" cy="11" r="8" />
-              <path d="m21 21-4.3-4.3" />
-            </svg>
-          </button>
-        </div>
-      </li>
     </ul>
-  </nav>
-</div><!-- end of mobile menu -->
+    <section class="mobile-teams-navigation">
+  <h2 class="mobile-teams-heading">Shop by Team</h2>
+  
+  <details class="mobile-league-accordion">
+    <summary class="mobile-league-title">Premier League</summary>
+    <ul class="mobile-teams-list">
+      <li class="mobile-team-item"><a href="team.php?team=Man Utd" class="mobile-team-link">Manchester United</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Liverpool" class="mobile-team-link">Liverpool</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Arsenal" class="mobile-team-link">Arsenal</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Chelsea" class="mobile-team-link">Chelsea</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Manchester City" class="mobile-team-link">Manchester City</a></li>
+    </ul>
+  </details>
+  
+  <details class="mobile-league-accordion">
+    <summary class="mobile-league-title">La Liga</summary>
+    <ul class="mobile-teams-list">
+      <li class="mobile-team-item"><a href="team.php?team=Barcelona" class="mobile-team-link">Barcelona</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Real Madrid" class="mobile-team-link">Real Madrid</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Atletico Madrid" class="mobile-team-link">Atletico Madrid</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Sevilla" class="mobile-team-link">Sevilla</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Valencia" class="mobile-team-link">Valencia</a></li>
+    </ul>
+  </details>
+  
+  <details class="mobile-league-accordion">
+    <summary class="mobile-league-title">Serie A</summary>
+    <ul class="mobile-teams-list">
+      <li class="mobile-team-item"><a href="team.php?team=Juventus" class="mobile-team-link">Juventus</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=AC Milan" class="mobile-team-link">AC Milan</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Inter Milan" class="mobile-team-link">Inter Milan</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Napoli" class="mobile-team-link">Napoli</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Roma" class="mobile-team-link">Roma</a></li>
+    </ul>
+  </details>
+  
+  <details class="mobile-league-accordion">
+    <summary class="mobile-league-title">International</summary>
+    <ul class="mobile-teams-list">
+      <li class="mobile-team-item"><a href="team.php?team=England" class="mobile-team-link">England</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Scotland" class="mobile-team-link">Scotland</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Germany" class="mobile-team-link">Germany</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Brazil" class="mobile-team-link">Brazil</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Argentina" class="mobile-team-link">Argentina</a></li>
+    </ul>
+  </details>
+  
+  <details class="mobile-league-accordion">
+    <summary class="mobile-league-title">SPFL</summary>
+    <ul class="mobile-teams-list">
+      <li class="mobile-team-item"><a href="team.php?team=Celtic" class="mobile-team-link">Celtic</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Rangers" class="mobile-team-link">Rangers</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Hibernian" class="mobile-team-link">Hibernian</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Hearts" class="mobile-team-link">Hearts</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Aberdeen" class="mobile-team-link">Aberdeen</a></li>
+    </ul>
+  </details>
+</section>
+  </nav><!-- end of main mobile navigation-->
+</section><!-- end of mobile menu -->

@@ -281,19 +281,19 @@ include('../components/Ciaoreviews.php');
 ?>
 
 <?php 
+// Inlude the newsletter sign up form file
 include('../components/newsletter.php');
 ?>
 
 </main>
 
 <?php
-// Inlude the newsletter sign up form file
+// Inlude the footer file
 include('../components/footer.php');
 ?>
 
 
 <script src="../js/app.js"></script>
-<script src = "../js/mobilemenu.js"></script>
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </body>
 </html>

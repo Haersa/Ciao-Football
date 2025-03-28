@@ -40,8 +40,18 @@ document.addEventListener("DOMContentLoaded", function () {
     MegaBox.classList.toggle("active");
   });
 
+  //add active class to megabox dropdown menu on focus with tab key
+  ShopByLink.addEventListener("focusin", () => {
+    MegaBox.classList.toggle("active");
+  });
+
   // Remove active class when mouse leaves the megabox
   MegaBox.addEventListener("mouseleave", () => {
+    MegaBox.classList.remove("active");
+  });
+
+  // Remove active class to megabox dropdown menu on focus with tab key
+  MegaBox.addEventListener("focusout", () => {
     MegaBox.classList.remove("active");
   });
 });
