@@ -53,7 +53,7 @@ include('../components/backtotopbutton.php');
                       // Product details
                       echo '<div class="product-details">';
                       echo '<div class = "product-top-row">';// start of top row container
-                      echo '<h3 class="product-team">' . $row['team'] . '</h3>'; // team
+                      echo '<h2 class="product-team">' . $row['team'] . '</h2>'; // team
                       echo '<p class="product-year">' . $row['year'] . '</p>'; // year the kit was used
                       echo '</div>'; // end of top row container
                       echo '<div class = "product-info">'; // start of product info container
@@ -61,11 +61,12 @@ include('../components/backtotopbutton.php');
                       echo '<p class="product-size">Size: ' . $row['size'] . '</p>'; // size available
                       echo '</div>'; // end of product details container
                       echo '<div class = "product-bottom-row">';
+                      echo '<p class="product-category">' . $row['category'] .'</p>'; // shirt category
                       echo '<p class="product-price">£' . number_format($row['price'], 2) . '</p>'; // price formatted with pound symbol
                       echo '</div>';
                       echo '<div class="product-actions">';
-                      echo '<a  rel = "noopener noreferrer" href="productdetails.php?id=' . $row['shirt_id'] . '" class="view-button">View Details</a>'; // view product details button
                       echo '<button class="basket-button" data-id="' . $row['shirt_id'] . '">Add to Basket</button>'; // add to cart button
+                      echo '<a  rel = "noopener noreferrer" href="productdetails.php?id=' . $row['shirt_id'] . '" class="view-button">View Details</a>'; // view product details button
                       echo '</div>';
                       echo '</div>';
                       

@@ -77,7 +77,7 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
       <a rel="noopener noreferrer" href="equipment.php">Equipment</a>
     </li><!--page link-->
     <li>
-      <a rel="noopener noreferrer" id="shopby" href="shirts.php">Shop By</a>
+      <a rel="noopener noreferrer" href = "shirts.php" id="shopby">Shop By</a>
     </li><!--page link-->
     <?php if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
       <li>
@@ -150,7 +150,7 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
             </div><!-- end of search input dropdown-->
           </div>
           <!-- end of search container-->
-          <div class="cart-container">
+          <div class="cart-container">\
             <!-- start of cart container-->
             <a rel="noopener noreferrer" href="basket.php">
               <!-- shopping bag/basket icon-->
@@ -173,6 +173,8 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
             </a>
           </div>
           <!-- end of cart container-->
+           <div class = "tablet-burger-container"><!-- burger menu for tablet screens -->
+           <svg id="tablet-burger-button" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
         </div>
         <div class="burger-container">
           <svg id="burger-button" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
@@ -227,18 +229,8 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
       <li class="category-item"><a href="team.php?team=Roma" class="category-link">Roma</a></li>
     </ul>
   </div>
-  
+
   <!-- Column 4 -->
-  <div class="category-column">
-    <h4 class="category-heading">International</h4>
-    <ul class="category-list">
-      <li class="category-item"><a href="team.php?team=England" class="category-link">England</a></li>
-      <li class="category-item"><a href="team.php?team=Scotland" class="category-link">Scotland</a></li>
-      <li class="category-item"><a href="team.php?team=Germany" class="category-link">Germany</a></li>
-      <li class="category-item"><a href="team.php?team=Brazil" class="category-link">Brazil</a></li>
-      <li class="category-item"><a href="team.php?team=Argentina" class="category-link">Argentina</a></li>
-    </ul>
-  </div>
   <div class="category-column">
     <h4 class="category-heading">SPFL</h4>
     <ul class="category-list">
@@ -249,8 +241,36 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
       <li class="category-item"><a href="team.php?team=Aberdeen" class="category-link">Aberdeen</a></li>
     </ul>
   </div>
+  
+  <!-- Column 5 -->
+  <div class="category-column">
+    <h4 class="category-heading">International</h4>
+    <ul class="category-list">
+      <li class="category-item"><a href="team.php?team=England" class="category-link">England</a></li>
+      <li class="category-item"><a href="team.php?team=Scotland" class="category-link">Scotland</a></li>
+      <li class="category-item"><a href="team.php?team=Germany" class="category-link">Germany</a></li>
+      <li class="category-item"><a href="team.php?team=Brazil" class="category-link">Brazil</a></li>
+      <li class="category-item"><a href="team.php?team=Argentina" class="category-link">Argentina</a></li>
+    </ul>
+  </div>
 </div>    <!-- end of megabox-->
 </header>
+
+<section class="tablet-shop-menu" id = "tablet-menu"> <!-- tablet shop by menu -->
+  <div class="tablet-menu-top-row"><!-- start of tablet menu top row -->
+    <div class="tablet-menu-heading"><!-- tablet menu heading -->
+      <h2>Shop by:</h2>
+    </div>
+    <div id="close-tablet-menu" class="tablet-menu-close"> <!-- tablet menu closing button -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x">
+        <path d="M18 6 6 18" />
+        <path d="m6 6 12 12" />
+      </svg>
+    </div>
+  </div><!-- end of tablet menu top row -->
+</section> <!-- end of tablet shop by menu -->
+
+
 
 <!-- Mobile Menu -->
 <section id="Mobile-Menu" class="mobile-menu">
@@ -360,6 +380,17 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
       <li class="mobile-team-item"><a href="team.php?team=Roma" class="mobile-team-link">Roma</a></li>
     </ul>
   </details>
+
+  <details class="mobile-league-accordion">
+    <summary class="mobile-league-title">SPFL</summary>
+    <ul class="mobile-teams-list">
+      <li class="mobile-team-item"><a href="team.php?team=Celtic" class="mobile-team-link">Celtic</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Rangers" class="mobile-team-link">Rangers</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Hibernian" class="mobile-team-link">Hibernian</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Hearts" class="mobile-team-link">Hearts</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Aberdeen" class="mobile-team-link">Aberdeen</a></li>
+    </ul>
+  </details>
   
   <details class="mobile-league-accordion">
     <summary class="mobile-league-title">International</summary>
@@ -371,17 +402,7 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
       <li class="mobile-team-item"><a href="team.php?team=Argentina" class="mobile-team-link">Argentina</a></li>
     </ul>
   </details>
-  
-  <details class="mobile-league-accordion">
-    <summary class="mobile-league-title">SPFL</summary>
-    <ul class="mobile-teams-list">
-      <li class="mobile-team-item"><a href="team.php?team=Celtic" class="mobile-team-link">Celtic</a></li>
-      <li class="mobile-team-item"><a href="team.php?team=Rangers" class="mobile-team-link">Rangers</a></li>
-      <li class="mobile-team-item"><a href="team.php?team=Hibernian" class="mobile-team-link">Hibernian</a></li>
-      <li class="mobile-team-item"><a href="team.php?team=Hearts" class="mobile-team-link">Hearts</a></li>
-      <li class="mobile-team-item"><a href="team.php?team=Aberdeen" class="mobile-team-link">Aberdeen</a></li>
-    </ul>
-  </details>
+
 </section>
   </nav><!-- end of main mobile navigation-->
 </section><!-- end of mobile menu -->
