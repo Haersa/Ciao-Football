@@ -48,8 +48,8 @@ include('../components/backtotopbutton.php');
 
            <div class="form-group terms-group">
                 <div class="terms-container">
-                    <p>I agree to the <a rel="noopener noreferrer" target = "_blank" href="terms.php">Terms & Conditions</a></p>
-                    <input type="checkbox" id="terms" name="terms" required>
+                    <p id = "terms-label">I agree to the <a rel="noopener noreferrer" target = "_blank" href="terms.php">Terms & Conditions</a></p>
+                    <input type="checkbox" aria-labelledby = "terms-label" id="terms" name="terms" required>
                 </div>
             </div>
            
@@ -60,12 +60,12 @@ include('../components/backtotopbutton.php');
                    <p>Or sign up with:</p>
                </div>
                <div class="third-party-auth-buttons"><!-- third party auth buttons -->
-                   <button class="google-button">
+                   <div class="google-button">
                        <img src="../images/google.svg" alt="Google icon"> Google
-                   </button><!-- google button -->
-                   <button class="facebook-button">
+</div><!-- google button -->
+                   <div class="facebook-button">
                        <img src="../images/facebook.svg" alt="Facebook icon"> Facebook
-                   </button><!-- facebook button -->
+</div><!-- facebook button -->
                </div>
            </div>
            

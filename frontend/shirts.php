@@ -15,14 +15,26 @@ include('../components/backtotopbutton.php');
 <!-- Main content of the page starts here -->
 <main>
   <section class="product-hero"><!-- product page hero section -->
-    <div class="product-heading">
+    <div class="product-top-row">
+      <div class = "product-heading"><!-- product heading -->
       <h1>All Shirts</h1>
-    </div>
-  </section><!-- end of product page hero section -->
+      </div><!-- end of product heading -->
+    <div class = "product-controls-container"><!-- product controls container -->
+      <div class = "product-controls"><!-- product controls -->
+      <select class = "product-filter-button" aria-label="Sort by Filter"> <!-- product filter button -->
+      <option value="Filter by:" selected disabled hidden class = "product-sort-button"> Filter by:</option>
+        <option>Price: Lowest</option>
+        <option>Price: Highest</option>
+        <option>Rating</option>
+      </select><!-- end of product filter button -->
+      </div><!-- end of product controls -->
+    </div><!-- product controls container -->
+    </div><!-- end of product top row -->
+</section><!-- end of product page hero section -->
   
   <section class="product-grid"><!-- product grid section -->
     <?php 
-    // Prepare the SQL statement for non-sale retro products
+    // Prepare the SQL statement for all non-sale non equipment products
     $stmt = $conn->prepare("SELECT * FROM shirts WHERE sale = ?");
 
     // Bind parameters
@@ -63,6 +75,9 @@ include('../components/backtotopbutton.php');
                       echo '<div class = "product-bottom-row">';
                       echo '<p class="product-category">' . $row['category'] .'</p>'; // shirt category
                       echo '<p class="product-price">£' . number_format($row['price'], 2) . '</p>'; // price formatted with pound symbol
+                      echo '</div>';
+                      echo '<div class = "product-rating">';
+                      echo '<p class = "product-rating-text">Rating: 4/5';
                       echo '</div>';
                       echo '<div class="product-actions">';
                       echo '<button class="basket-button" data-id="' . $row['shirt_id'] . '">Add to Basket</button>'; // add to cart button

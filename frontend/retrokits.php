@@ -18,7 +18,7 @@ include('../components/backtotopbutton.php');
 <main>
   <section class="product-hero"><!-- product page hero section -->
     <div class="product-heading">
-      <h1>Retro Replica Shirts</h1>
+      <h1>Retro Shirts</h1>
     </div>
   </section><!-- end of product page hero section -->
   

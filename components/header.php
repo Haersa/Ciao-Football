@@ -36,6 +36,7 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
     <link rel = "icon" type = "svg+xml" href = "../images/favicon.svg" media = "(prefers-color-scheme: dark)">
   
     <link rel="stylesheet" href="../css/style.css" /> <!-- CSS file-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.3.0/flickity.min.css">
   </head>
   <body>
   <div id = "top"></div>
@@ -63,7 +64,7 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
           </a>
         </div>
         <div class="text-logo"> <!-- text logo-->
-          <a class="text-logo-text" href="index.php" rel="noopener noreferrer">
+          <a class="mobile-logo" href="index.php" rel="noopener noreferrer">
             Ciao Football
           </a>
         </div> <!-- end of text logo-->
@@ -127,7 +128,7 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
             <div class="search-dropdown"> <!-- search input dropdown-->
               <div class="search-input-container">
                 <input type="text" placeholder="Search..." />
-                <button type="button" class="close-container">
+                <button type="button" aria-label="Search" class="close-container">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -150,32 +151,32 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
             </div><!-- end of search input dropdown-->
           </div>
           <!-- end of search container-->
-          <div class="cart-container">\
+          <div class="cart-container">
             <!-- start of cart container-->
-            <a rel="noopener noreferrer" href="basket.php">
+            <a rel="noopener noreferrer" href="basket.php" aria-label="Basket">
               <!-- shopping bag/basket icon-->
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#050505"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-shopping-bag"
-              >
-                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
-                <path d="M3 6h18" />
-                <path d="M16 10a4 4 0 0 1-8 0" />
-              </svg> <!-- shopping bag/basket icon-->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#050505"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-shopping-bag"
+          
+        >
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+          <path d="M3 6h18" />
+          <path d="M16 10a4 4 0 0 1-8 0" />
+        </svg>
             </a>
           </div>
           <!-- end of cart container-->
            <div class = "tablet-burger-container"><!-- burger menu for tablet screens -->
-           <svg id="tablet-burger-button" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-        </div>
+           <svg id="tablet-burger-button" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shirt-icon lucide-shirt"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>        </div>
         <div class="burger-container">
           <svg id="burger-button" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
         </div>
@@ -189,8 +190,8 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
             <div class="megabox-row">
             <a href = "shirts.php" rel = "noopener noreferrer" class="megabox-title">All Shirts</a>
               <a href = "replicakits.php" rel = "noopener noreferrer" class="megabox-title">Replica Shirts</a>
-              <a href = "retrokits.php" rel = "noopener noreferrer" class="megabox-title">Retro Replica's</a>
-              <a  href = "specialistkits.php" rel = "noopener noreferrer" class="megabox-title">Replica Specialist Shirts</a>
+              <a href = "retrokits.php" rel = "noopener noreferrer" class="megabox-title">Retro Shirts</a>
+              <a  href = "specialistkits.php" rel = "noopener noreferrer" class="megabox-title">Specialist Shirts</a>
               <a href = "equipment.php" rel="noopener noreferrer" class="megabox-title">Equipment</a>
             </div>
 <div class="content-box">
@@ -262,12 +263,83 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
       <h2>Shop by:</h2>
     </div>
     <div id="close-tablet-menu" class="tablet-menu-close"> <!-- tablet menu closing button -->
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#050505" stroke="#050505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x">
         <path d="M18 6 6 18" />
         <path d="m6 6 12 12" />
       </svg>
     </div>
   </div><!-- end of tablet menu top row -->
+  <div class = "tablet-link-row"><!-- tablet link row -->
+  <a href = "shirts.php" rel = "noopener noreferrer" class="tablet-link-row-title">All Shirts</a>
+              <a href = "replicakits.php" rel = "noopener noreferrer" class="tablet-link-item">Replica Shirts</a>
+              <a href = "retrokits.php" rel = "noopener noreferrer" class="tablet-link-item">Retro Shirts</a>
+              <a  href = "specialistkits.php" rel = "noopener noreferrer" class="tablet-link-item">Specialist Shirts</a>
+              <a href = "equipment.php" rel="noopener noreferrer" class="tablet-link-item">Equipment</a>
+  </div><!-- end of tablet link row -->
+  <div class="tablet-nav-menu"><!-- start of tablet navigation-->
+  <div class="tablet-content-box">
+    <div class="tablet-nav-menu-row"><!-- nav menu row  -->
+      <!-- Column 1 -->
+      <div class="tablet-category-column">
+        <h4 class="tablet-category-heading">Premier League</h4>
+        <ul class="tablet-category-list">
+          <li class="tablet-category-item"><a href="team.php?team=Man Utd" class="tablet-category-link">Manchester United</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=Liverpool" class="tablet-category-link">Liverpool</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=Arsenal" class="tablet-category-link">Arsenal</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=Chelsea" class="tablet-category-link">Chelsea</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=Manchester City" class="tablet-category-link">Manchester City</a></li>
+        </ul>
+      </div>
+      
+      <!-- Column 2 -->
+      <div class="tablet-category-column">
+        <h4 class="tablet-category-heading">La Liga</h4>
+        <ul class="tablet-category-list">
+          <li class="tablet-category-item"><a href="team.php?team=Barcelona" class="tablet-category-link">Barcelona</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=Real Madrid" class="tablet-category-link">Real Madrid</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=Atletico Madrid" class="tablet-category-link">Atletico Madrid</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=Sevilla" class="tablet-category-link">Sevilla</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=Valencia" class="tablet-category-link">Valencia</a></li>
+        </ul>
+      </div>
+      
+      <!-- Column 3 -->
+      <div class="tablet-category-column">
+        <h4 class="tablet-category-heading">Serie A</h4>
+        <ul class="tablet-category-list">
+          <li class="tablet-category-item"><a href="team.php?team=Juventus" class="tablet-category-link">Juventus</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=AC Milan" class="tablet-category-link">AC Milan</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=Inter Milan" class="tablet-category-link">Inter Milan</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=Napoli" class="tablet-category-link">Napoli</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=Roma" class="tablet-category-link">Roma</a></li>
+        </ul>
+      </div>
+      <!-- Column 4 -->
+      <div class="tablet-category-column">
+        <h4 class="tablet-category-heading">SPFL</h4>
+        <ul class="tablet-category-list">
+          <li class="tablet-category-item"><a href="team.php?team=Celtic" class="tablet-category-link">Celtic</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=Rangers" class="tablet-category-link">Rangers</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=Hibernian" class="tablet-category-link">Hibernian</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=Hearts" class="tablet-category-link">Hearts</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=Aberdeen" class="tablet-category-link">Aberdeen</a></li>
+        </ul>
+      </div>
+      
+      <!-- Column 5 -->
+      <div class="tablet-category-column">
+        <h4 class="tablet-category-heading">International</h4>
+        <ul class="tablet-category-list">
+          <li class="tablet-category-item"><a href="team.php?team=England" class="tablet-category-link">England</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=Scotland" class="tablet-category-link">Scotland</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=Germany" class="tablet-category-link">Germany</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=Brazil" class="tablet-category-link">Brazil</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=Argentina" class="tablet-category-link">Argentina</a></li>
+        </ul>
+      </div>
+    </div><!-- end of tablet nav menu row  -->
+  </div> 
+</div><!-- end of tablet navigation-->
 </section> <!-- end of tablet shop by menu -->
 
 
@@ -276,12 +348,12 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
 <section id="Mobile-Menu" class="mobile-menu">
 <section class="mobile-menu-header">
   <section class="mobile-logo">
-    <a href="index.php">Ciao Football</a>
+    <a rel = "noopener noreferrer" href="index.php">Ciao Football</a>
   </section>
   
   <section class="menu-actions">
     <section class="basket-icon">
-      <a rel="noopener noreferrer"  href="basket.php">
+      <a rel="noopener noreferrer"  href="basket.php" aria-label="Search">
         <!-- shopping bag/basket icon-->
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -313,7 +385,7 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
 
   <section class="mobile-search"> <!-- mobile menu search bar -->
     <input type="text" placeholder="Search..." />
-      <button type="submit">
+      <button aria-label="Search" type="submit">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search">
           <circle cx="11" cy="11" r="8" />
             <path d="m21 21-4.3-4.3" />
@@ -340,8 +412,8 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
         <ul class="mobile-submenu">
           <li><a rel="noopener noreferrer" href="shirts.php">All Shirts</a></li>
           <li><a rel="noopener noreferrer" href="replicakits.php">Replica Shirts</a></li>
-          <li><a rel="noopener noreferrer" href="retrokits.php">Retro Replicas</a></li>
-          <li><a rel="noopener noreferrer" href="specialistkits.php">Replica Specialist Shirts</a></li>
+          <li><a rel="noopener noreferrer" href="retrokits.php">Retro Shirts</a></li>
+          <li><a rel="noopener noreferrer" href="specialistkits.php">Specialist Shirts</a></li>
         </ul>
       </li>
     </ul>

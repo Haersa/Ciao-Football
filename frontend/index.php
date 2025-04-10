@@ -29,6 +29,62 @@ include('../components/backtotopbutton.php');
 </div>
   </section><!-- end of hero section -->
 
+  <section class = "recommended-slider"> <!-- recommended products slider from equipments table -->
+    <div class = "recommended-heading">
+      <h2>Recommended Products</h2>
+    </div>
+  <div class="carousel-container">
+        <div class="carousel">
+            <?php
+            // SQL statement for all non-sale equipment products
+            $stmt = $conn->prepare("SELECT * FROM equipment WHERE sale = ? LIMIT 9");
+
+            // Bind parameters
+            $sale = "no";
+            $stmt->bind_param("s", $sale);
+
+            // Execute the query
+            $stmt->execute();
+
+            // Get the result
+            $result = $stmt->get_result();
+
+            // Check if any products were found
+            if ($result->num_rows > 0) {
+                // Loop through each product and create carousel cells
+                while ($row = $result->fetch_assoc()) {
+                    // Create a product card for each item
+                    echo '<div class="carousel-cell">';
+                    
+                    // Display the product image
+                    echo '<div class="cell-image">';
+                    echo '<img src="../' . $row['image'] . '" alt="' . $row['name'] . ' ' . $row['category'] . ' ' . $row['brand'] . ' product">';
+                    echo '</div>';
+                    
+                    // Product title and view more link
+                    echo '<div class="cell-content">';
+                    echo '<h2 class="cell-title">' . $row['name'] . '</h2>';
+                    echo '<a href="productdetails.php?id=' . $row['equipment_id'] . '" class="view-more">View More</a>';
+                    echo '</div>';
+                    
+                    echo '</div>'; // End carousel cell
+                }
+            } else {
+                echo '<div class="no-products">No recommended products at this time.</div>';
+            }
+
+            // Close statement
+            $stmt->close();
+            ?>
+        </div>
+        <div class="carousel-arrows">
+            <button class="arrow-button prev-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-left-icon lucide-move-left"><path d="M6 8L2 12L6 16"/><path d="M2 12H22"/></svg></button>
+            <button class="arrow-button next-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right-icon lucide-move-right"><path d="M18 8L22 12L18 16"/><path d="M2 12H22"/></svg></button>
+        </div>
+    </div>
+</section><!-- end of recommended products slider -->
+
+
   <div class = "feature-heading">
         <h2>Most Popular</h2>
     </div>
@@ -294,6 +350,8 @@ include('../components/footer.php');
 
 
 <script src="../js/app.js"></script>
+<script src="../js/flickity.js"></script>
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.3.0/flickity.pkgd.min.js"></script>
 </body>
 </html>

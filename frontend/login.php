@@ -22,7 +22,7 @@ include('../components/backtotopbutton.php');
       <form action="../backend/signin.php" method="post">
         <h2>Sign in</h2> <!-- login form title -->
         <div class="form-group">
-          <label for="username">Email</label>
+          <label for="Email">Email</label>
           <input type="text" id="Email" name="email" required> <!-- username input field -->
         </div>
         <div class="form-group">
@@ -35,12 +35,12 @@ include('../components/backtotopbutton.php');
                    <p>Or sign in with:</p>
                </div>
                <div class="third-party-auth-buttons"><!-- third party auth buttons -->
-                   <button class="google-button">
+                   <div class="google-button">
                        <img src="../images/google.svg" alt="Google icon"> Google
-                   </button><!-- google button -->
-                   <button class="facebook-button">
+</div><!-- google button -->
+                   <div class="facebook-button">
                        <img src="../images/facebook.svg" alt="Facebook icon"> Facebook
-                   </button><!-- facebook button -->
+</div><!-- facebook button -->
                </div>
            </div>
         <div class = "register-link">
