@@ -48,7 +48,7 @@ include('../components/backtotopbutton.php');
 
            <div class="form-group terms-group">
                 <div class="terms-container">
-                    <p id = "terms-label">I agree to the <a rel="noopener noreferrer" target = "_blank" href="terms.php">Terms & Conditions</a></p>
+                    <p id = "terms-label">I agree to the <a class = "terms-agreement"rel="noopener noreferrer" target = "_blank" href="terms.php">Terms & Conditions</a></p>
                     <input type="checkbox" aria-labelledby = "terms-label" id="terms" name="terms" required>
                 </div>
             </div>
@@ -70,7 +70,7 @@ include('../components/backtotopbutton.php');
            </div>
            
            <div class="login-link">
-               <p>Already have an account? <a rel="noopener noreferrer" href="login.php">Sign in</a></p>
+               <p>Already have an account? <a href="login.php">Sign in</a></p>
            </div>
        </form>
    </div><!-- end of register container -->

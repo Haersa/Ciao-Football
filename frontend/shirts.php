@@ -14,32 +14,43 @@ include('../components/backtotopbutton.php');
 
 <!-- Main content of the page starts here -->
 <main>
-  <section class="product-hero"><!-- product page hero section -->
-    <div class="product-top-row">
-      <div class = "product-heading"><!-- product heading -->
-      <h1>All Shirts</h1>
-      </div><!-- end of product heading -->
-    <div class = "product-controls-container"><!-- product controls container -->
-      <div class = "product-controls"><!-- product controls -->
-      <select class = "product-filter-button" aria-label="Sort by Filter"> <!-- product filter button -->
-      <option value="Filter by:" selected disabled hidden class = "product-sort-button"> Filter by:</option>
-        <option>Price: Lowest</option>
-        <option>Price: Highest</option>
-        <option>Rating</option>
-      </select><!-- end of product filter button -->
-      </div><!-- end of product controls -->
-    </div><!-- product controls container -->
-    </div><!-- end of product top row -->
-</section><!-- end of product page hero section -->
+  <?php include('../components/producthero.php'); 
+  ?>
   
   <section class="product-grid"><!-- product grid section -->
     <?php 
-    // Prepare the SQL statement for all non-sale non equipment products
-    $stmt = $conn->prepare("SELECT * FROM shirts WHERE sale = ?");
+    // Prepare the SQL statement
+    $sql = "SELECT * FROM shirts WHERE sale = ?" AND "quantity > 0";
+    
+    // Add size filter if selected 
+    if (isset($_GET['size']) && $_GET['size'] != 'all' && $_GET['size'] != '') {
+        $sql .= " AND size = ?";
+        $hasSize = true;
+    } else {
+        $hasSize = false;
+    }
+    
+    // Add ORDER BY clause based on selected filter
+    if (isset($_GET['sort'])) {
+        if ($_GET['sort'] == 'price_asc') {
+            $sql .= " ORDER BY price ASC";
+        } elseif ($_GET['sort'] == 'price_desc') {
+            $sql .= " ORDER BY price DESC";
+        } elseif ($_GET['sort'] == 'rating') {
+            $sql .= " ORDER BY rating DESC";
+        }
+    }
+    
+    $stmt = $conn->prepare($sql);
 
     // Bind parameters
     $sale = "no";
-    $stmt->bind_param("s", $sale);
+    if ($hasSize) {
+        $size = $_GET['size'];
+        $stmt->bind_param("ss", $sale, $size);
+    } else {
+        $stmt->bind_param("s", $sale);
+    }
 
     // Execute the query
     $stmt->execute();
@@ -63,6 +74,7 @@ include('../components/backtotopbutton.php');
             echo '</div>';
             
                       // Product details
+                      echo '<form method="POST" action="../backend/addbasket.php">';
                       echo '<div class="product-details">';
                       echo '<div class = "product-top-row">';// start of top row container
                       echo '<h2 class="product-team">' . $row['team'] . '</h2>'; // team
@@ -77,11 +89,13 @@ include('../components/backtotopbutton.php');
                       echo '<p class="product-price">£' . number_format($row['price'], 2) . '</p>'; // price formatted with pound symbol
                       echo '</div>';
                       echo '<div class = "product-rating">';
-                      echo '<p class = "product-rating-text">Rating: 4/5';
+                      echo '<p class = "product-rating-text">Rating: ' . number_format($row['rating'], 1) . '/5' . '</p>';
                       echo '</div>';
                       echo '<div class="product-actions">';
-                      echo '<button class="basket-button" data-id="' . $row['shirt_id'] . '">Add to Basket</button>'; // add to cart button
-                      echo '<a  rel = "noopener noreferrer" href="productdetails.php?id=' . $row['shirt_id'] . '" class="view-button">View Details</a>'; // view product details button
+                      echo '<input type="hidden" name="shirt_id" value="' . $row['shirt_id'] . '">';
+                      echo '<button type="submit" class="basket-button">Add to Basket</button>'; // add to cart button
+                      echo '</form>';
+                      echo '<a href="productdetails.php?id=' . $row['shirt_id'] . '" class="view-button">View Details</a>'; // view product details button
                       echo '</div>';
                       echo '</div>';
                       
@@ -90,7 +104,7 @@ include('../components/backtotopbutton.php');
         
         echo '</div>'; // End products container
     } else {
-        echo '<div class="no-products">No non-sale retro shirts found</div>'; // if no products are found, display this error to user
+        echo '<div class="no-products">No Shirts Found</div>'; // if no products are found, display this error to user
     }
 
     // Close statement
@@ -100,11 +114,12 @@ include('../components/backtotopbutton.php');
 </main>
 
 <?php
-// Inlude the footer file
+// Include the footer file
 include('../components/footer.php');
 ?>
 
 <script src="../js/app.js"></script>
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
 </body>
 </html>

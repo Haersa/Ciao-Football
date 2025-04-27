@@ -44,7 +44,7 @@ include('../components/backtotopbutton.php');
                </div>
            </div>
         <div class = "register-link">
-          <p>Don't have an account? <a  rel = "noopener noreferrer" href="register.php">Register</a></p>
+          <p>Don't have an account? <a  href="register.php">Register</a></p>
       </form>
     </div>
   </div><!-- end of login container -->

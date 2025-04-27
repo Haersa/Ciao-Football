@@ -1,6 +1,7 @@
 <?php 
 session_start();
 include('../backend/conn/conn.php'); // connection to database file
+include('basketcount.php');
 
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0"); // these make sure the login feedback message on login is only displayed once, and isn't shown again if a user clicks the browser back arrow (found on stack overflow)
 header("Cache-Control: post-check=0, pre-check=0", false);
@@ -55,7 +56,7 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
         <!--start of navigation container-->
         <div class="logo-container">
           <!-- logo container-->
-          <a rel="noopener noreferrer" href="index.php">
+          <a  href="index.php">
             <img
               src="../images/ciaologo.svg"
               alt="Ciao Football Logo"
@@ -64,7 +65,7 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
           </a>
         </div>
         <div class="text-logo"> <!-- text logo-->
-          <a class="mobile-logo" href="index.php" rel="noopener noreferrer">
+          <a class="mobile-logo" href="index.php" >
             Ciao Football
           </a>
         </div> <!-- end of text logo-->
@@ -73,23 +74,23 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
         <div class="nav-links">
   <!-- start of navigation links-->
   <ul>
-    <li><a rel="noopener noreferrer" href="index.php">Home</a></li><!--page link-->
+    <li><a  href="index.php">Home</a></li><!--page link-->
     <li>
-      <a rel="noopener noreferrer" href="equipment.php">Equipment</a>
+      <a  href="equipment.php">Equipment</a>
     </li><!--page link-->
     <li>
-      <a rel="noopener noreferrer" href = "shirts.php" id="shopby">Shop By</a>
+      <a  href = "shirts.php" id="shopby">Shop By</a>
     </li><!--page link-->
     <?php if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
       <li>
-      <a rel="noopener noreferrer"  href="forsale.php">Sale</a>
+      <a   href="forsale.php">Sale</a>
     </li><!--page link-->
   <?php endif; ?>
     <?php if(!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']): ?>
-      <li><a rel="noopener noreferrer" href="login.php">Sign in</a></li><!--page link-->
-      <li><a rel="noopener noreferrer" href="register.php">Register</a></li><!--page link-->
+      <li><a  href="login.php">Sign in</a></li><!--page link-->
+      <li><a  href="register.php">Register</a></li><!--page link-->
     <?php else: ?>
-      <li><a rel="noopener noreferrer" href="../backend/signout.php">Sign out</a></li><!--page link-->
+      <li><a  href="../backend/signout.php">Sign out</a></li><!--page link-->
     <?php endif; ?>
   </ul>
 </div>
@@ -99,7 +100,7 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
         <div class="action-container">
   <?php if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
     <div class="user-container"> 
-      <a href="profile.php" rel="noopener noreferrer">
+      <a href="profile.php" >
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
       </a>          
     </div>
@@ -152,29 +153,35 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
           </div>
           <!-- end of search container-->
           <div class="cart-container">
-            <!-- start of cart container-->
-            <a rel="noopener noreferrer" href="basket.php" aria-label="Basket">
-              <!-- shopping bag/basket icon-->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#050505"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-shopping-bag"
-          
-        >
-          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
-          <path d="M3 6h18" />
-          <path d="M16 10a4 4 0 0 1-8 0" />
-        </svg>
-            </a>
-          </div>
-          <!-- end of cart container-->
+  <!-- start of cart container-->
+  <a href="basket.php" aria-label="Basket" class="basket-link">
+    <!-- shopping bag/basket icon-->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#050505"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="lucide lucide-shopping-bag"
+    >
+      <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+      <path d="M3 6h18" />
+      <path d="M16 10a4 4 0 0 1-8 0" />
+    </svg>
+    
+    <?php
+    // Display the counter if there are items in the basket
+    if ($totalItems > 0) {
+        echo '<span class="basket-count">' . $totalItems . '</span>';
+    }
+    ?>
+  </a>
+</div>
+<!-- end of cart container-->
            <div class = "tablet-burger-container"><!-- burger menu for tablet screens -->
            <svg id="tablet-burger-button" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shirt-icon lucide-shirt"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>        </div>
         <div class="burger-container">
@@ -188,11 +195,10 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
           <div class="megabox-content">
             <!-- Main category tabs -->
             <div class="megabox-row">
-            <a href = "shirts.php" rel = "noopener noreferrer" class="megabox-title">All Shirts</a>
-              <a href = "replicakits.php" rel = "noopener noreferrer" class="megabox-title">Replica Shirts</a>
-              <a href = "retrokits.php" rel = "noopener noreferrer" class="megabox-title">Retro Shirts</a>
-              <a  href = "specialistkits.php" rel = "noopener noreferrer" class="megabox-title">Specialist Shirts</a>
-              <a href = "equipment.php" rel="noopener noreferrer" class="megabox-title">Equipment</a>
+            <a href = "shirts.php"  class="megabox-title">All Shirts</a>
+              <a href = "replicakits.php"  class="megabox-title">Replica Shirts</a>
+              <a href = "retrokits.php"  class="megabox-title">Retro Shirts</a>
+              <a  href = "specialistkits.php"  class="megabox-title">Specialist Shirts</a>
             </div>
 <div class="content-box">
   <!-- Column 1 -->
@@ -270,11 +276,11 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
     </div>
   </div><!-- end of tablet menu top row -->
   <div class = "tablet-link-row"><!-- tablet link row -->
-  <a href = "shirts.php" rel = "noopener noreferrer" class="tablet-link-row-title">All Shirts</a>
-              <a href = "replicakits.php" rel = "noopener noreferrer" class="tablet-link-item">Replica Shirts</a>
-              <a href = "retrokits.php" rel = "noopener noreferrer" class="tablet-link-item">Retro Shirts</a>
-              <a  href = "specialistkits.php" rel = "noopener noreferrer" class="tablet-link-item">Specialist Shirts</a>
-              <a href = "equipment.php" rel="noopener noreferrer" class="tablet-link-item">Equipment</a>
+  <a href = "shirts.php"  class="tablet-link-row-title">All Shirts</a>
+              <a href = "replicakits.php"  class="tablet-link-item">Replica Shirts</a>
+              <a href = "retrokits.php"  class="tablet-link-item">Retro Shirts</a>
+              <a  href = "specialistkits.php"  class="tablet-link-item">Specialist Shirts</a>
+              <a href = "equipment.php"  class="tablet-link-item">Equipment</a>
   </div><!-- end of tablet link row -->
   <div class="tablet-nav-menu"><!-- start of tablet navigation-->
   <div class="tablet-content-box">
@@ -348,31 +354,38 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
 <section id="Mobile-Menu" class="mobile-menu">
 <section class="mobile-menu-header">
   <section class="mobile-logo">
-    <a rel = "noopener noreferrer" href="index.php">Ciao Football</a>
+    <a  href="index.php">Ciao Football</a>
   </section>
   
   <section class="menu-actions">
-    <section class="basket-icon">
-      <a rel="noopener noreferrer"  href="basket.php" aria-label="Search">
-        <!-- shopping bag/basket icon-->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#050505"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-shopping-bag"
-        >
-          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
-          <path d="M3 6h18" />
-          <path d="M16 10a4 4 0 0 1-8 0" />
-        </svg>
-      </a>
-    </section>
+  <section class="basket-icon">
+  <a href="basket.php" aria-label="Basket" class="basket-link">
+    <!-- shopping bag/basket icon-->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#050505"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="lucide lucide-shopping-bag"
+    >
+      <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+      <path d="M3 6h18" />
+      <path d="M16 10a4 4 0 0 1-8 0" />
+    </svg>
+    
+    <?php
+    // Display the counter if there are items in the basket
+    if ($totalItems > 0) {
+        echo '<span class="basket-count">' . $totalItems . '</span>';
+    }
+    ?>
+  </a>
+</section>
     
     <section id="close-burger" class="close-button">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x">
@@ -394,26 +407,26 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
   </section> <!-- end of mobile menu search bar -->
   <section class="mobile-user-action"> <!-- start of mobile user actions -->
   <?php if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
-        <a rel="noopener noreferrer" href="profile.php">My Account</a>
-        <a rel="noopener noreferrer" href="forsale.php">Sale items</a>
-        <a rel="noopener noreferrer" href="../backend/signout.php">Sign out</a>
+        <a  href="profile.php">My Account</a>
+        <a  href="forsale.php">Sale items</a>
+        <a  href="../backend/signout.php">Sign out</a>
       <?php else: ?>
-        <a rel="noopener noreferrer" href="login.php">Sign in</a>
-        <a rel="noopener noreferrer" href="register.php">Register</a>
+        <a  href="login.php">Sign in</a>
+        <a  href="register.php">Register</a>
       <?php endif; ?>
       </section><!-- end of mobile user actions -->
   
   <nav class="mobile-navigation"><!-- main mobile navigation -->
     <ul class="mobile-nav-links">
-      <li><a rel="noopener noreferrer" href="index.php">Home</a></li>
-      <li><a rel="noopener noreferrer" href="equipment.php">Equipment</a></li>
+      <li><a  href="index.php">Home</a></li>
+      <li><a  href="equipment.php">Equipment</a></li>
       <li>
         <h2>Shop By</h2>
         <ul class="mobile-submenu">
-          <li><a rel="noopener noreferrer" href="shirts.php">All Shirts</a></li>
-          <li><a rel="noopener noreferrer" href="replicakits.php">Replica Shirts</a></li>
-          <li><a rel="noopener noreferrer" href="retrokits.php">Retro Shirts</a></li>
-          <li><a rel="noopener noreferrer" href="specialistkits.php">Specialist Shirts</a></li>
+          <li><a  href="shirts.php">All Shirts</a></li>
+          <li><a  href="replicakits.php">Replica Shirts</a></li>
+          <li><a  href="retrokits.php">Retro Shirts</a></li>
+          <li><a  href="specialistkits.php">Specialist Shirts</a></li>
         </ul>
       </li>
     </ul>

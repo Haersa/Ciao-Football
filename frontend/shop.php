@@ -56,7 +56,7 @@ $shirtsResult = mysqli_query($conn, $shirtsSql);
         <?php if (isset($_GET['price']) && !empty($rangeText)): ?>
             <div class="filter-notice">
                 <p>Showing products in price range: <strong><?php echo $rangeText; ?></strong></p>
-                <a rel = "noopener noreferrer" href="shop.php">Clear filter</a>
+                <a  href="shop.php">Clear filter</a>
             </div>
         <?php endif; ?>
         

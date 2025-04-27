@@ -48,4 +48,8 @@
     $stmt->close();
     ?>
   </div>
+
+  <div class = "all-reviews">
+    <a href="reviews.php">See All Reviews</a>
+  </div>
 </section>

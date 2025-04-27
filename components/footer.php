@@ -3,18 +3,20 @@
         <div class="footer">
             <div class="footer-container">
                 <div class="footer-content">
-                    <div class="footer-logo">
-                        <!-- <img src="../images/ciaologo.svg" alt="Ciao Logo"> -->
-                    </div>
+                    <!-- <div class="footer-logo">
+                        <a href = "index.php">
+                            <img src="../images/ciaologo.svg" alt="Ciao Logo">
+                        </a>
+                    </div> -->
                     <div class="footer-column">
                         <h3>Quick Links</h3>
                         <ul>
-                            <li><a href="index.php" rel = "noopener noreferrer">Home</a></li>
-                            <li><a href="equipment.php" rel = "noopener noreferrer">Equipment</a></li>
-                            <li><a href="newproducts.php" rel = "noopener noreferrer">New in</a></li>
-                            <li><a href="retrokits.php" rel = "noopener noreferrer">Retro Kits</a></li>
-                            <li><a href="replicakits.php" rel = "noopener noreferrer">Retro Replica's</a></li>
-                            <li><a href="specialistkits.php" rel = "noopener noreferrer">Specialist Kits</a></li>
+                            <li><a href="index.php">Home</a></li>
+                            <li><a href="equipment.php">Equipment</a></li>
+                            <li><a href="newproducts.php">New in</a></li>
+                            <li><a href="retrokits.php">Retro Kits</a></li>
+                            <li><a href="replicakits.php">Retro Replicas</a></li>
+                            <li><a href="specialistkits.php">Specialist Kits</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -28,7 +30,7 @@
                     <div class="footer-column">
                         <h3>Contact</h3>
                         <ul>
-                            <li><a rel = "noopener noreferrer" href="contact.php">Contact Us</a></li>
+                            <li><a href="contact.php">Contact Us</a></li>
                             <li><p>Phone Number: 0123456789</p></li>
                             <li><p>Address: 128 A, Piccadilly, London.</p></li>
                         </ul>
@@ -36,7 +38,7 @@
                     <div class="footer-column">
                         <h3>Review</h3>
                         <ul>
-                            <li><a rel = "noopener noreferrer" href="reviewciao.php">Review Ciao Football</a></li>
+                            <li><a href="reviewciao.php">Review Ciao Football</a></li>
                         </ul>
                     </div>
                 </div>
