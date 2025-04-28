@@ -22,6 +22,25 @@ include('../components/backtotopbutton.php');
 // Prepare the SQL statement for non-sale retro products
 $stmt = $conn->prepare("SELECT * FROM shirts WHERE category = ? AND sale = ? AND quantity > 0");
 
+// Add size filter if selected 
+if (isset($_GET['size']) && $_GET['size'] != 'all' && $_GET['size'] != '') {
+  $sql .= " AND size = ?";
+  $hasSize = true;
+} else {
+  $hasSize = false;
+}
+
+// Add ORDER BY clause based on selected filter
+if (isset($_GET['sort'])) {
+  if ($_GET['sort'] == 'price_asc') {
+      $sql .= " ORDER BY price ASC";
+  } elseif ($_GET['sort'] == 'price_desc') {
+      $sql .= " ORDER BY price DESC";
+  } elseif ($_GET['sort'] == 'rating') {
+      $sql .= " ORDER BY rating DESC";
+  }
+}
+
 // Bind parameters
 $category = "specialist";
 $sale = "no";

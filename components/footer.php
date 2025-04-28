@@ -13,7 +13,7 @@
                         <ul>
                             <li><a href="index.php">Home</a></li>
                             <li><a href="equipment.php">Equipment</a></li>
-                            <li><a href="newproducts.php">New in</a></li>
+                            <li><a href="shirts.php">All Shirts</a></li>
                             <li><a href="retrokits.php">Retro Kits</a></li>
                             <li><a href="replicakits.php">Retro Replicas</a></li>
                             <li><a href="specialistkits.php">Specialist Kits</a></li>

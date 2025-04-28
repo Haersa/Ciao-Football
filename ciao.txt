@@ -1,0 +1,9 @@
+email: tester@gmail.com
+Password: Tester54321
+http://127.0.0.1:8080/admin/dashboard.php
+UNCOMMENT SESSION RESTRICTION FOR 
+ADMIN ONCE ADMIN ACCOUNT CREATION FORM
+IS FINISHED
+
+
+root file directory: http://127.0.0.1:8080/

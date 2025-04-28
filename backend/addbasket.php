@@ -51,6 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 'size' => $product['size'],
                 'price' => $product['price'],
                 'image' => $product['image'], 
+                'category' => $product['category'],
                 'quantity' => 1,
                 'product_type' => 'shirt' // Add product type identifier to differentiate between shirt and equipment products
             );
