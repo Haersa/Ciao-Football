@@ -319,7 +319,6 @@ include('../components/footer.php');
 
 
 <script src="../js/app.js"></script>
-<!-- <script src="../js/flickity.js"></script> -->
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.3.0/flickity.pkgd.min.js"></script>
 </body>

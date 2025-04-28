@@ -20,7 +20,7 @@ include('../components/backtotopbutton.php');
   <section class="product-grid"><!-- product grid section -->
     <?php 
     // Prepare the SQL statement
-    $sql = "SELECT * FROM shirts WHERE sale = ?" AND "quantity > 0";
+    $sql = "SELECT * FROM shirts WHERE sale = ? AND quantity > 0";
     
     // Add size filter if selected 
     if (isset($_GET['size']) && $_GET['size'] != 'all' && $_GET['size'] != '') {

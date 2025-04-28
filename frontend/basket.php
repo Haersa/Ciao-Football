@@ -109,7 +109,7 @@ $successIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" v
     
     <div class="basket-actions">
         <a href="../frontend/index.php" class="continue-shopping">Continue Shopping</a>
-        <a href="../frontend/checkout.php" class="checkout-button">Proceed to Checkout</a>
+        <a href="../frontend/revieworder.php" class="checkout-button">Proceed to Checkout</a>
     </div>
 <?php endif; ?>
 </section><!-- end of basket container -->
@@ -196,7 +196,7 @@ $successIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" v
     
     <div class="mobile-basket-actions">
         <a href="../frontend/index.php" class="mobile-continue-shopping">Continue Shopping</a>
-        <a href="../frontend/checkout.php" class="mobile-checkout-button">Proceed to Checkout</a>
+        <a href="../frontend/revieworder.php" class="mobile-checkout-button">Proceed to Checkout</a>
     </div>
 <?php endif; ?>
 </section>
@@ -210,7 +210,6 @@ include('../components/footer.php');
 ?>
 
 <script src="../js/app.js"></script>
-<!-- <script src="../js/flickity.js"></script> -->
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.3.0/flickity.pkgd.min.js"></script>
 </body>

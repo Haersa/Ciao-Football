@@ -3,12 +3,6 @@
 $team = isset($_GET['team']) ? $_GET['team'] : '';
 $filter = isset($_GET['filter']) ? $_GET['filter'] : 'all';
 
-// Redirect if no team is specified
-if (empty($team)) {
-    header("Location: index.php");
-    exit;
-}
-
 // Set dynamic page information based on team
 $pageTitle = $team . " Football Products | Ciao Football"; // This will be used in the title tag
 $pageDescription = "Browse " . $team . " football shirts and equipment at Ciao Football."; // This is used as the page desciption meta tag
@@ -33,12 +27,37 @@ include('../backend/conn/conn.php');
   <section class="product-grid"><!-- product grid section -->
   <?php 
   // Prepare the SQL statement for non-sale retro products
-  $stmt = $conn->prepare("SELECT * FROM shirts WHERE team = ? AND sale = ? AND quantity > 0");
+  $sql = "SELECT * FROM shirts WHERE team = ? AND sale = ? AND quantity > 0";
+  
+  // Add size filter if selected 
+  if (isset($_GET['size']) && $_GET['size'] != 'all' && $_GET['size'] != '') {
+      $sql .= " AND size = ?";
+      $hasSize = true;
+  } else {
+      $hasSize = false;
+  }
+  
+  // Add ORDER BY clause based on selected filter
+  if (isset($_GET['sort'])) {
+      if ($_GET['sort'] == 'price_asc') {
+          $sql .= " ORDER BY price ASC";
+      } elseif ($_GET['sort'] == 'price_desc') {
+          $sql .= " ORDER BY price DESC";
+      } elseif ($_GET['sort'] == 'rating') {
+          $sql .= " ORDER BY rating DESC";
+      }
+  }
+  
+  $stmt = $conn->prepare($sql);
 
   // Bind parameters
-  $category = $team;
   $sale = "no";
-  $stmt->bind_param("ss", $category, $sale);
+  if ($hasSize) {
+      $size = $_GET['size'];
+      $stmt->bind_param("sss", $team, $sale, $size);
+  } else {
+      $stmt->bind_param("ss", $team, $sale);
+  }
 
   // Execute the query
   $stmt->execute();
