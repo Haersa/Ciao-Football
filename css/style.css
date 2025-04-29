@@ -3555,14 +3555,18 @@ meter::-moz-meter-bar {
 
 /* checkout progress bar styles */
 .checkout-progress {
+  width: 100%;
   max-width: 600px;
   margin: 0 auto;
   margin-bottom: 1.75rem;
   margin-top: 1.5rem;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
 
 .progress-container {
   position: relative;
+  width: 100%;
 }
 
 .progress-bar {
@@ -3571,6 +3575,7 @@ meter::-moz-meter-bar {
   position: relative;
   margin-bottom: 30px;
   border-radius: 2px;
+  width: 100%;
 }
 
 .progress-fill {
@@ -3581,11 +3586,15 @@ meter::-moz-meter-bar {
 }
 
 .progress-review {
-  width: 33%;
+  width: 25%;
+}
+
+.progress-billing {
+  width: 50%;
 }
 
 .progress-shipping {
-  width: 66%;
+  width: 75%;
 }
 
 .progress-payment {
@@ -3603,6 +3612,7 @@ meter::-moz-meter-bar {
 .step {
   text-align: center;
   position: relative;
+  width: 33.33%;
 }
 
 .step-circle {
@@ -3615,13 +3625,14 @@ meter::-moz-meter-bar {
   justify-content: center;
   margin: 0 auto;
   font-size: var(--text-button);
-  color: var(--background);
+  color: var(--text-colour);
   font-weight: var(--font-weight-600);
   font-family: var(--font-secondary);
 }
 
 .step.active .step-circle {
   background-color: var(--accent-colour);
+  color: var(--background);
 }
 
 .step-label {
@@ -3638,9 +3649,31 @@ meter::-moz-meter-bar {
   font-family: var(--font-secondary);
 }
 
+@media screen and (max-width: 480px) {
+  .step-circle {
+    width: 20px;
+    height: 20px;
+    font-size: var(--mobile-button);
+  }
+
+  .step-label {
+    font-size: var(--mobile-button);
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .checkout-progress {
+    padding: 0 10px;
+  }
+
+  .step-circle {
+    width: 18px;
+    height: 18px;
+  }
+}
 /* end of checkout progress bar styles */
 
-/* checkout page styles */
+/* review order page styles */
 .checkout-container {
   max-width: 1400px;
   width: 100%;
@@ -3839,6 +3872,90 @@ meter::-moz-meter-bar {
   }
 }
 
+/* review order action styles */
+.review-order-action-container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 1.5rem auto 0;
+  display: flex;
+  justify-content: center;
+}
+
+.review-order-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+.review-order-basket-button,
+.review-order-shipping-button {
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-500);
+  font-size: var(--text-button);
+  transition: box-shadow 0.3s ease;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.back-button-icon {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.back-button-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.review-order-basket-button:hover,
+.review-order-shipping-button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.review-order-basket-button:hover .back-button-icon {
+  transform: translateX(-4px);
+}
+
+.review-order-basket-button {
+  background-color: var(--text-colour);
+  color: var(--background);
+}
+
+.review-order-shipping-button {
+  background-color: var(--accent-colour);
+  color: var(--background);
+}
+
+@media (max-width: 480px) {
+  .review-order-action {
+    width: 95%;
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .review-order-basket-button,
+  .review-order-shipping-button {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    justify-content: center;
+  }
+}
+/* end of review order action styles */
+
+/* start of billing address form page */
+
+/* end of billing address form page */
+
 /* start of shipping details styles */
 .shipping-details-container {
   max-width: 1400px;
@@ -3931,6 +4048,139 @@ meter::-moz-meter-bar {
   align-items: center;
   display: inline-flex;
 }
+
+.country-group {
+  margin-top: 1.5rem;
+}
+
+.shipping-country-select {
+  width: 100%;
+  padding: 0.75rem;
+  color: var(--text-colour);
+  font-family: var(--font-primary);
+  margin-top: 0.25rem;
+}
+
+.checkbox-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.remember-checkbox {
+  font-size: var(--mobile-link);
+  font-family: var(--font-primary);
+  color: var(--text-colour);
+  font-weight: var(--font-weight-400);
+}
+
+.shipping-save-details {
+  accent-color: var(--text-colour);
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 5px;
+  vertical-align: middle;
+}
+
+@media (max-width: 500px) {
+  .shipping-save-details {
+    width: 1rem;
+    height: 1rem;
+    vertical-align: middle;
+  }
+
+  .remember-checkbox {
+    font-size: var(--text-small);
+  }
+}
+
+/* shipping page action styles */
+.shipping-action-container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 1.5rem auto 0;
+  display: flex;
+  justify-content: center;
+}
+
+.shipping-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+.shipping-review-button,
+.shipping-payment-button {
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-500);
+  font-size: var(--text-button);
+  transition: box-shadow 0.3s ease;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.shipping-back-icon {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.shipping-back-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.shipping-review-button:hover,
+.shipping-payment-button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.shipping-review-button:hover .shipping-back-icon {
+  transform: translateX(-4px);
+}
+
+.shipping-review-button {
+  background-color: var(--text-colour);
+  color: var(--background);
+}
+
+.shipping-payment-button {
+  background-color: var(--accent-colour);
+  color: var(--background);
+  outline: none !important;
+  border: none;
+}
+
+.shipping-payment-button:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .shipping-action {
+    width: 100%;
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .shipping-review-button,
+  .shipping-payment-button {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    justify-content: center;
+  }
+}
+/* end of shipping page action styles */
 
 @media (max-width: 768px) {
   .shipping-form-top-row,

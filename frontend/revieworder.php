@@ -49,27 +49,11 @@ include('../components/backtotopbutton.php');
         <h1>Checkout</h1>
     </section><!-- end of checkout page header -->
 
-    <section class="checkout-progress"><!-- checkout progress bar -->
-  <div class="progress-container">
-    <div class="progress-bar">
-      <div class="progress-fill progress-review"></div>
-    </div>
-    <div class="progress-steps">
-      <div class="step active">
-        <div class="step-circle">1</div>
-        <div class="step-label">Review</div>
-      </div>
-      <div class="step">
-        <div class="step-circle">2</div>
-        <div class="step-label">Shipping</div>
-      </div>
-      <div class="step">
-        <div class="step-circle">3</div>
-        <div class="step-label">Payment</div>
-      </div>
-    </div>
-  </div>
-</section><!-- end of checkout progress bar -->
+    <?php
+    // include the checkout process progress bar
+    include('../components/revieworderprogress.php');
+    ?>
+
     <section class="checkout-container">
     <!-- start of checkout container -->
     <div class="review-purchase-card">
@@ -146,7 +130,7 @@ include('../components/backtotopbutton.php');
                 <!-- start of review purchase footer -->
                 <div class="review-purchase-subtotal">
                     <p class="review-purchase-info-text">Subtotal:</p> 
-                    <p class="review-purchase-money-info">£<?php echo number_format($totalAmount, 2); ?></p>
+                    <p class="review-purchase-money-info">£<?php echo number_format($totalAmount, 2); ?></p> 
                 </div>
                 <div class="review-purchase-shipping">
                     <p class="review-purchase-info-text">Shipping:</p> 
@@ -168,10 +152,10 @@ include('../components/backtotopbutton.php');
 
 <section class = "review-order-action-container"> <!-- start of review order action container -->
     <div class="review-order-action">
-        <a href="basket.php" class="review-order-action-button">Back to Basket</a>
-        <a href = "shippingdetails.php" class="review-order-action-button">Continue to Shipping</a>
+        <a href="basket.php" class="review-order-basket-button"><span class="back-button-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-left-icon"><path d="M6 8L2 12L6 16"/><path d="M2 12H22"/></svg></span>Back to Basket</a>
+        <a href="billing.php" class="review-order-shipping-button">Proceed to Checkout</a>
     </div>
-</section>
+</section> <!-- end of review order action container -->
 <!-- end of review order action container -->
 
 </main>
@@ -183,6 +167,5 @@ include('../components/footer.php');
 
 <script src="../js/app.js"></script>
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.3.0/flickity.pkgd.min.js"></script>
 </body>
 </html>
