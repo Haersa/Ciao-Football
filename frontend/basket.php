@@ -1,4 +1,5 @@
 <?php
+session_start();
 $pageTitle = "Your Basket"; // This will be used in the title tag
 $pageDescription = "Your product basket, finalise your decision and purchase your products."; // This is used as the page desciption meta tag
 $pageKeywords = "Ciao, Football, Ciao Football, Soccer, replica, shirt, football shirts, equipment, store, premium, basket, purchase, cart"; // This is used as the keywords meta tag

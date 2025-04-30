@@ -17,7 +17,7 @@ include('../components/backtotopbutton.php');
    <div class="register-container">
        <!-- heading container -->
        <div class="register-heading-container">
-           <h2>Create Your Account</h2> <!-- register form title -->
+           <h1>Create Your Account</h1> <!-- register form title -->
        </div> <!-- end of heading container -->
        <form class="register-form" action="../backend/signup.php" method="POST">
            <div class="form-row">

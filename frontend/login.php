@@ -20,7 +20,7 @@ include('../components/backtotopbutton.php');
     </div>
     <div class="login-form">
       <form action="../backend/signin.php" method="post">
-        <h2>Sign in</h2> <!-- login form title -->
+        <h1>Sign in</h1> <!-- login form title -->
         <div class="form-group">
           <label for="Email">Email</label>
           <input type="text" id="Email" name="email" required> <!-- username input field -->

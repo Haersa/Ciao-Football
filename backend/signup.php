@@ -71,13 +71,13 @@ if (mysqli_stmt_execute($stmt)) {
     $_SESSION['userid'] = $userId; // set session variable tied to user id
     $_SESSION['logged_in'] = true; // set logged in session variable to true, for auto login
     $_SESSION['Success'] = true; // set success session variable to true for displaying success message
-    $_SESSION['SuccessMessage'] = "Account created successfully" . $successIcon;  // display success message to user
+    $_SESSION['SuccessMessage'] = "Account Created Successfully" . $successIcon;  // display success message to user
     
     // Redirect to homepage
     header("Location: ../frontend/index.php");
 } else {
     $_SESSION['Failed'] = true; // set failed session variable to true for displaying error message
-    $_SESSION['FailMessage'] = "Registration failed: " . mysqli_error($conn) . $errorIcon; // display error message to user
+    $_SESSION['FailMessage'] = "Registration Failed: " . mysqli_error($conn) . $errorIcon; // display error message to user
     header("Location: ../frontend/register.php"); // redirect to register page to let them try again
 }
 

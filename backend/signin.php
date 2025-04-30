@@ -36,7 +36,7 @@ if (password_verify($password, $stored_password)) {
     $_SESSION['logged_in'] = true; // set session variable to true
     $_SESSION['is_admin'] = ($row['Admin'] == 1) ? true : false; // check if user is admin, if so store admin status
     $_SESSION['Success'] = true; // set session variable to true
-    $_SESSION['SuccessMessage'] = "Sign in successful" . $successIcon; // success message
+    $_SESSION['SuccessMessage'] = "Sign in Successful" . $successIcon; // success message
     
     // Redirect based on admin status
     if ($row['Admin'] == 1) {
@@ -47,7 +47,7 @@ if (password_verify($password, $stored_password)) {
 } else {
     // Password is incorrect
     $_SESSION['Failed'] = true;
-    $_SESSION['FailMessage'] = "Incorrect password" . $errorIcon;
+    $_SESSION['FailMessage'] = "Incorrect Password" . $errorIcon;
     header("Location: ../frontend/login.php");
 }
 
