@@ -138,7 +138,12 @@ if (!preg_match('/^[0-9]{3}$/', $trimmedCVV)) {
 
 // once all of this validation passes and there are no errors, move on to payment processing and order confirmation
 
-
-
-
+function generateOrderNumber() { // generate a random order number for each order
+    return mt_rand(100000000, 999999999); // generate a random 9 digit number between 100000000 and 999999999
 }
+
+$orderNumber = generateOrderNumber();
+
+
+} // remember and wrap everything in this bracket ////////////////////////////////////////////////////////
+
