@@ -22,7 +22,7 @@ foreach ($required_fields as $field) { // loop through each required field and s
 }
 
 // Check if form was submitted
-if($_SERVER["REQUEST_METHOD"] == "POST") {
+if($_SERVER["REQUEST_METHOD"] == "POST") { // start of POST code block
 // Validate payment detail fields/inputs
 if (count($missing_fields) > 0) {
     // Some required fields are missing
@@ -142,7 +142,7 @@ function generateOrderNumber() { // generate a random order number for each orde
     return mt_rand(100000000, 999999999); // generate a random 9 digit number between 100000000 and 999999999
 }
 
-$orderNumber = generateOrderNumber();
+$orderNumber = generateOrderNumber(); // call the function to append the generated order number to the order number variable
 
 // Check if order number already exists (probability is quite low anyways but good to check)
 $checkOrderNumber = "SELECT COUNT(*) as count FROM user_orders WHERE order_number = ?";
@@ -180,7 +180,7 @@ foreach ($_SESSION['basket'] as $basketKey => $item) {
     }
 
     // Calculate the current date for the order
-    $orderDate = date('d m Y H:i:s');  // store the current date
+    $orderDate = date('Y-m-d H:i:s'); // store the current date
 
     // Once we have all of this, submit the order
 
@@ -212,6 +212,24 @@ foreach ($_SESSION['basket'] as $basketKey => $item) {
                 }
     
                 mysqli_stmt_close($stmt);
+
+                // First, get the image path before deleting the shirt record
+                $getShirtImage = "SELECT image FROM shirts WHERE shirt_id = ?";
+                $stmt = mysqli_prepare($conn, $getShirtImage);
+                mysqli_stmt_bind_param($stmt, "i", $shirtID);
+                mysqli_stmt_execute($stmt);
+                $result = mysqli_stmt_get_result($stmt);
+                $shirt = mysqli_fetch_assoc($result);
+                mysqli_stmt_close($stmt);
+
+                // If image exists, delete the file using the unlink function
+                if (!empty($shirt['image'])) {
+                $imagePath = "../productimages/" . $shirt['image']; // image path
+                if (file_exists($imagePath)) {
+                    unlink($imagePath); // Delete the image file
+                    }
+                }
+
     
                 //Next, delete the shirt from the shirts table since it is unique
                 $deleteShirt = "DELETE FROM shirts WHERE shirt_id = ?";
@@ -291,8 +309,7 @@ foreach ($_SESSION['basket'] as $basketKey => $item) {
         exit();
     }
 
-
-
+} // end of POST code block
 
 
 
