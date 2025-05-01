@@ -213,7 +213,7 @@ foreach ($_SESSION['basket'] as $basketKey => $item) {
     
                 mysqli_stmt_close($stmt);
 
-                // First, get the image path before deleting the shirt record
+                // First, get the image path before deleting the shirt from the db
                 $getShirtImage = "SELECT image FROM shirts WHERE shirt_id = ?";
                 $stmt = mysqli_prepare($conn, $getShirtImage);
                 mysqli_stmt_bind_param($stmt, "i", $shirtID);
@@ -224,7 +224,7 @@ foreach ($_SESSION['basket'] as $basketKey => $item) {
 
                 // If image exists, delete the file using the unlink function
                 if (!empty($shirt['image'])) {
-                $imagePath = "../productimages/" . $shirt['image']; // image path
+                $imagePath = "../" . $shirt['image']; // image path to productimages folder
                 if (file_exists($imagePath)) {
                     unlink($imagePath); // Delete the image file
                     }
