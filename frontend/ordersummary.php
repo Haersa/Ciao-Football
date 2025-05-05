@@ -100,7 +100,9 @@ if(isset($_GET['order'])) {
     
     // Action buttons
     echo "<div class='action-buttons'>";
-    echo "<a href = 'profile.php' class='track-order-button'>Track Order</a>";
+    if(isset($_SESSION['logged_in'])) {
+        echo "<a href = 'profile.php' class='track-order-button'>Track Order</a>"; // hide if user isnt logged in, as the profile.php page is only accessible to ciao users
+      }
     echo "<a href = 'index.php' class='continue-shopping-button'>Continue Shopping</a>";
     echo "</div>";
     
