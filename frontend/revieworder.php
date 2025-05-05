@@ -97,6 +97,7 @@ include('../components/backtotopbutton.php');
                             <!-- end of top row -->
                             <div class="checkout-review-order-info">
                                 <!-- start of product info -->
+                                <div class="checkout-item-info" id = "mobile-item-quantity1"><p class="product-info-bold">Qty: </p> <?php echo $item['quantity']; ?></div>
                                 <div class="checkout-item-info"><p class="product-info-bold">Brand: </p> <?php echo $item['brand']; ?></div>
                                 <div class="checkout-item-info"><p class="product-info-bold">Category: </p> <?php echo $item['category']; ?></div>
                                 <div class="checkout-item-price"> £<?php echo number_format($item['price'], 2); ?> </div>
@@ -113,6 +114,7 @@ include('../components/backtotopbutton.php');
                             <!-- end of top row -->
                             <div class="checkout-review-order-info">
                                 <!-- start of product info -->
+                                <div class="checkout-item-info" id = "mobile-item-quantity2"><p class="product-info-bold">Qty: </p> <?php echo $item['quantity']; ?></div>
                                 <div class="checkout-item-info"><p class="product-info-bold">Size: </p> <?php echo $item['size']; ?></div>
                                 <div class="checkout-item-info"><p class="product-info-bold">Year: </p><?php echo $item['year']; ?></div>
                                 <div class="checkout-item-info"><p class="product-info-bold">Category: </p> <?php echo $item['category']; ?></div>
