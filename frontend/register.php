@@ -23,17 +23,17 @@ include('../components/backtotopbutton.php');
            <div class="form-row">
                <div class="form-group">
                    <label for="name">First Name</label>
-                   <input type="text" id="firstName" name="firstName" required placeholder="Name"> <!-- first name input field -->
+                   <input type="text" id="firstName" name="firstName" required placeholder="Name" minlength = "3" maxlength = "50"> <!-- first name input field -->
                </div>
                <div class="form-group">
                    <label for="surname">Surname</label>
-                   <input type="text" id="surname" name="surname" required placeholder="Surname"> <!-- surname input field -->
+                   <input type="text" id="surname" name="surname" required placeholder="Surname" minlength = "3" maxlength = "50"> <!-- surname input field -->
                </div>
            </div>
            
            <div class="form-group">
                <label for="email">Email</label>
-               <input type="email" id="email" name="email" required placeholder="Email"> <!-- email input field -->
+               <input type="email" id="email" name="email" required placeholder="Email" minlength = "8" maxlength = "50"> <!-- email input field -->
            </div>
            
            <div class="form-group">

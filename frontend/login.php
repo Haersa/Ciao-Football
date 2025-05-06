@@ -23,11 +23,11 @@ include('../components/backtotopbutton.php');
         <h1>Sign in</h1> <!-- login form title -->
         <div class="form-group">
           <label for="Email">Email</label>
-          <input type="text" id="Email" name="email" required> <!-- username input field -->
+          <input type="text" id="Email" name="email" required minlength = "8" maxlength = "50" > <!-- username input field -->
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" id="password" name="password" required> <!-- password input field -->
+          <input type="password" id="password" name="password" required minlength = "8" maxlength = "20"> <!-- password input field -->
         </div>
         <input type="submit" value="Sign in"> <!-- submit button -->
         <div class="third-party-auth">

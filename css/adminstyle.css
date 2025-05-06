@@ -38,18 +38,27 @@ body {
 
   /* Text Sizes */
   /* Headings */
-  --text-h1: clamp(1.1rem, 1.5rem, 1.8rem);
-  --text-h2: clamp(1.5rem, 4vw, 1.875rem);
-  --text-h3: clamp(1.25rem, 3vw, 1.5rem);
-  --text-h4: clamp(1.125rem, 2vw, 1.25rem);
+  --text-h1: clamp(1.2rem, 1.7rem, 2.2rem);
+  --text-h2: clamp(1.1rem, 1.5rem, 1.875rem);
+  --text-h3: clamp(1rem, 1.3rem, 1.6rem);
+  --text-h4: clamp(0.9rem, 1.1rem, 1.3rem);
+
+  /* mobile menu heading size */
+  --mobile-h1: clamp(0.7rem, 1.2rem, 1.6rem);
+
+  /* mobile menu text sizes */
+  --mobile-link: clamp(0.88rem, 0.9rem, 1rem);
+  --mobile-button: clamp(0.6rem, 0.7rem, 0.8rem);
+  --mobile-body: clamp(0.65rem, 0.7rem, 0.75rem);
 
   /* Content Text */
-  --text-link: clamp(0.875rem, 1.5vw, 1rem);
-  --text-body: clamp(0.875rem, 1.5vw, 1rem);
-  --text-success: clamp(0.875rem, 1.5vw, 1rem);
-  --text-failure: clamp(0.875rem, 1.5vw, 1rem);
-  --text-button: clamp(0.875rem, 1.5vw, 1rem);
-  --text-small: clamp(0.6rem, 1.25vw, 0.8rem);
+  --text-link: clamp(0.875rem, 1.1rem, 1.3rem);
+  --text-body: clamp(0.875rem, 1.1rem, 1.25rem);
+  --text-success: clamp(0.875rem, 0.95rem, 1rem);
+  --text-failure: clamp(0.875rem, 0.95rem, 1rem);
+  --text-button: clamp(0.875rem, 1rem, 1.3rem);
+  --text-small: clamp(0.75rem, 0.8rem, 0.875rem);
+  --text-xsmall: clamp(0.5rem, 0.65rem, 0.75rem);
 
   /* navbar height */
 
@@ -123,7 +132,7 @@ body {
   }
 }
 
-/* admin navigation menu */
+/* admin navigation styles */
 .admin-navbar {
   position: fixed;
   top: 0;
@@ -301,6 +310,8 @@ body {
   vertical-align: middle;
 }
 
+/* end of admin navigation styles */
+
 /* main tag styles */
 
 main {
@@ -354,6 +365,7 @@ main {
   padding: 1rem;
   display: grid;
   grid-template-columns: 1fr;
+  gap: 1.5rem;
 }
 
 .dashboard-grid-item {
@@ -374,7 +386,7 @@ main {
 .grid-item-content {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .grid-analytics {
@@ -398,7 +410,7 @@ main {
 .dashboard-card-trend {
   font-size: var(--text-small);
   font-family: var(--font-primary);
-  font-weight: var(--font-weight-400);
+  font-weight: var(--font-weight-600);
   margin-top: 0.25rem;
 }
 
@@ -418,4 +430,173 @@ main {
   align-items: center;
   justify-content: center;
   background-color: var(--accent-colour);
+  vertical-align: middle;
+  margin-right: 0.5rem;
 }
+
+/* dashboard orders table styling */
+
+.recent-orders {
+  max-width: 1200px;
+  margin-top: 3rem;
+  background-color: var(--background);
+  padding: 2rem;
+}
+
+.recent-orders-heading {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.recent-orders-heading h2 {
+  font-family: var(--font-primary);
+  font-size: var(--text-h2);
+  font-weight: var(--font-weight-400);
+  color: var(--text-colour);
+}
+
+/* Table styling */
+.recent-orders-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin: 0 auto;
+  min-width: 600px;
+}
+
+.orders-table th,
+.orders-table td {
+  text-align: center;
+}
+
+.orders-table th {
+  font-family: var(--font-primary);
+  color: var(--background);
+  font-weight: var(--font-weight-400);
+  font-size: var(--text-body);
+  background-color: var(--accent-colour);
+  border-bottom: 2px solid var(--background);
+}
+
+.orders-table td {
+  font-family: var(--font-secondary);
+  color: var(--text-colour);
+  font-weight: var(--font-weight-400);
+  font-size: var(--text-body);
+  border-bottom: 1px solid var(--grey-accent);
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 0.8rem 1rem;
+  white-space: nowrap;
+}
+
+.orders-table thead tr {
+  border-bottom: 2px solid var(--grey-accent);
+}
+
+.orders-table tbody tr:hover {
+  background-color: var(--grey-accent);
+}
+
+/* end of dashboard styles */
+
+/* start of admin account creation styles */
+
+.admin-account-creation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - var(--navbar-height));
+  padding: 1.5rem;
+}
+
+.account-creation-container {
+  width: 100%;
+  max-width: 650px;
+}
+
+.admin-creation-form-card {
+  background-color: var(--background);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+}
+
+.admin-creation-header {
+  margin-bottom: 1.5rem;
+}
+
+.admin-creation-header {
+  font-size: var(--mobile-h1);
+  color: var(--text-colour);
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-600);
+}
+
+.admin-creation-form {
+  width: 100%;
+}
+
+.admin-creation-form-group {
+  margin-bottom: 1rem;
+}
+
+.admin-creation-form-group:last-of-type {
+  margin-bottom: 1.5rem;
+}
+
+.admin-creation-form-group label {
+  display: block;
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-500);
+  font-family: var(--font-primary);
+  color: var(--text-colour);
+  margin-bottom: 0.35rem;
+}
+
+.admin-creation-form-group input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--grey-accent);
+  border-radius: 5px;
+  font-size: var(--mobile-link);
+  font-family: var(--font-secondary);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.admin-creation-form-group input:focus {
+  outline: none;
+  border-color: var(--accent-colour);
+  box-shadow: 0 0 0 3px rgba(39, 93, 93, 0.25);
+}
+
+.admin-creation-submit-button {
+  display: block;
+  width: 100%;
+  background-color: var(--accent-colour);
+  color: var(--background);
+  font-weight: var(--font-weight-600);
+  font-family: var(--font-primary);
+  font-size: var(--text-button);
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.admin-creation-submit-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(39, 93, 93, 0.25);
+}
+
+/* end of admin account creation styles */
