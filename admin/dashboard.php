@@ -158,7 +158,7 @@ $result = mysqli_stmt_get_result($stmt);
     <h2>Recent Orders</h2>
   </div><!-- end of recent orders heading -->
 
-  <div class="recent-orders-table"><!-- start of recent orders table -->
+  <section class="recent-orders-table"><!-- start of recent orders table -->
     <table class="orders-table"><!-- start of orders table -->
       <thead>
         <tr><!-- table row -->
@@ -179,7 +179,7 @@ $result = mysqli_stmt_get_result($stmt);
         <?php endwhile; ?>
       </tbody>
     </table><!-- end of orders table -->
-  </div>
+  </section><!-- end of recent orders -->
   
   <?php mysqli_stmt_close($stmt); ?>
 

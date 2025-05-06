@@ -37,6 +37,18 @@ if (password_verify($password, $stored_password)) {
     $_SESSION['is_admin'] = ($row['Admin'] == 1) ? true : false; // check if user is admin, if so store admin status
     $_SESSION['Success'] = true; // set session variable to true
     $_SESSION['SuccessMessage'] = "Sign in Successful" . $successIcon; // success message
+
+
+        // Update last login column for non-admin users in the db table
+        if ($row['Admin'] == 0) { // don't track admin users
+            $updateQuery = "UPDATE ciaousers SET last_login = CURRENT_TIMESTAMP WHERE userid = ?";
+            $updateStmt = mysqli_prepare($conn, $updateQuery);
+            mysqli_stmt_bind_param($updateStmt, "i", $row['userid']);
+            mysqli_stmt_execute($updateStmt);
+            mysqli_stmt_close($updateStmt);
+        }
+
+
     
     // Redirect based on admin status
     if ($row['Admin'] == 1) {

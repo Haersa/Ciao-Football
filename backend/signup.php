@@ -59,7 +59,7 @@ if (mysqli_num_rows($result) > 0) {
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
 // Insert new user 
-$insertQuery = "INSERT INTO ciaousers (name, surname, email, password, Admin) VALUES (?, ?, ?, ?, 0)"; // sql query to add new user to database
+$insertQuery = "INSERT INTO ciaousers (name, surname, email, password, Admin, last_login) VALUES (?, ?, ?, ?, 0, CURRENT_TIMESTAMP)"; // sql query to add new user to database
 $stmt = mysqli_prepare($conn, $insertQuery);
 mysqli_stmt_bind_param($stmt, "ssss", $firstName, $surname, $email, $hashedPassword);
 

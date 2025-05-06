@@ -40,8 +40,6 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
   <head>
     <meta charset="UTF-8" /> <!-- Meta Tags-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="UTF-8" /> <!-- Meta Tags-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="<?php echo isset($pageDescription) ? $pageDescription : ''; ?>" />
     <meta name="author" content="Ciao Football" />
     <meta name="keywords" content="<?php echo isset($pageKeywords) ? $pageKeywords : ''; ?>"/>
