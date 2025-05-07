@@ -73,7 +73,7 @@ include('../components/backtotopbutton.php');
             echo '<input type="hidden" name="equipment_id" value="' . $row['equipment_id'] . '">';
             echo '<button type="submit" class="basket-button">Add to Basket</button>'; // add to cart button
             echo '</form>';
-            echo '<a href="productdetails.php?id=' . $row['equipment_id'] . '" class="view-button">View Details</a>'; // view product details button
+            echo '<a href="productdetails.php?id=' . $row['equipment_id'] . '&type=equipment" class="view-button">View More</a>'; // view product details button
             echo '</div>';
             echo '</div>';
                       

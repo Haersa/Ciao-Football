@@ -50,64 +50,7 @@ $shirtsResult = mysqli_query($conn, $shirtsSql);
 ?>
 
 <main>
-    <div class="shop-container">
-        <h1>Our Products</h1>
-        
-        <?php if (isset($_GET['price']) && !empty($rangeText)): ?>
-            <div class="filter-notice">
-                <p>Showing products in price range: <strong><?php echo $rangeText; ?></strong></p>
-                <a  href="shop.php">Clear filter</a>
-            </div>
-        <?php endif; ?>
-        
-        <div class="products-grid">
-            <!-- Equipment Products -->
-            <?php if (mysqli_num_rows($equipmentResult) > 0): ?>
-                <?php while($equipment = mysqli_fetch_assoc($equipmentResult)): ?>
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="<?php echo $equipment['image']; ?>" alt="<?php echo $equipment['name']; ?>">
-                        </div>
-                        <div class="product-info">
-                            <h3><?php echo $equipment['name']; ?></h3>
-                            <p class="product-category"><?php echo $equipment['category']; ?></p>
-                            <p class="product-description"><?php echo $equipment['description']; ?></p>
-                            <p class="product-price">£<?php echo number_format($equipment['price'], 2); ?></p>
-                            <a href="product.php?type=equipment&id=<?php echo $equipment['equipment_id']; ?>" class="view-product-btn">View Product</a>
-                        </div>
-                    </div>
-                <?php endwhile; ?>
-            <?php endif; ?>
-            
-            <!-- Shirts Products -->
-            <?php if (mysqli_num_rows($shirtsResult) > 0): ?>
-                <?php while($shirt = mysqli_fetch_assoc($shirtsResult)): ?>
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="<?php echo $shirt['image']; ?>" alt="<?php echo $shirt['team']; ?>">
-                        </div>
-                        <div class="product-info">
-                            <h3><?php echo $shirt['team']; ?></h3>
-                            <p class="product-category"><?php echo $shirt['category']; ?></p>
-                            <p class="product-details">
-                                <?php echo $shirt['type']; ?> | 
-                                <?php echo $shirt['size']; ?> | 
-                                <?php echo $shirt['year']; ?>
-                            </p>
-                            <p class="product-price">£<?php echo number_format($shirt['price'], 2); ?></p>
-                            <a href="product.php?type=shirts&id=<?php echo $shirt['shirt_id']; ?>" class="view-product-btn">View Product</a>
-                        </div>
-                    </div>
-                <?php endwhile; ?>
-            <?php endif; ?>
-            
-            <?php if (mysqli_num_rows($equipmentResult) == 0 && mysqli_num_rows($shirtsResult) == 0): ?>
-                <div class="no-products">
-                    <p>No products found in this price range.</p>
-                </div>
-            <?php endif; ?>
-        </div>
-    </div>
+   
 </main>
 
 <?php
