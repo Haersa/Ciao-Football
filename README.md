@@ -1,6 +1,6 @@
 # Ciao Football
 
-![Ciao Football Screenshot](projectoverview.PNG)
+![Ciao Football Screenshot](projectpreview.PNG)
 
 
 ## Project Overview
