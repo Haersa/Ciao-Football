@@ -33,6 +33,38 @@ mysqli_stmt_close($stmt);
 ?>
 
 <main><!-- start of main content -->
+
+<section class="user-summary"><!-- start of user summary heading section -->
+  <div class="user-summary-card active-card">
+    <div class="user-summary-number active-user"><?php echo $recentUsersCount; ?></div>
+    <div class="user-summary-label">Active Users</div>
+  </div>
+  
+  <div class="user-summary-card inactive-card">
+    <div class="user-summary-number inactive-user"><?php echo $inactiveUsersCount; ?></div>
+    <div class="user-summary-label">Inactive Users</div>
+  </div>
+  
+  <div class="user-summary-card total-card">
+    <div class="user-summary-number total-user"><?php echo $recentUsersCount + $inactiveUsersCount; ?></div>
+    <div class="user-summary-label">Total Users</div>
+  </div>
+  
+  <div class="user-summary-card percentage-card">
+    <?php
+      // Calculate the percentage of active users
+      $percentActive = ($recentUsersCount + $inactiveUsersCount > 0) 
+      // If there are users, calculate the percentage and round to a whole number
+      ? round(($recentUsersCount / ($recentUsersCount + $inactiveUsersCount)) * 100) 
+      // If there are no users, return 0 to avoid division by zero
+      : 0;
+    ?>
+    <div class="user-summary-number percentage-user"><?php echo $percentActive; ?>%</div>
+    <div class="user-summary-label">Activity Rate</div>
+  </div>
+</section><!-- end of user summary heading section -->
+
+
   <!-- Active Users -->
   <section class="active-users"><!-- start of active users -->
     <div class="active-users-heading"><!-- start of active users heading -->
@@ -43,12 +75,12 @@ mysqli_stmt_close($stmt);
       <table class="users-table"><!-- start of users table -->
         <thead>
           <tr><!-- table row -->
-            <th>User ID</th><!-- table headings -->
+            <th>ID</th><!-- table headings -->
             <th>Name</th>
             <th>Surname</th>
             <th>Email</th>
             <th>Last Login</th>
-            <th>Actions</th>
+            <th class = "th-center">Actions</th>
           </tr><!-- end of table row -->
         </thead>
         <tbody>
@@ -58,21 +90,21 @@ mysqli_stmt_close($stmt);
               <td>
                 <form method="POST" action="../backend/updateUser.php" class="edit-user-form">
                   <input type="hidden" name="userid" value="<?php echo htmlspecialchars($user['userid']); ?>">
-                  <input type="text" name="name" value="<?php echo htmlspecialchars($user['name']); ?>">
+                  <input type="text" minlength = "3" maxlength = "50" name="name" value="<?php echo htmlspecialchars($user['name']); ?>">
               </td>
               <td>
-                  <input type="text" name="surname" value="<?php echo htmlspecialchars($user['surname']); ?>">
+                  <input type="text" minlength = "3" maxlength = "50" name="surname" value="<?php echo htmlspecialchars($user['surname']); ?>">
               </td>
               <td>
-                  <input type="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>">
+                  <input type="email" minlength = "8" maxlength = "50" name="email" value="<?php echo htmlspecialchars($user['email']); ?>">
               </td>
-              <td><?php echo date('d M Y H:i', strtotime($user['last_login'])); ?></td>
+              <td class = "table-last-login"><?php echo date('d M Y H:i', strtotime($user['last_login'])); ?></td>
               <td class="action-buttons">
-                  <button type="submit" name="action" value="update" class="update-btn">Update</button>
+                  <button type="submit" name="updateButton" value="update" class="update-button">Update</button>
                 </form>
                 <form method="POST" action="../backend/deleteUser.php" class="delete-user-form">
                   <input type="hidden" name="userid" value="<?php echo htmlspecialchars($user['userid']); ?>">
-                  <button type="submit" name="action" value="delete" class="delete-btn">Delete</button>
+                  <button type="button" class="delete-button" onclick="document.getElementById('delete-user-id').value='<?php echo htmlspecialchars($user['userid']); ?>'; document.getElementById('delete-confirmation-dialog').showModal();"> Delete </button> <!-- on click, open the delete confirmation modal and tie it to the userid of the user that the delete button was clicked for -->
                 </form>
               </td>
             </tr><!-- end of table row -->
@@ -92,12 +124,12 @@ mysqli_stmt_close($stmt);
       <table class="users-table"><!-- start of users table -->
         <thead>
           <tr><!-- table row -->
-            <th>User ID</th><!-- table headings -->
+            <th>ID</th><!-- table headings -->
             <th>Name</th>
             <th>Surname</th>
             <th>Email</th>
             <th>Last Login</th>
-            <th>Actions</th>
+            <th class = "th-center">Actions</th>
           </tr><!-- end of table row -->
         </thead>
         <tbody>
@@ -107,21 +139,21 @@ mysqli_stmt_close($stmt);
               <td>
                 <form method="POST" action="../backend/updateUser.php" class="edit-user-form">
                   <input type="hidden" name="userid" value="<?php echo htmlspecialchars($user['userid']); ?>">
-                  <input type="text" name="name" value="<?php echo htmlspecialchars($user['name']); ?>">
+                  <input type="text" minlength = "3" maxlength = "50" name="name" value="<?php echo htmlspecialchars($user['name']); ?>">
               </td>
               <td>
-                  <input type="text" name="surname" value="<?php echo htmlspecialchars($user['surname']); ?>">
+                  <input type="text" minlength = "3" maxlength = "50" name="surname" value="<?php echo htmlspecialchars($user['surname']); ?>">
               </td>
               <td>
-                  <input type="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>">
+                  <input type="email" name="email" minlength = "8" maxlength = "50" value="<?php echo htmlspecialchars($user['email']); ?>">
               </td>
-              <td><?php echo date('d M Y H:i', strtotime($user['last_login'])); ?></td>
+              <td class = "table-last-login"><?php echo date('d M Y H:i', strtotime($user['last_login'])); ?></td>
               <td class="action-buttons">
-                  <button type="submit" name="action" value="update" class="update-btn">Update</button>
+                  <button type="submit" name="updateButton" value="update" class="update-button">Update</button>
                 </form>
                 <form method="POST" action="../backend/deleteUser.php" class="delete-user-form">
                   <input type="hidden" name="userid" value="<?php echo htmlspecialchars($user['userid']); ?>">
-                  <button type="submit" name="action" value="delete" class="delete-btn">Delete</button>
+                  <button type="button" class="delete-button" onclick="document.getElementById('delete-user-id').value='<?php echo htmlspecialchars($user['userid']); ?>'; document.getElementById('delete-confirmation-dialog').showModal();"> Delete </button> <!-- on click, open the delete confirmation modal and tie it to the userid of the user that the delete button was clicked for -->
                 </form>
               </td>
             </tr><!-- end of table row -->
@@ -131,6 +163,22 @@ mysqli_stmt_close($stmt);
     </section><!-- end of inactive users table -->
   </section><!-- end of inactive users -->
 </main><!-- end of main content -->
+
+<dialog id="delete-confirmation-dialog" class="delete-dialog"><!-- delete user confirmation modal -->
+  <div class="dialog-content">
+    <h3>Confirm Deletion</h3>
+    <p>Are you sure you want to delete this user? This action cannot be undone.</p>
+    <div class="dialog-buttons">
+      <button class="cancel-button" onclick="document.getElementById('delete-confirmation-dialog').close();">Cancel</button> <!-- on click, close the modal -->
+      <form id="confirm-delete-form" method="POST" action="../backend/deleteUser.php">
+        <input type="hidden" id="delete-user-id" name="userid" value="">
+        <button type="submit" name="deleteButton" value="delete" class="delete-button">Delete</button>
+      </form>
+    </div>
+  </div>
+</dialog><!-- end of delete user confirmation modal -->
+
+
 
 <script src="../js/admin.js"></script>
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
