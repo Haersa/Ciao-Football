@@ -366,6 +366,7 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
+  margin: 0 auto;
 }
 
 .dashboard-grid-item {
@@ -439,16 +440,20 @@ main {
 .recent-orders {
   max-width: 1200px;
   margin-top: 3rem;
-  background-color: var(--background);
-  padding: 2rem;
+  margin: 3rem auto 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .recent-orders-heading {
-  width: 100%;
+  width: 95%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 1.5rem;
+  padding: 0 1rem;
 }
 
 .recent-orders-heading h2 {
@@ -456,56 +461,71 @@ main {
   font-size: var(--text-h2);
   font-weight: var(--font-weight-400);
   color: var(--text-colour);
-}
-
-/* Table styling */
-.recent-orders-table {
-  width: 100%;
-  overflow-x: auto;
-}
-
-.orders-table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-  margin: 0 auto;
-  min-width: 600px;
-}
-
-.orders-table th,
-.orders-table td {
   text-align: center;
 }
 
-.orders-table th {
+/* Table styling */
+.purchase-history-container {
+  margin-bottom: 2.5rem;
+  overflow-x: auto;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.purchase-history-heading {
+  margin-bottom: 1.25rem;
+}
+
+.purchase-history-heading h2 {
+  font-size: var(--text-h2);
+  font-weight: var(--font-weight-400);
+  font-family: var(--font-primary);
+  color: var(--text-colour);
+}
+
+.purchase-history-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.purchase-history-table th,
+.purchase-history-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--text-colour);
+}
+
+.purchase-history-table th {
   font-family: var(--font-primary);
   color: var(--background);
   font-weight: var(--font-weight-400);
   font-size: var(--text-body);
   background-color: var(--accent-colour);
-  border-bottom: 2px solid var(--background);
 }
 
-.orders-table td {
+.purchase-history-table td {
   font-family: var(--font-secondary);
   color: var(--text-colour);
   font-weight: var(--font-weight-400);
   font-size: var(--text-body);
-  border-bottom: 1px solid var(--grey-accent);
 }
 
-.orders-table th,
-.orders-table td {
-  padding: 0.8rem 1rem;
-  white-space: nowrap;
+.purchase-history-table tbody tr:hover {
+  background-color: var(--background);
 }
 
-.orders-table thead tr {
-  border-bottom: 2px solid var(--grey-accent);
+@media (max-width: 992px) {
+  .purchase-history-container {
+    border-radius: 8px;
+  }
 }
 
-.orders-table tbody tr:hover {
-  background-color: var(--grey-accent);
+@media (max-width: 768px) {
+  .purchase-history-heading h2 {
+    font-size: var(--text-h3);
+    text-wrap: balance;
+  }
 }
 
 /* end of dashboard styles */
@@ -673,7 +693,7 @@ main {
   color: var(--text-colour) !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 970px) {
   .user-summary {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -740,10 +760,6 @@ main {
   background-color: var(--accent-colour);
 }
 
-.th-center {
-  text-align: center !important;
-}
-
 .users-table tbody tr:hover {
   background-color: var(--background);
 }
@@ -791,10 +807,15 @@ main {
   color: var(--text-colour);
 }
 
+.user-id-td {
+  font-family: var(--font-primary);
+  color: var(--text-colour);
+}
+
 @media (max-width: 992px) {
   .active-users-table,
   .inactive-users-table {
-    border: 1px solid #eee;
+    border: 1px solid var(--background);
     border-radius: 8px;
   }
 }

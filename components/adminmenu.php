@@ -46,7 +46,7 @@ function isActive($page, $current_page) { // pass in the page and current page v
         <a href="ciaoproducts.php">Products</a>
     </li>
     <li class="navigation-link <?php echo isActive('userdetails.php', $current_page); ?>">
-        <a href="userdetails.php">Customers</a>
+        <a href="userdetails.php">Customer Accounts</a>
     </li>
     <li class="navigation-link <?php echo isActive('formsubissions.php', $current_page); ?>">
         <a href="formsubissions.php">Customer Queries</a>

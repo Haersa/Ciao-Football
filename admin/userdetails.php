@@ -80,13 +80,13 @@ mysqli_stmt_close($stmt);
             <th>Surname</th>
             <th>Email</th>
             <th>Last Login</th>
-            <th class = "th-center">Actions</th>
+            <th>Actions</th>
           </tr><!-- end of table row -->
         </thead>
         <tbody>
           <?php while ($user = mysqli_fetch_assoc($recentUsers)): ?> <!-- loop through each user and create a table record -->
             <tr><!--table row -->
-              <td><?php echo htmlspecialchars($user['userid']); ?></td>
+            <td class = "user-id-td"><?php echo htmlspecialchars($user['userid']); ?></td>
               <td>
                 <form method="POST" action="../backend/updateUser.php" class="edit-user-form">
                   <input type="hidden" name="userid" value="<?php echo htmlspecialchars($user['userid']); ?>">
@@ -129,13 +129,13 @@ mysqli_stmt_close($stmt);
             <th>Surname</th>
             <th>Email</th>
             <th>Last Login</th>
-            <th class = "th-center">Actions</th>
+            <th>Actions</th>
           </tr><!-- end of table row -->
         </thead>
         <tbody>
           <?php while ($user = mysqli_fetch_assoc($inactiveUsers)): ?> <!-- loop through each user and create a table record -->
             <tr><!--table row -->
-              <td><?php echo htmlspecialchars($user['userid']); ?></td>
+              <td class = "user-id-td"><?php echo htmlspecialchars($user['userid']); ?></td>
               <td>
                 <form method="POST" action="../backend/updateUser.php" class="edit-user-form">
                   <input type="hidden" name="userid" value="<?php echo htmlspecialchars($user['userid']); ?>">

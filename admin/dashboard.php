@@ -158,8 +158,8 @@ $result = mysqli_stmt_get_result($stmt);
     <h2>Recent Orders</h2>
   </div><!-- end of recent orders heading -->
 
-  <section class="recent-orders-table"><!-- start of recent orders table -->
-    <table class="orders-table"><!-- start of orders table -->
+  <section class="purchase-history-container"><!-- start of recent orders table -->
+    <table class="purchase-history-table"><!-- start of orders table -->
       <thead>
         <tr><!-- table row -->
           <th>Order Number</th> <!-- table headings -->
