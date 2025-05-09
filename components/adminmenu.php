@@ -43,7 +43,10 @@ function isActive($page, $current_page) { // pass in the page and current page v
         <a href="createadminaccount.php">Create Admin Account</a>
     </li>
     <li class="navigation-link <?php echo isActive('ciaoproducts.php', $current_page); ?>">
-        <a href="ciaoproducts.php">Products</a>
+        <a href="ciaoproducts.php">Shirts</a>
+    </li>
+    <li class="navigation-link <?php echo isActive('ciaoequipment.php', $current_page); ?>">
+        <a href="ciaoequipment.php">Equipment Products</a>
     </li>
     <li class="navigation-link <?php echo isActive('userdetails.php', $current_page); ?>">
         <a href="userdetails.php">Customer Accounts</a>

@@ -172,7 +172,7 @@ mysqli_stmt_close($stmt);
       <button class="cancel-button" onclick="document.getElementById('delete-confirmation-dialog').close();">Cancel</button> <!-- on click, close the modal -->
       <form id="confirm-delete-form" method="POST" action="../backend/deleteUser.php">
         <input type="hidden" id="delete-user-id" name="userid" value="">
-        <button type="submit" name="deleteButton" value="delete" class="delete-button">Delete</button>
+        <button type="submit" name="deleteButton" value="delete" class="modal-remove-button">Delete</button>
       </form>
     </div>
   </div>
