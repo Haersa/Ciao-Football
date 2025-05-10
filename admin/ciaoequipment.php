@@ -21,7 +21,7 @@ $result = $stmt->get_result();
 <section class="new-section">
     <div class="new-card">
         <div class="new-content">
-            <h2 class="new-title">Add New Product</h2>
+            <h2 class="new-title">Add New Equipment Product</h2>
             <p class="new-description">Create and add a new product to your inventory</p>
         </div>
         <div class="new-action">
