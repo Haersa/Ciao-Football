@@ -224,7 +224,8 @@ foreach ($_SESSION['basket'] as $basketKey => $item) {
 
                 // If image exists, delete the file using the unlink function
                 if (!empty($shirt['image'])) {
-                     $imagePath = __DIR__ . '/../' . $shirt['image']; // image path to productimages folder
+                     $filename = basename($shirt['image']);
+                     $imagePath = __DIR__ . '/../productimages/' . $filename;// image path to productimages folder
                 if (file_exists($imagePath)) {
                     unlink($imagePath); // Delete the image file
                     }

@@ -1634,7 +1634,6 @@ main {
   transform: translateY(1px);
 }
 
-/* Responsive adjustments */
 @media (max-width: 900px) {
   .equipment-form-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1666,3 +1665,390 @@ main {
 }
 
 /* add new equipment item form styles end */
+
+/* update product details page styles */
+
+.shirt-form-container {
+  max-width: 900px;
+  margin: var(--navbar-height) auto 3rem;
+  padding: 1.2rem;
+}
+
+.shirt-form-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.shirt-form-header h1 {
+  font-size: var(--text-h1);
+  color: var(--text-colour);
+  font-weight: var(--font-weight-500);
+  font-family: var(--font-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.shirt-form-header p {
+  font-size: var(--text-body);
+  color: var(--text-colour);
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-400);
+  margin: 0;
+}
+
+.shirt-form {
+  background-color: var(--background);
+  border: 1px solid var(--grey-accent);
+  border-radius: 8px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.shirt-form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.shirt-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.shirt-form-full {
+  grid-column: 1 / -1;
+}
+
+.shirt-form-label {
+  font-size: var(--text-body);
+  color: var(--text-colour);
+  font-weight: var(--font-weight-500);
+  font-family: var(--font-primary);
+  margin-bottom: 0.5rem;
+}
+
+.shirt-form-input,
+.shirt-form-select,
+.shirt-form-textarea {
+  padding: 0.875rem;
+  border: 1px solid var(--text-colour);
+  border-radius: 6px;
+  font-size: var(--text-body);
+  font-family: var(--font-secondary);
+  color: var(--text-colour);
+  background-color: var(--background);
+  width: 100%;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.shirt-form-input:focus,
+.shirt-form-select:focus,
+.shirt-form-textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.15);
+}
+
+.shirt-form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.shirt-form-checkbox-group {
+  justify-content: flex-end;
+  padding-bottom: 0.6rem;
+}
+
+.shirt-form-checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: var(--text-body);
+  font-family: var(--font-secondary);
+  color: var(--text-colour);
+}
+
+.shirt-form-checkbox {
+  margin-right: 0.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+}
+
+.shirt-form-checkbox:checked {
+  accent-color: var(--accent-colour);
+  color: var(--background);
+}
+
+.shirt-form-file {
+  padding: 0.5rem 0;
+  width: 100%;
+}
+
+.shirt-form-hint {
+  font-size: var(--text-small);
+  color: var(--text-colour);
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-400);
+  margin: 0.5rem 0 0 0;
+}
+
+.shirt-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.shirt-form-reset-button,
+.shirt-form-submit-button,
+.shirt-form-cancel-button {
+  padding: 0.875rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: var(--text-button);
+  font-weight: var(--font-weight-500);
+  font-family: var(--font-primary);
+  cursor: pointer;
+  transform: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.shirt-form-reset-button,
+.shirt-form-cancel-button {
+  background-color: var(--grey-accent);
+  color: var(--text-colour);
+}
+
+.shirt-form-submit-button {
+  background-color: var(--accent-colour);
+  color: var(--background);
+  font-weight: var(--font-weight-600);
+}
+
+.shirt-form-reset-button:focus,
+.shirt-form-submit-button:focus,
+.shirt-form-cancel-button:focus {
+  outline: 1px solid var(--text-colour);
+}
+
+.shirt-form-reset-button:active,
+.shirt-form-submit-button:active,
+.shirt-form-cancel-button:active {
+  transform: translateY(1px);
+}
+
+.equipment-form-container {
+  max-width: 900px;
+  margin: var(--navbar-height) auto 3rem;
+  padding: 1.2rem;
+}
+
+.equipment-form-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.equipment-form-header h1 {
+  font-size: var(--text-h1);
+  color: var(--text-colour);
+  font-weight: var(--font-weight-500);
+  font-family: var(--font-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.equipment-form-header p {
+  font-size: var(--text-body);
+  color: var(--text-colour);
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-400);
+  margin: 0;
+}
+
+.equipment-form {
+  background-color: var(--background);
+  border: 1px solid var(--grey-accent);
+  border-radius: 8px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.equipment-form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.equipment-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.equipment-form-full {
+  grid-column: 1 / -1;
+}
+
+.equipment-form-label {
+  font-size: var(--text-body);
+  color: var(--text-colour);
+  font-weight: var(--font-weight-500);
+  font-family: var(--font-primary);
+  margin-bottom: 0.5rem;
+}
+
+.equipment-form-input,
+.equipment-form-select,
+.equipment-form-textarea {
+  padding: 0.875rem;
+  border: 1px solid var(--text-colour);
+  border-radius: 6px;
+  font-size: var(--text-body);
+  font-family: var(--font-secondary);
+  color: var(--text-colour);
+  background-color: var(--background);
+  width: 100%;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.equipment-form-input:focus,
+.equipment-form-select:focus,
+.equipment-form-textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.15);
+}
+
+.equipment-form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.equipment-form-checkbox-group {
+  justify-content: flex-end;
+  padding-bottom: 0.6rem;
+}
+
+.equipment-form-checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: var(--text-body);
+  font-family: var(--font-secondary);
+  color: var(--text-colour);
+}
+
+.equipment-form-checkbox {
+  margin-right: 0.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+}
+
+.equipment-form-checkbox:checked {
+  accent-color: var(--accent-colour);
+  color: var(--background);
+}
+
+.equipment-form-file {
+  padding: 0.5rem 0;
+  width: 100%;
+}
+
+.equipment-form-hint {
+  font-size: var(--text-small);
+  color: var(--text-colour);
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-400);
+  margin: 0.5rem 0 0 0;
+}
+
+.equipment-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.equipment-form-reset-button,
+.equipment-form-submit-button,
+.equipment-form-cancel-button {
+  padding: 0.875rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: var(--text-button);
+  font-weight: var(--font-weight-500);
+  font-family: var(--font-primary);
+  cursor: pointer;
+  transform: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.equipment-form-reset-button,
+.equipment-form-cancel-button {
+  background-color: var(--grey-accent);
+  color: var(--text-colour);
+}
+
+.equipment-form-submit-button {
+  background-color: var(--accent-colour);
+  color: var(--background);
+  font-weight: var(--font-weight-600);
+}
+
+.equipment-form-reset-button:focus,
+.equipment-form-submit-button:focus,
+.equipment-form-cancel-button:focus {
+  outline: 1px solid var(--text-colour);
+}
+
+.equipment-form-reset-button:active,
+.equipment-form-submit-button:active,
+.equipment-form-cancel-button:active {
+  transform: translateY(1px);
+}
+
+@media (max-width: 900px) {
+  .equipment-form-grid,
+  .shirt-form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .equipment-form,
+  .shirt-form {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .equipment-form-grid,
+  .shirt-form-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .equipment-form,
+  .shirt-form {
+    padding: 1.5rem;
+  }
+
+  .equipment-form-actions,
+  .shirt-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .equipment-form-reset-button,
+  .equipment-form-submit-button,
+  .equipment-form-cancel-button,
+  .shirt-form-reset-button,
+  .shirt-form-submit-button,
+  .shirt-form-cancel-button {
+    width: 100%;
+  }
+}
+
+/* customer contact form submissions styles start */
+
+/* customer contact form submissions styles end */

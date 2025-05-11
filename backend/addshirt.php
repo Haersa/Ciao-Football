@@ -150,7 +150,7 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === 0) { // check if fi
         }
         
         $_SESSION['Failed'] = true; // set failed session variable to true for displaying error message
-        $_SESSION['FailMessage'] = "Error adding shirt to database: " . mysqli_error($conn) . $errorIcon; // display error message to user with the specific MySQL error
+        $_SESSION['FailMessage'] = "Error adding shirt to database: " . $errorIcon; // display error message to user 
         header("Location: ../admin/newshirt.php"); // redirect to shirt upload page to let them try again
     }
     

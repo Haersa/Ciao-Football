@@ -44,7 +44,7 @@ $result = $stmt->get_result();
                         <span class="shirt-product-type"><?php echo $row['type']; ?></span>
                     </div>
                     <div class="shirt-product-actions">
-                    <a href="adminproductdetails.php?id=<?php echo $row['shirt_id']; ?>" class="shirt-product-view-button">View Details</a>
+                       <a href="adminproductdetails.php?id=<?php echo $row['shirt_id']; ?>&product_type=shirt" class="shirt-product-view-button">View Details</a>
                         <button type="button" class="shirt-product-delete-button" onclick="document.getElementById('delete-product-id').value='<?php echo htmlspecialchars($row['shirt_id']); ?>'; document.getElementById('delete-shirt-dialog').showModal();">Delete</button>
                     </div>
                 </div>
