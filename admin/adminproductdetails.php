@@ -61,6 +61,24 @@ if ($productType === 'shirt') { // if the product type in the url is shirt
 }
 ?>
 
+<section class="return-to-products">
+    <div class="return-products-header">
+        <h2>Return to Product listing</h2>
+        <a class="return-button" href="javascript:history.back()">
+            <span class="return-button-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-left-icon">
+                    <path d="M6 8L2 12L6 16"/>
+                    <path d="M2 12H22"/>
+                </svg>
+            </span>
+            <span class="return-button-text">Go Back</span>
+        </a>
+    </div>
+</section>
+
+
+</section>
+
 <!-- display the shirt form based on the product type in the url (if product variable isn't null) -->
 <?php if($productType === 'shirt' && $product){ ?>
     <section class="shirt-form-container">
