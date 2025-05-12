@@ -99,7 +99,7 @@ if (isset($_GET['sort'])) {
         
         echo '</div>'; // End products container
     } else {
-        echo '<div class="no-products">No non-sale retro shirts found</div>'; // if no products are found, display this error to user
+        echo '<div class="no-products">No shirts found</div>'; // if no products are found, display this error to user
     }
 
     // Close statement
