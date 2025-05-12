@@ -227,13 +227,13 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
   
   <!-- Column 3 -->
   <div class="category-column">
-    <h4 class="category-heading">Serie A</h4>
+    <h4 class="category-heading">Bundesliga</h4>
     <ul class="category-list">
-      <li class="category-item"><a href="team.php?team=Juventus" class="category-link">Juventus</a></li>
-      <li class="category-item"><a href="team.php?team=AC Milan" class="category-link">AC Milan</a></li>
-      <li class="category-item"><a href="team.php?team=Inter Milan" class="category-link">Inter Milan</a></li>
-      <li class="category-item"><a href="team.php?team=Napoli" class="category-link">Napoli</a></li>
-      <li class="category-item"><a href="team.php?team=Roma" class="category-link">Roma</a></li>
+      <li class="category-item"><a href="team.php?team=Dortmund" class="category-link">Borussia Dortmund</a></li>
+      <li class="category-item"><a href="team.php?team=Bayern Munich" class="category-link">Bayern Munich</a></li>
+      <li class="category-item"><a href="team.php?team=Bayern Leverkusen" class="category-link">Bayern Leverkusen</a></li>
+      <li class="category-item"><a href="team.php?team=St. Pauli" class="category-link">St. Pauli</a></li>
+      <li class="category-item"><a href="team.php?team=Frankfurt" class="category-link">Eintracht Frankfurt</a></li>
     </ul>
   </div>
 
@@ -251,13 +251,13 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
   
   <!-- Column 5 -->
   <div class="category-column">
-    <h4 class="category-heading">International</h4>
+    <h4 class="category-heading">Serie A</h4>
     <ul class="category-list">
-      <li class="category-item"><a href="team.php?team=England" class="category-link">England</a></li>
-      <li class="category-item"><a href="team.php?team=Scotland" class="category-link">Scotland</a></li>
-      <li class="category-item"><a href="team.php?team=Germany" class="category-link">Germany</a></li>
-      <li class="category-item"><a href="team.php?team=Brazil" class="category-link">Brazil</a></li>
-      <li class="category-item"><a href="team.php?team=Argentina" class="category-link">Argentina</a></li>
+      <li class="category-item"><a href="team.php?team=Napoli" class="category-link">Napoli</a></li>
+      <li class="category-item"><a href="team.php?team=Roma" class="category-link">Roma</a></li>
+      <li class="category-item"><a href="team.php?team=Juventus" class="category-link">Juventus</a></li>
+      <li class="category-item"><a href="team.php?team=Inter Milan" class="category-link">Inter Milan</a></li>
+      <li class="category-item"><a href="team.php?team=AC Milan" class="category-link">AC Milan</a></li>
     </ul>
   </div>
 </div>    <!-- end of megabox-->
@@ -311,13 +311,13 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
       
       <!-- Column 3 -->
       <div class="tablet-category-column">
-        <h4 class="tablet-category-heading">Serie A</h4>
+        <h4 class="tablet-category-heading">Bundesliga</h4>
         <ul class="tablet-category-list">
-          <li class="tablet-category-item"><a href="team.php?team=Juventus" class="tablet-category-link">Juventus</a></li>
-          <li class="tablet-category-item"><a href="team.php?team=AC Milan" class="tablet-category-link">AC Milan</a></li>
-          <li class="tablet-category-item"><a href="team.php?team=Inter Milan" class="tablet-category-link">Inter Milan</a></li>
-          <li class="tablet-category-item"><a href="team.php?team=Napoli" class="tablet-category-link">Napoli</a></li>
-          <li class="tablet-category-item"><a href="team.php?team=Roma" class="tablet-category-link">Roma</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=Dortmund" class="tablet-category-link">Borussia Dortmund</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=Bayern Munich" class="tablet-category-link">Bayern Munich</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=Bayern Leverkusen" class="tablet-category-link">Bayern Leverkusen</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=St. Pauli" class="tablet-category-link">St. Pauli</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=Frankfurt" class="tablet-category-link">Eintrach Frankfurt</a></li>
         </ul>
       </div>
       <!-- Column 4 -->
@@ -334,13 +334,13 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
       
       <!-- Column 5 -->
       <div class="tablet-category-column">
-        <h4 class="tablet-category-heading">International</h4>
+        <h4 class="tablet-category-heading">Serie A</h4>
         <ul class="tablet-category-list">
-          <li class="tablet-category-item"><a href="team.php?team=England" class="tablet-category-link">England</a></li>
-          <li class="tablet-category-item"><a href="team.php?team=Scotland" class="tablet-category-link">Scotland</a></li>
-          <li class="tablet-category-item"><a href="team.php?team=Germany" class="tablet-category-link">Germany</a></li>
-          <li class="tablet-category-item"><a href="team.php?team=Brazil" class="tablet-category-link">Brazil</a></li>
-          <li class="tablet-category-item"><a href="team.php?team=Argentina" class="tablet-category-link">Argentina</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=Napoli" class="tablet-category-link">Napoli</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=Roma" class="tablet-category-link">Roma</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=Juventus" class="tablet-category-link">Juventus</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=Inter Milan" class="tablet-category-link">Inter Milan</a></li>
+          <li class="tablet-category-item"><a href="team.php?team=AC Milan" class="tablet-category-link">AC Milan</a></li>
         </ul>
       </div>
     </div><!-- end of tablet nav menu row  -->
@@ -456,13 +456,13 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
   </details>
   
   <details class="mobile-league-accordion">
-    <summary class="mobile-league-title">Serie A</summary>
+    <summary class="mobile-league-title">Bundesliga</summary>
     <ul class="mobile-teams-list">
-      <li class="mobile-team-item"><a href="team.php?team=Juventus" class="mobile-team-link">Juventus</a></li>
-      <li class="mobile-team-item"><a href="team.php?team=AC Milan" class="mobile-team-link">AC Milan</a></li>
-      <li class="mobile-team-item"><a href="team.php?team=Inter Milan" class="mobile-team-link">Inter Milan</a></li>
-      <li class="mobile-team-item"><a href="team.php?team=Napoli" class="mobile-team-link">Napoli</a></li>
-      <li class="mobile-team-item"><a href="team.php?team=Roma" class="mobile-team-link">Roma</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Dortmund" class="mobile-team-link">Borussia Dortmund</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Bayern Munich" class="mobile-team-link">Bayern Munich</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Bayern Leverkusen" class="mobile-team-link">Bayern Leverkusen</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=St. Pauli" class="mobile-team-link">St. Pauli</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Frankfurt" class="mobile-team-link">Eintrach Frankfurt</a></li>
     </ul>
   </details>
 
@@ -478,13 +478,13 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
   </details>
   
   <details class="mobile-league-accordion">
-    <summary class="mobile-league-title">International</summary>
+    <summary class="mobile-league-title">Serie A</summary>
     <ul class="mobile-teams-list">
-      <li class="mobile-team-item"><a href="team.php?team=England" class="mobile-team-link">England</a></li>
-      <li class="mobile-team-item"><a href="team.php?team=Scotland" class="mobile-team-link">Scotland</a></li>
-      <li class="mobile-team-item"><a href="team.php?team=Germany" class="mobile-team-link">Germany</a></li>
-      <li class="mobile-team-item"><a href="team.php?team=Brazil" class="mobile-team-link">Brazil</a></li>
-      <li class="mobile-team-item"><a href="team.php?team=Argentina" class="mobile-team-link">Argentina</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Napoli" class="mobile-team-link">Napoli</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Roma" class="mobile-team-link">Roma</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Juventus" class="mobile-team-link">Juventus</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=Inter Milan" class="mobile-team-link">Inter Milan</a></li>
+      <li class="mobile-team-item"><a href="team.php?team=AC Milan" class="mobile-team-link">AC Milan</a></li>
     </ul>
   </details>
 

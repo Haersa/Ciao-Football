@@ -2840,7 +2840,7 @@ meter::-moz-meter-bar {
 
 .products-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   width: 100%;
   max-width: 1400px;
@@ -2854,8 +2854,8 @@ meter::-moz-meter-bar {
 }
 
 .product-image {
-  height: 350px;
-  width: 350px;
+  height: 400px;
+  width: 400px;
   overflow: hidden;
 }
 
