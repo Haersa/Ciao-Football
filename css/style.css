@@ -1664,7 +1664,7 @@ footer {
   }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 600px) {
   .hero-text {
     width: 100%;
     clip-path: none;
