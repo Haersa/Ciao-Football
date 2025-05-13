@@ -21,9 +21,9 @@ $productDesc = trim($_POST['description']);
 $current_image = $_POST['current_image'];
 
 // Validate empty fields
-if(empty($equipmentName) || empty($productCategory) || empty($productBrand) || empty($productDesc)) {
+if(empty($equipmentName) || empty($productCategory) || empty($productBrand) || empty ($productPrice) || empty($productQuantity) || empty($productDesc)) {
     $_SESSION['Failed'] = true; // set failed session flag to true
-    $_SESSION['FailMessage'] = "All required fields must be filled " . $errorIcon; // display error message
+    $_SESSION['FailMessage'] = "All fields must be filled " . $errorIcon; // display error message
     header('Location: ' . $_SERVER['HTTP_REFERER']); // revert the user back to the same page to let them try again
     exit();
 }
