@@ -96,13 +96,13 @@ if(strlen($shirtDesc) > 200){
 }
 
 // Set database image path to current image
-$dbimagePath = $currentImage
+$dbimagePath = $currentImage;
 
 // generate a random 4-digit ID for the image (this is to prevent images having the same name)
 $generateNewImageID = rand(1000, 9999);
 
 // Handle image upload if a new one is provided
-if(isset($_FILES['image']) && $_FILES['image'] ['error'] === 0){{
+if(isset($_FILES['image']) && $_FILES['image'] ['error'] === 0){
     $allowedFileFormats = ['image/jpeg', 'image/jpg', 'image/png']; // store the allowed image file formats in an array
     $uploadedImageFormat = $_FILES['image']['type']; // get the uploaded image's file format
 
@@ -118,18 +118,18 @@ if(isset($_FILES['image']) && $_FILES['image'] ['error'] === 0){{
     $fileExtension = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION); // get the file extension from the file name
 
     // Create new filename with extension
-    $newFileName = 'shirt_' . $shirtTeam. '_' . $shirtYear. $generateNewImageID . '.' . $fileExtension // generate and append a random 4 digit number to the image file
+    $newFileName = 'shirt_' . $shirtTeam. '_' . $shirtYear. $generateNewImageID . '.' . $fileExtension; // generate and append a random 4 digit number to the image file
 
     // Create directory if it doesn't exist
 
     $uploadDir = '../productimages/';
     if(!file_exists($uploadDir)){
-        mddir($uploadDir, 0777, true);
+        mkdir($uploadDir, 0777, true);
     }
 
     // Set upload paths
     $uploadPath = __DIR__ . '/../productimages/' . $newFileName; // set the upload path
-    $dbImagePath = 'productimages/' . $newFileName // set the database upload path
+    $dbImagePath = 'productimages/' . $newFileName; // set the database upload path
 
     // If the file already exists, delete it
     if(file_exists($uploadPath)) {
@@ -156,16 +156,44 @@ if(isset($_FILES['image']) && $_FILES['image'] ['error'] === 0){{
     }
 
     // Update shirt item in database
-    $updateQuery = "UPDATE shirts set name = ?, "
+    $updateQuery = "UPDATE shirts set team = ?, category = ?, year = ?, type = ?, size = ?, sale = ?, price = ?, description = ?, image = ?, rating = ? WHERE shirt_id = ?";
 
+    // Prepare upate statement
     $stmt = mysqli_prepare($conn, $updateQuery);
 
+    // Bind parameters
+    mysqli_stmt_bind_param($stmt, "ssssssdssdsi", $shirtTeam,  $shirtCategory, $shirtYear, $shirtType, $shirtSize, $isSale, $shirtPrice, $shirtDesc, $dbImagePath, $shirtRating, $shirt_ID
+);
+    
+    // Execute Statement
+    if(mysqli_stmt_execute($stmt)){
+        $_SESSION['Success'] = true; // set success session variable to true for displaying success message
+        $_SESSION['SuccessMessage'] = "Shirt updated successfully" . $successIcon; // display success message to user
+        header('Location: ../admin/ciaoproducts.php'); // redirect to shirt products page incase the admin needs to update more products 
+    } else {
+        // If database insert fails, delete the uploaded image 
+        if (file_exists($uploadPath)) {
+            unlink($uploadPath); // delete the uploaded image
+        }
+        
+        $_SESSION['Failed'] = true; // set failed session variable to true for displaying error message
+        $_SESSION['FailMessage'] = "Error updating shirt data " . $errorIcon; // display error message to user 
+        header('Location: ' . $_SERVER['HTTP_REFERER']); // refresh page to let user try again
+    }
+    
+    // Close the prepared statement
+    mysqli_stmt_close($stmt);
+    
+} else {
+    // No file was uploaded or an error occurred
+    $_SESSION['Failed'] = true; // set failed session variable to true for displaying error message
+    $_SESSION['FailMessage'] = "Please upload an image file" . $errorIcon; // display error message to user
+    header('Location: ' . $_SERVER['HTTP_REFERER']); // refresh page to let user try again
+    exit();
+}
 
 
-}}
-
-
-
-
-
+// Close database connection
+mysqli_close($conn);
+exit();
 ?>
