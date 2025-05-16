@@ -95,5 +95,77 @@ if(strlen($shirtDesc) > 200){
     exit();
 }
 
+// Set database image path to current image
+$dbimagePath = $currentImage
+
+// generate a random 4-digit ID for the image (this is to prevent images having the same name)
+$generateNewImageID = rand(1000, 9999);
+
+// Handle image upload if a new one is provided
+if(isset($_FILES['image']) && $_FILES['image'] ['error'] === 0){{
+    $allowedFileFormats = ['image/jpeg', 'image/jpg', 'image/png']; // store the allowed image file formats in an array
+    $uploadedImageFormat = $_FILES['image']['type']; // get the uploaded image's file format
+
+    // Check if the uploaded file is an allowed/accepted file format
+    if(!in_array($uploadedImageFormat, $allowedFileFormats)) {
+        $_SESSION['Failed'] = true; // set failed session variable to true for displaying error message
+        $_SESSION['FailMessage'] = "Only JPEG and PNG images are allowed " . $errorIcon; // display error message to user
+        header('Location: ' . $_SERVER['HTTP_REFERER']); // revert the user back to the same page to let them try again
+        exit();
+    }
+
+    // Get file extension from original filename
+    $fileExtension = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION); // get the file extension from the file name
+
+    // Create new filename with extension
+    $newFileName = 'shirt_' . $shirtTeam. '_' . $shirtYear. $generateNewImageID . '.' . $fileExtension // generate and append a random 4 digit number to the image file
+
+    // Create directory if it doesn't exist
+
+    $uploadDir = '../productimages/';
+    if(!file_exists($uploadDir)){
+        mddir($uploadDir, 0777, true);
+    }
+
+    // Set upload paths
+    $uploadPath = __DIR__ . '/../productimages/' . $newFileName; // set the upload path
+    $dbImagePath = 'productimages/' . $newFileName // set the database upload path
+
+    // If the file already exists, delete it
+    if(file_exists($uploadPath)) {
+        unlink($uploadPath); // delete the existing file
+    }
+
+    // Move the new file to the folder
+    if(!move_uploaded_file($_FILES['image']['tmp_name'], $uploadPath)){
+        $_SESSION['Failed'] = true; // set failed session variable to true for displaying error message
+        $_SESSION['FailMessage'] = "Failed to save the uploaded image " . $errorIcon; // display error message to user
+        header('Location: ' . $_SERVER['HTTP_REFERER']); // revert the user back to the same page to let them try again
+        exit();
+    }
+
+    // Delete old image if it exists
+    $old_image_path = __DIR__ . '/../' . $currentImage;
+    if(!empty($currentImage) && file_exists($old_image_path)){
+        unlink($old_image_path); // delete the old image
+    }
+
+    // If the rating input is left empty in the form, set a default value of 0
+    if(empty($shirtRating)){
+        $shirtRating = 0.0; // default rating if none is provided
+    }
+
+    // Update shirt item in database
+    $updateQuery = "UPDATE shirts set name = ?, "
+
+    $stmt = mysqli_prepare($conn, $updateQuery);
+
+
+
+}}
+
+
+
+
 
 ?>

@@ -142,7 +142,7 @@ if(empty($productRating)) {
     $productRating = 0.0; // default rating if none provided
 }
 
-// Update equipment in database
+// Update equipment item in database
 $updateQuery = "UPDATE equipment SET name = ?,  category = ?, brand = ?, price = ?, quantity = ?, rating = ?, sale = ?, description = ?, image = ? WHERE equipment_id = ?";
 
 $stmt = mysqli_prepare($conn, $updateQuery);
