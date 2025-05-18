@@ -2716,7 +2716,6 @@ meter::-moz-meter-bar {
 }
 
 /* product page styles */
-/* product page styles */
 
 .product-hero {
   background-color: var(--background);
@@ -2873,7 +2872,7 @@ meter::-moz-meter-bar {
 }
 
 .product-image {
-  height: 400px;
+  height: 500px;
   width: 100%;
   overflow: hidden;
 }
