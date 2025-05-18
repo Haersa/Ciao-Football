@@ -10,15 +10,12 @@ include('../components/header.php');
 <?php 
 // back to top button
 include('../components/backtotopbutton.php');
+
+include('../components/equipmentproductfilter.php');
 ?>
 
 <!-- Main content of the page starts here -->
 <main>
-  <section class="hero">
-    <h1>Equipment</h1>
-    <p>Your destination for premium football gear</p>
-  </section>
-  
   <section class="product-grid"><!-- product grid section -->
     <?php 
     // SQL statement for all non-sale equipment products
@@ -35,55 +32,51 @@ include('../components/backtotopbutton.php');
     $result = $stmt->get_result();
 
     // Check if any products were found
-    if ($result->num_rows > 0) {
-        // If a product is found
-        echo '<div class="products-container">';
+if ($result->num_rows > 0) {
+    // If a product is found
+    echo '<div class="products-container">';
+    
+    // Use while loop to display each product
+    while ($row = $result->fetch_assoc()) { 
+        // Create a product card for each item
+        echo '<div class="product-card">';
         
-        // Use while loop to display each product
-        while ($row = $result->fetch_assoc()) { 
-            // Create a product card for each item
-            echo '<div class="product-card">';
-            
-            // display the product image from productimages folder
-            echo '<div class="product-image">';
-            echo '<img src="../' . $row['image']  . '" alt="' . $row['brand'] . ' ' .  $row['name']. '">'; // use product data for alt tag
-            echo '</div>';
-            
-            // Product details
-            echo '<form method="POST" action="../backend/addbasket.php">';
-            echo '<div class="product-details">';
-            echo '<div class = "product-top-row">';// start of top row container
-            echo '<h2 class="product-team">' . $row['name'] . '</h2>'; // equipment name
-            echo '<p class="product-year">' . $row['category'] . '</p>'; // equipment category
-            echo '</div>'; // end of top row container
-            
-            echo '<div class = "product-info">'; // start of product info container
-            echo '<p class="product-type">' . $row['brand'] . '</p>'; // equipment brand
-            echo '</div>'; // end of product info container
-            
-            echo '<div class = "product-bottom-row">';
-            echo '<p class="product-price">£' . number_format($row['price'], 2) . '</p>'; // price formatted with pound symbol
-            echo '</div>';
-            
-            echo '<div class = "product-rating">';
-            echo '<p class = "product-rating-text">Rating: ' . number_format($row['rating'], 1) . '/5' . '</p>';
-            echo '</div>';
-            
-            echo '<div class="product-actions">';
-            echo '<input type="hidden" name="equipment_id" value="' . $row['equipment_id'] . '">';
-            echo '<button type="submit" class="basket-button">Add to Basket</button>'; // add to cart button
-            echo '</form>';
-            echo '<a href="productdetails.php?id=' . $row['equipment_id'] . '&type=equipment" class="view-button">View More</a>'; // view product details button
-            echo '</div>';
-            echo '</div>';
-                      
-            echo '</div>'; // End product card
-        }
+        echo '<div class="product-year-tag">' . $row['category'] . '</div>';
         
-        echo '</div>'; // End products container
-    } else {
-        echo '<div class="no-products">No equipment products found</div>'; // if no products are found, display this error to user
+        // display the product image from productimages folder
+        echo '<div class="product-image">';
+        echo '<img src="../' . $row['image']  . '" alt="' . $row['brand'] . ' ' .  $row['name']. '">'; // use product data for alt tag
+        echo '</div>';
+        
+        // Product details
+        echo '<form method="POST" action="../backend/addbasket.php">';
+        echo '<div class="product-details">';
+        
+        echo '<div class="product-info-row">';
+        echo '<div class="product-team">' . $row['name'] . '</div>'; 
+        echo '<div class="product-type">' . $row['brand'] . '</div>';
+        echo '</div>';
+        
+        echo '<div class="product-info-row">';
+        echo '<div class="product-rating-text">' . number_format($row['rating'], 1) . ' <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#f1c40f" stroke="#f1c40f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>';
+        echo '<div class="product-price">£' . number_format($row['price'], 2) . '</div>'; // price formatted with pound symbol
+        echo '</div>';
+        
+        echo '<div class="product-actions">';
+        echo '<input type="hidden" name="equipment_id" value="' . $row['equipment_id'] . '">';
+        echo '<button type="submit" class="basket-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag-icon lucide-shopping-bag"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></button>';
+        echo '</form>';
+        echo '<a href="productdetails.php?id=' . $row['equipment_id'] . '&type=equipment" class="view-button">View More</a>'; // view product details button
+        echo '</div>';
+        
+        echo '</div>'; 
+        echo '</div>'; // End product card
     }
+    
+    echo '</div>'; // End products container
+} else {
+    echo '<div class="no-products">No equipment products found</div>'; // if no products are found, display this error to user
+}
 
     // Close statement
     $stmt->close();
