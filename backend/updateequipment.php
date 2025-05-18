@@ -21,9 +21,9 @@ $productDesc = trim($_POST['description']);
 $current_image = $_POST['current_image'];
 
 // Validate empty fields
-if(empty($equipmentName) || empty($productCategory) || empty($productBrand) || empty($productDesc)) {
+if(empty($equipmentName) || empty($productCategory) || empty($productBrand) || empty ($productPrice) || empty($productQuantity) || empty($productDesc)) {
     $_SESSION['Failed'] = true; // set failed session flag to true
-    $_SESSION['FailMessage'] = "All required fields must be filled " . $errorIcon; // display error message
+    $_SESSION['FailMessage'] = "All fields must be filled " . $errorIcon; // display error message
     header('Location: ' . $_SERVER['HTTP_REFERER']); // revert the user back to the same page to let them try again
     exit();
 }
@@ -142,7 +142,7 @@ if(empty($productRating)) {
     $productRating = 0.0; // default rating if none provided
 }
 
-// Update equipment in database
+// Update equipment item in database
 $updateQuery = "UPDATE equipment SET name = ?,  category = ?, brand = ?, price = ?, quantity = ?, rating = ?, sale = ?, description = ?, image = ? WHERE equipment_id = ?";
 
 $stmt = mysqli_prepare($conn, $updateQuery);

@@ -101,7 +101,7 @@ if ($productType === 'shirt') { // if the product type in the url is shirt
                         </svg>
                     </span>
                 </label>
-                <input type="text" id="team" name="team" class="shirt-form-input" value="<?php echo htmlspecialchars($product['team']); ?>"> <!-- team name input, displays current team name -->
+                <input type="text" id="team" name="team" class="shirt-form-input" minlength = "0" maxlength = "50" value="<?php echo htmlspecialchars($product['team']); ?>"> <!-- team name input, displays current team name -->
             </div>
 
             <div class="shirt-form-group">
@@ -132,7 +132,7 @@ if ($productType === 'shirt') { // if the product type in the url is shirt
                         </svg>
                     </span>
                 </label>
-                <input type="text" id="year" name="year" class="shirt-form-input" placeholder="e.g. 22/23" value="<?php echo htmlspecialchars($product['year']); ?>"> <!-- year input, displays current year value -->
+                <input type="text" id="year" name="year" class="shirt-form-input" placeholder="e.g. 22/23" minlength = "2" maxlength = "8" value="<?php echo htmlspecialchars($product['year']); ?>"> <!-- year input, displays current year value -->
             </div>
 
             <div class="shirt-form-group">

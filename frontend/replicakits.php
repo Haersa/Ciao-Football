@@ -54,7 +54,7 @@ if (isset($_GET['sort'])) {
   $result = $stmt->get_result();
 
     // Check if any products were found
-    if ($result->num_rows > 0) {
+      if ($result->num_rows > 0) {
     // If a product is found
     echo '<div class="products-container">';
     
