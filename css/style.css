@@ -3044,6 +3044,10 @@ meter::-moz-meter-bar {
   font-family: var(--font-secondary);
   color: var(--text-colour);
   font-weight: var(--font-weight-400);
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (min-width: 1028px) and (orientation: portrait) {
