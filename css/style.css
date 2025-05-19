@@ -2942,6 +2942,11 @@ meter::-moz-meter-bar {
   color: var(--text-colour);
   font-family: var(--font-secondary);
   text-transform: capitalize;
+  background-color: var(--grey-accent);
+  box-sizing: border-box;
+  padding: 0.25rem 0.35rem 0.25rem 0.35rem;
+  border-radius: 5px;
+  border: 1px solid var(--text-colour);
 }
 
 .product-size {
