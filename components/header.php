@@ -20,6 +20,13 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
     unset($_SESSION['Failed']);
     unset($_SESSION['FailMessage']);
 }
+
+// set lucide icons in variables
+$errorIcon = '<svg alt = "success icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8b0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-triangle-alert"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>';
+$successIcon = '<svg alt = "error icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0a5c36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-check"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>';
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -109,7 +116,7 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
           <div class="search-container">
             <!-- start of search container-->
               <!-- search icon-->
-            <svg
+            <svg alt = "open search bar"
               id="search-icon"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -130,7 +137,7 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
               <div class="search-input-container">
                 <input type="text" placeholder="Search..." />
                 <button type="button" aria-label="Search" class="close-container">
-                  <svg
+                  <svg alt = "search icon"
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
                     height="20"
@@ -156,7 +163,7 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
   <!-- start of cart container-->
   <a href="basket.php" aria-label="Basket" class="basket-link">
     <!-- shopping bag/basket icon-->
-    <svg
+    <svg alt = "Your basket"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -183,9 +190,9 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
 </div>
 <!-- end of cart container-->
            <div class = "tablet-burger-container"><!-- burger menu for tablet screens -->
-           <svg id="tablet-burger-button" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shirt-icon lucide-shirt"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>        </div>
+           <svg alt = "open tablet menu" id="tablet-burger-button" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shirt-icon lucide-shirt"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>        </div>
         <div class="burger-container">
-          <svg id="burger-button" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          <svg alt = "open tablet menu" id="burger-button" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
         </div>
         <!--end of action container-->
       </div>
@@ -269,7 +276,7 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
       <h2>Shop by:</h2>
     </div>
     <div id="close-tablet-menu" class="tablet-menu-close"> <!-- tablet menu closing button -->
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#050505" stroke="#050505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x">
+      <svg alt = "close tablet menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#050505" stroke="#050505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x">
         <path d="M18 6 6 18" />
         <path d="m6 6 12 12" />
       </svg>
@@ -361,7 +368,7 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
   <section class="basket-icon">
   <a href="basket.php" aria-label="Basket" class="basket-link">
     <!-- shopping bag/basket icon-->
-    <svg
+    <svg alt = "Your basket"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -388,7 +395,7 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
 </section>
     
     <section id="close-burger" class="close-button">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x">
+      <svg alt = "close mobile menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x">
         <path d="M18 6 6 18" />
         <path d="m6 6 12 12" />
       </svg>
@@ -399,7 +406,7 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
   <section class="mobile-search"> <!-- mobile menu search bar -->
     <input type="text" placeholder="Search..." />
       <button aria-label="Search" type="submit">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search">
+        <svg alt = "open search bar" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search">
           <circle cx="11" cy="11" r="8" />
             <path d="m21 21-4.3-4.3" />
         </svg>
