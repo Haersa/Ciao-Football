@@ -1428,6 +1428,7 @@ footer {
   height: 1.2rem;
   margin-left: 1rem;
   accent-color: var(--text-colour);
+  cursor: pointer;
 }
 
 .register-button {
@@ -1532,7 +1533,7 @@ footer {
 .hero {
   position: relative;
   width: 100%;
-  height: 70vh;
+  height: 75vh;
   overflow: hidden;
 }
 
