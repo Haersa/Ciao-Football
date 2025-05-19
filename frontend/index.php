@@ -63,7 +63,7 @@ include('../components/backtotopbutton.php');
           <h3>Arsenal FC</h3>
           <a href="team.php?team=Arsenal" >Shop Arsenal FC</a>
         </div>
-        <img src="../images/arsenalbadge.png" alt="Arsenal FC">
+        <img src="../images/arsenalbadge.png" loading = "lazy" alt="Arsenal FC">
       </div>
       
       <!-- Inter Milan -->
@@ -72,16 +72,16 @@ include('../components/backtotopbutton.php');
           <h3>Inter Milan</h3>
           <a href="team.php?team=Inter Milan" >Shop Inter Milan</a>
         </div>
-        <img src="../images/interbadge.png" alt="Inter Milan">
+        <img src="../images/interbadge.png" loading = "lazy" alt="Inter Milan">
       </div>
       
       <!-- Barcelona -->
       <div class="quick-link-grid-item">
         <div class="quick-link-overlay">
           <h3>Barcelona</h3>
-          <a href="team.php?team=Barcelona" >Shop Barcelona</a>
+          <a href="team.php?team=Barcelona">Shop Barcelona</a>
         </div>
-        <img src="../images/barcabadge.png" alt="Barcelona">
+        <img src="../images/barcabadge.png" loading = "lazy" alt="Barcelona">
       </div>
       
       <!-- Liverpool FC -->
@@ -90,7 +90,7 @@ include('../components/backtotopbutton.php');
           <h3>Liverpool FC</h3>
           <a href="team.php?team=Liverpool">Shop Liverpool FC</a>
         </div>
-        <img src="../images/liverpoolbadge.png" alt="Liverpool FC">
+        <img src="../images/liverpoolbadge.png" loading = "lazy" alt="Liverpool FC">
       </div>
       
       <!-- Juventus -->
@@ -99,7 +99,7 @@ include('../components/backtotopbutton.php');
           <h3>Juventus</h3>
           <a href="team.php?team=Juventus">Shop Juventus</a>
         </div>
-        <img src="../images/juvebadge.png" alt="Juventus">
+        <img src="../images/juvebadge.png" loading = "lazy" alt="Juventus">
       </div>
       
       <!-- Manchester United -->
@@ -109,7 +109,7 @@ include('../components/backtotopbutton.php');
           <h3 class="small-text">Man Utd</h3>
           <a href="team.php?team=Man Utd">Shop Manchester Utd</a>
         </div>
-        <img src="../images/manutdbadge.png" alt="Manchester United">
+        <img src="../images/manutdbadge.png" loading = "lazy" alt="Manchester United">
       </div>
       
     </div><!-- quick link grid ends -->
@@ -128,7 +128,7 @@ include('../components/Ciaoreviews.php');
 
   <section class="feature-container"> <!-- feature container -->
         <div class="box">
-        <img src="../images/retrokit.png" class = "retro-img"  alt="Featured product 1">
+        <img src="../images/retrokit.png" class = "retro-img"  alt="Featured product 1" loading = "lazy">
             <div class="feature-overlay">
                 <h2>Retro Kits</h2>
                 <a href="retrokits.php" rel = "noopener noreferrer" class="feature-button">Shop Now</a>
@@ -136,7 +136,7 @@ include('../components/Ciaoreviews.php');
         </div>
         
         <div class="box">
-            <img src="../images/specialist.png" class = "specialist-img" alt="Featured product 2">
+            <img src="../images/specialist.png" class = "specialist-img" alt="Featured product 2" loading = "lazy">
             <div class="feature-overlay">
                 <h2>Specialist Kits</h2>
                 <a href="specialistkits.php" rel = "noopener noreferrer" class="feature-button">Shop Now</a>
