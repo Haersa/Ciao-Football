@@ -25,12 +25,12 @@ include('../components/adminmenu.php');
             <form class = "admin-creation-form" method = "POST" action = "../backend/createadminaccount.php"><!-- start of form -->
                 <div class = "admin-creation-form-group"><!-- start of form group -->
                     <label for = "username">Email (Username)</label><!-- input label -->
-                        <input type = "email" name = "username" placeholder = "Username:" minlength = "10" maxlength = "50"><!-- input field -->
+                        <input type = "email" name = "username" placeholder = "Username:" minlength = "10" maxlength = "50" required><!-- input field -->
                 </div><!-- end of form group -->
 
                 <div class = "admin-creation-form-group"><!-- start of form group -->
                     <label for = "password">Password</label><!-- input label -->
-                        <input type = "password" name = "password" placeholder = "Password:" minlength = "10" maxlength = "50"><!-- input field -->
+                        <input type = "password" name = "password" placeholder = "Password:" minlength = "10" maxlength = "50" required><!-- input field -->
                 </div><!-- end of form group -->
                 <div class="admin-creation-form-group">
                     <button type="submit" class="admin-creation-submit-button">Create Admin Account</button>

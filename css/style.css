@@ -3076,9 +3076,243 @@ meter::-moz-meter-bar {
 
 /* end of product page styles */
 
-/* product details page styles */
+/* Product details page (shirt product design) */
+.product-details-container {
+  padding: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-/* end of product details page styles */
+.shirt-product-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.product-image-side {
+  background-color: var(--grey-accent);
+  border-radius: 10px;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-details-hero-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  max-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-details-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-height: 600px;
+}
+
+.product-tags-container {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.product-tag-item {
+  padding: 0.5rem;
+  background-color: var(--grey-accent);
+  box-sizing: border-box;
+  font-family: var(--font-secondary);
+  font-size: var(--text-small);
+  color: var(--text-colour);
+  border-radius: 5px;
+}
+
+.product-tag-item:last-of-type {
+  background-color: var(--accent-colour);
+  color: var(--background);
+}
+
+.product-name-display {
+  margin-bottom: 0.5rem;
+}
+
+.product-rating-display {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.product-secondary-info {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  background-color: var(--grey-accent);
+  border-radius: 5px;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  width: fit-content;
+  margin-bottom: 0.5rem;
+}
+
+.product-category-display {
+  padding-inline: 0.5rem;
+  border-left: 1px solid var(--text-colour);
+  border-right: 1px solid var(--text-colour);
+  text-transform: capitalize;
+  font-size: var(--text-small);
+}
+
+.product-year-display,
+.rating-subtext {
+  font-size: var(--text-small);
+}
+.product-price {
+  font-weight: var(--font-weight-600);
+  font-size: var(--text-h1);
+  font-family: var(--font-primary);
+  color: var(--text-colour);
+}
+
+.size-guide-link {
+  color: var(--text-colour);
+  font-size: var(--text-link);
+}
+
+.size-value {
+  color: var(--text-colour);
+}
+
+.unique-item-note {
+  font-style: italic;
+}
+
+.add-to-cart-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--accent-colour);
+  color: var(--background);
+  font-weight: var(--font-weight-600);
+  font-family: var(--font-primary);
+  font-size: var(--text-button);
+  cursor: pointer;
+  margin-top: 1.5rem;
+}
+
+.shopping-bag-icon {
+  vertical-align: middle;
+}
+
+.product-description {
+  background-color: var(--grey-accent);
+  border-radius: 5px;
+  padding: 1rem;
+  box-sizing: border-box;
+  margin-top: 1rem;
+  line-height: 1.4;
+}
+
+.product-description h3 {
+  margin-bottom: 0.25rem;
+}
+
+/* Size Guide Table */
+.size-guide-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--grey-accent);
+}
+
+.size-guide-section h2 {
+  margin-bottom: 0.5rem;
+}
+
+.size-chart {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+.size-chart td {
+  font-weight: var(--font-weight-500);
+}
+
+.size-chart th {
+  font-weight: var(--font-weight-400);
+}
+
+.size-chart th,
+.size-chart td {
+  border: 1px solid var(--grey-accent);
+  padding: 0.75rem;
+  text-align: center;
+  font-family: var(--font-primary);
+  color: var(--text-colour);
+  font-size: var(--text-body);
+}
+
+.size-chart th {
+  background-color: var(--grey-accent);
+  color: var(--text-colour);
+}
+
+.size-chart tr:nth-child(2),
+.size-chart tr:nth-child(4) {
+  background-color: var(--grey-accent);
+}
+
+.measuring-guide {
+  margin-top: 2rem;
+}
+
+.measuring-guide h3 {
+  margin-bottom: 1rem;
+}
+
+.measuring-guide ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.measuring-guide li {
+  margin-bottom: 0.5rem;
+  font-family: var(--font-secondary);
+  color: var(--text-colour);
+  font-size: var(--text-small);
+  font-weight: var(--font-weight-400);
+}
+
+@media (min-width: 768px) {
+  .shirt-product-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .product-image-side {
+    width: 50%;
+  }
+
+  .product-details-side {
+    width: 50%;
+    padding-left: 2rem;
+  }
+}
+
+/* End of Product details page (shirt product design) */
 
 /* basket page styles */
 
@@ -4038,10 +4272,6 @@ meter::-moz-meter-bar {
   }
 }
 /* end of review order action styles */
-
-/* start of billing address form page */
-
-/* end of billing address form page */
 
 /* start of shipping details styles */
 .shipping-details-container {

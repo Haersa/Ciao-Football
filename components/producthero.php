@@ -11,7 +11,6 @@
           <option value="" selected disabled hidden class="product-sort-button">Sort by:</option>
           <option value="price_asc" <?php echo (isset($_GET['sort']) && $_GET['sort'] == 'price_asc') ? 'selected' : ''; ?>>Price: Lowest</option>
           <option value="price_desc" <?php echo (isset($_GET['sort']) && $_GET['sort'] == 'price_desc') ? 'selected' : ''; ?>>Price: Highest</option>
-          <option value="rating" <?php echo (isset($_GET['sort']) && $_GET['sort'] == 'rating') ? 'selected' : ''; ?>>Rating</option>
         </select>
         
         <!-- Size filter -->
