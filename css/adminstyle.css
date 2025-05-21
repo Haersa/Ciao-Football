@@ -2127,6 +2127,10 @@ main {
   }
 }
 
+.edit-product{
+  background-color: var(--background)!important; /* add a different background colour to edit product page go back button */
+}
+
 /* customer contact form submissions styles start */
 
 /* customer contact form submissions styles end */
