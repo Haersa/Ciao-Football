@@ -215,9 +215,116 @@ include('../components/backtotopbutton.php');
             </section>
         <?php endif; ?>
         
-        <?php if ($type == 'equipment'): ?> <!-- and product type = equipment -->
-            <!-- Equipment product layout here -->
-        <?php endif; ?>
+<?php if ($type == 'equipment'): ?> <!-- or, if product type = equipment -->
+    <section class="product-details-page-shirt-product-wrapper">
+        <!-- Product Image - Left side -->
+        <div class="product-details-page-image-side">
+            <div class="product-details-page-hero-image">
+                <img src="../<?php echo $product['image']; ?>" alt="<?php echo $product['name'] . ' ' . $product['category'] . ' equipment'; ?>"> <!-- display the products image and form the alt tag based on product info -->
+            </div>
+        </div>
+        
+        <!-- Product Details - Right side -->
+        <div class="product-details-page-details-side">
+            <div class="product-details-page-tags-container"> <!-- small product tags -->
+                <div class="product-details-page-tag-item">Category:</div> 
+                <div class="product-details-page-tag-item equipment-tag-item"><?php echo $product['category']; ?></div> 
+            </div>
+
+            <!-- Product Name display -->
+            <div class="product-details-page-name-display">
+                <h1>
+                    <?php echo $product['name']; ?> <!-- echo title based on the specific products details -->
+                </h1>
+            </div>
+            
+            <!-- Product secondary info container -->
+            <div class="product-details-page-secondary-info">
+                <div class="product-details-page-rating-display">
+                    <p class="product-details-page-rating-subtext"><?php echo $product['rating']; ?></p> <!-- display the products rating -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f1c40f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="star-icon">
+                        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/>
+                    </svg>
+                </div>
+                <p class="product-details-page-category-display">Category: <?php echo $product['category']; ?></p> <!-- display the products category -->
+                <p class="product-details-page-year-display">Brand: <?php echo $product['brand']; ?></p> <!-- display the brand of the product -->
+            </div>
+            
+            <!-- Product Price -->
+            <div class="product-details-page-price">
+                <h2>£<?php echo $product['price']; ?></h2> <!-- display the products price -->
+            </div>
+            
+            <!-- Size Information - removed for equipment -->
+            
+            <!-- Unique Item Note -->
+            <div class="product-details-item-quantity">
+                <p>Quantity Remaining: <?php echo $product['quantity']; ?></p>
+            </div>
+            
+            <!-- Add to Basket Button-->
+            <form method="POST" action="../backend/addbasket.php"> <!--  add to basket form -->
+                <input type="hidden" name="equipment_id" value="<?php echo $product['equipment_id']; ?>">
+                <button type="submit" class="product-details-page-add-to-cart-button"> <!-- add to basket button -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="product-details-page-shopping-bag-icon">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    Add to Basket
+                </button><!-- end of add to basket button -->
+            </form> <!-- end of form -->
+            
+            <!-- Product Description -->
+            <div class="product-details-page-description">
+                <h3>Description</h3>
+                <p><?php echo $product['description']; ?></p> <!-- display the product description -->
+            </div>
+        </div>
+    </section>
+    
+    <div class="product-details-page-details">
+        <h2>Product Details</h2>
+        <ul>
+            <li><span class="product-details-page-additional-info-bold">Name:</span> <?php echo $product['name']; ?></li>
+            <li class = "equipment-category-list"><span class="product-details-page-additional-info-bold">Category:</span> <?php echo $product['category']; ?></li>
+            <li><span class="product-details-page-additional-info-bold">Brand:</span> <?php echo $product['brand']; ?></li>
+            <li><span class="product-details-page-additional-info-bold">Quality:</span> Professional Grade</li>
+            <li><span class="product-details-page-additional-info-bold">Features:</span> Durable construction & high performance</li>
+        </ul>
+    </div>
+    <section class="product-details-page-additional-info product-details-page-care-instructions"> <!-- additional info section -->
+        <div class="product-details-page-additional-info-heading">
+            <h2>Care Instructions</h2>
+        </div>
+        <div class="product-details-page-additional-info-content"><!-- additional info content -->
+            <ul class="product-details-page-care-instructions-list"><!-- care instructions list -->
+                <li><span class="product-details-page-additional-info-bold">Cleaning: </span>Wipe clean with damp cloth</li>
+                <li><span class="product-details-page-additional-info-bold">Drying: </span>Air dry completely before storage</li>
+                <li><span class="product-details-page-additional-info-bold">Maintenance: </span>Regular inspection recommended</li>
+                <li><span class="product-details-page-additional-info-bold">Storage: </span>Store in dry, cool place away from direct sunlight</li>
+                <li><span class="product-details-page-additional-info-bold">Handling: </span>Handle with care to maintain longevity</li>
+             </ul> <!-- end of care instructions list -->
+        </div> <!-- end of additional info content -->
+    </section> <!-- end of additional info section -->
+    <section class="product-details-page-additional-info"> <!-- additional info section -->
+        <div class="product-details-page-additional-info-heading">
+            <h2>Condition</h2>
+        </div>
+        <div class="product-details-page-additional-info-content"><!-- additional info content -->
+            <div class="product-details-page-condition-row"><!-- condition row -->
+           <div class="product-details-page-condition-tag">Excellent Condition</div>
+           <p>10/10 Guaranteed.</p>
+        </div><!-- end of condition row -->
+        <div class="product-details-page-condition-text"><!-- conditon text -->
+            <p>This equipment is in excellent condition with no signs of wear or damage. All components are fully functional and intact, 
+                with no scratches, dents, or defects to be found. The item maintains its original quality and performance standards. 
+                Perfect for training or professional use.
+            </p>
+        </div><!-- end of condition text -->
+        </div> <!-- end of additional info content -->
+    </section> <!-- end of additional info section -->
+<?php endif; ?>
         </div>
     <?php else: ?>
         <div class="product-not-found">

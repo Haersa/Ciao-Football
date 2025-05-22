@@ -2898,6 +2898,8 @@ meter::-moz-meter-bar {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.5rem;
+  padding-inline: 0.25rem;
+  box-sizing: border-box;
 }
 
 .product-team {
@@ -2994,7 +2996,7 @@ meter::-moz-meter-bar {
 }
 
 .basket-button {
-  width: 45px;
+  width: 55px;
   height: 45px;
   display: flex;
   align-items: center;
@@ -3086,7 +3088,7 @@ meter::-moz-meter-bar {
 
 /* end of product page styles */
 
-/* Product details page (shirt product design) */
+/* Product details page (Both product types share same design) */
 .product-details-page-container {
   padding: 2rem;
   width: 100%;
@@ -3192,9 +3194,10 @@ meter::-moz-meter-bar {
   color: var(--text-colour);
 }
 
-.product-details-page-size-guide-link {
+.product-details-page-size-guide-link{
   color: var(--text-colour);
   font-size: var(--text-link);
+  font-family: var(--font-secondary);
 }
 
 .product-details-page-size-guide-icon {
@@ -3204,6 +3207,10 @@ meter::-moz-meter-bar {
 
 .product-details-page-size-value {
   color: var(--text-colour);
+}
+
+.product-details-page-size{
+  margin-block: 0.5rem;
 }
 
 .product-details-page-unique-item-note {
@@ -3431,7 +3438,19 @@ meter::-moz-meter-bar {
   }
 }
 
-/* End of Product details page (shirt product design) */
+.equipment-category-list {
+  text-transform: capitalize;
+}
+
+.product-details-item-quantity {
+  margin-top: 0.5rem;
+}
+
+.equipment-tag-item{
+   text-transform: capitalize;
+}
+
+/* End of Product details page  */
 
 /* basket page styles */
 
