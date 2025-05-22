@@ -97,15 +97,15 @@ include('../components/backtotopbutton.php');
                     <!-- Size Information -->
                     <div class="product-size">
                         <p>Size: <span class="size-value"><?php echo $product['size']; ?></span></p> <!-- display the products size -->
-                        <a href="#size-guide" class="size-guide-link">Size Guide</a> <!-- link to the size guide, futher down the page -->
+                        <a href="#size-guide" class="size-guide-link">Size Guide <span class = "size-guide-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#050505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg></span></a> <!-- link to the size guide, futher down the page -->
                     </div>
                     
                     <!-- Unique Item Note -->
                     <div class="unique-item-note">
-                        <p>This is a unique item</p> 
+                        <p>This is a unique item.</p> 
                     </div>
                     
-                    <!-- Add to Cart Button-->
+                    <!-- Add to Basket Button-->
                     <form method="POST" action="../backend/addbasket.php"> <!--  add to basket form -->
                         <input type="hidden" name="shirt_id" value="<?php echo $product['shirt_id']; ?>">
                         <button type="submit" class="add-to-cart-button"> <!-- add to basket button -->
@@ -114,7 +114,7 @@ include('../components/backtotopbutton.php');
                                 <line x1="3" y1="6" x2="21" y2="6"></line>
                                 <path d="M16 10a4 4 0 0 1-8 0"></path>
                             </svg>
-                            Add to Cart
+                            Add to Basket
                         </button><!-- end of add to basket button -->
                     </form> <!-- end of form -->
                     
@@ -126,6 +126,47 @@ include('../components/backtotopbutton.php');
                 </div>
             </section>
             
+            <div class="product-details">
+                <h2>Product Details</h2>
+                <ul>
+                    <li><span class = "additional-info-bold">Type:</span> <?php echo $product['type']; ?></li>
+                    <li><span class = "additional-info-bold">Size:</span> <?php echo $product['size']; ?></li>
+                    <li><span class = "additional-info-bold">Season:</span> <?php echo $product['year']; ?></li>
+                    <li><span class = "additional-info-bold">Material:</span> 100% Polyester</li>
+                    <li><span class = "additional-info-bold">Features:</span> Club Badge, sponsor & breathable fabric</li>
+                </ul>
+            </div>
+            <section class = "additional-info care-instructions"> <!-- additional info section -->
+                <div class = "additional-info-heading">
+                    <h2>Care Instructions</h2>
+                </div>
+                <div class = "additional-info-content"><!-- additional info content -->
+                    <ul class = "care-instructions-list"><!-- care instructions list -->
+                        <li><span class = "additional-info-bold">Washing: </span>Machine wash on cold setting (30°C)</li>
+                        <li><span class = "additional-info-bold">Drying: </span>Do not tumble dry</li>
+                        <li><span class = "additional-info-bold">Ironing: </span>Iron on low heat</li>
+                        <li><span class = "additional-info-bold">Bleaching: </span>Do not bleach, it may ruin the sponsor or badge</li>
+                        <li><span class = "additional-info-bold">Storage: </span>Hang in a cool, dry place away from direct sunlight</li>
+                     </ul> <!-- end of care instructions list -->
+                </div> <!-- end of additional info content -->
+            </section> <!-- end of additional info section -->
+            <section class = "additional-info"> <!-- additional info section -->
+                <div class = "additional-info-heading">
+                    <h2>Condition</h2>
+                </div>
+                <div class = "additional-info-content"><!-- additional info content -->
+                    <div class = "condition-row"><!-- condition row -->
+                   <div class = "condition-tag">Excellent Condition</div>
+                   <p>10/10 Guaranteed.</p>
+                </div><!-- end of condition row -->
+                <div class = "condition-text"><!-- conditon text -->
+                    <p>This shirt is in excellent condition with no signs of wear. The fabric is smooth and fully intact, with no pulls, frays or snags to be found. 
+                        Colours are bold and vibrant, showing no fading. All printing, including the sponsor, name and number, as well as the badges, are in perfect shape with no cracking or peeling. 
+                        A great example for any fan or collector.
+                    </p>
+                </div><!-- end of condition text -->
+                </div> <!-- end of additional info content -->
+            </section> <!-- end of additional info section -->
             <!-- Size Guide Section -->
             <section id="size-guide" class="size-guide-section">
                 <h2>Size Guide</h2>
@@ -171,19 +212,6 @@ include('../components/backtotopbutton.php');
                         </tr>
                     </tbody>
                 </table><!-- end of size chart table -->
-                <div class="measuring-guide">
-                    <h3>How to Measure</h3>
-                    <p>For the best fit, take measurements directly over your underwear. Hold the tape measure firmly, but not too tight.</p>
-                    <ul>
-                        <li><span class = "table-bold-heading">Chest:</span> Measure around the fullest part of your chest, keeping the tape horizontal.</li>
-                        <li><span class = "table-bold-heading">Waist:</span> Measure around your natural waistline, keeping the tape comfortably loose.</li>
-                        <li><span class = "table-bold-heading">Hip:</span> Stand with your feet together and measure around the fullest part of your hips.</li>
-                    </ul>
-                </div>
-            </section>
-            <section class = "additional-info">
-
-
             </section>
         <?php endif; ?>
         
