@@ -2890,14 +2890,14 @@ meter::-moz-meter-bar {
 }
 
 .product-details {
-  padding: 10px;
+  padding: 0.25rem;
 }
 
 .product-info-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
 }
 
 .product-team {
@@ -3087,14 +3087,14 @@ meter::-moz-meter-bar {
 /* end of product page styles */
 
 /* Product details page (shirt product design) */
-.product-details-container {
+.product-details-page-container {
   padding: 2rem;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.shirt-product-wrapper {
+.product-details-page-shirt-product-wrapper {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -3102,7 +3102,7 @@ meter::-moz-meter-bar {
   margin-bottom: 3rem;
 }
 
-.product-image-side {
+.product-details-page-image-side {
   background-color: var(--grey-accent);
   border-radius: 10px;
   padding: 2rem;
@@ -3111,7 +3111,7 @@ meter::-moz-meter-bar {
   align-items: center;
 }
 
-.product-details-hero-image {
+.product-details-page-hero-image {
   width: 100%;
   max-width: 500px;
   height: auto;
@@ -3121,21 +3121,21 @@ meter::-moz-meter-bar {
   align-items: center;
 }
 
-.product-details-hero-image img {
+.product-details-page-hero-image img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   max-height: 600px;
 }
 
-.product-tags-container {
+.product-details-page-tags-container {
   display: flex;
   gap: 0.75rem;
   align-items: center;
   margin-bottom: 0.5rem;
 }
 
-.product-tag-item {
+.product-details-page-tag-item {
   padding: 0.5rem;
   background-color: var(--grey-accent);
   box-sizing: border-box;
@@ -3145,22 +3145,22 @@ meter::-moz-meter-bar {
   border-radius: 5px;
 }
 
-.product-tag-item:last-of-type {
+.product-details-page-tag-item:last-of-type {
   background-color: var(--accent-colour);
   color: var(--background);
 }
 
-.product-name-display {
+.product-details-page-name-display {
   margin-bottom: 0.5rem;
 }
 
-.product-rating-display {
+.product-details-page-rating-display {
   display: flex;
   gap: 0.25rem;
   align-items: center;
 }
 
-.product-secondary-info {
+.product-details-page-secondary-info {
   display: flex;
   gap: 0.75rem;
   align-items: center;
@@ -3172,7 +3172,7 @@ meter::-moz-meter-bar {
   margin-bottom: 0.5rem;
 }
 
-.product-category-display {
+.product-details-page-category-display {
   padding-inline: 0.5rem;
   border-left: 1px solid var(--text-colour);
   border-right: 1px solid var(--text-colour);
@@ -3180,36 +3180,37 @@ meter::-moz-meter-bar {
   font-size: var(--text-small);
 }
 
-.product-year-display,
-.rating-subtext {
+.product-details-page-year-display,
+.product-details-page-rating-subtext {
   font-size: var(--text-small);
 }
-.product-price {
+
+.product-details-page-price {
   font-weight: var(--font-weight-600);
   font-size: var(--text-h1);
   font-family: var(--font-primary);
   color: var(--text-colour);
 }
 
-.size-guide-link {
+.product-details-page-size-guide-link {
   color: var(--text-colour);
   font-size: var(--text-link);
 }
 
-.size-guide-icon{
+.product-details-page-size-guide-icon {
   align-items: center;
   vertical-align: middle;
 }
 
-.size-value {
+.product-details-page-size-value {
   color: var(--text-colour);
 }
 
-.unique-item-note {
+.product-details-page-unique-item-note {
   font-style: italic;
 }
 
-.add-to-cart-button {
+.product-details-page-add-to-cart-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3227,11 +3228,11 @@ meter::-moz-meter-bar {
   margin-top: 1.5rem;
 }
 
-.shopping-bag-icon {
+.product-details-page-shopping-bag-icon {
   vertical-align: middle;
 }
 
-.product-description {
+.product-details-page-description {
   background-color: var(--grey-accent);
   border-radius: 5px;
   padding: 1rem;
@@ -3240,37 +3241,37 @@ meter::-moz-meter-bar {
   line-height: 1.4;
 }
 
-.product-description h3 {
+.product-details-page-description h3 {
   margin-bottom: 0.25rem;
 }
 
 /* Size Guide Table */
-.size-guide-section {
+.product-details-page-size-guide-section {
   margin-top: 3rem;
   padding-top: 2rem;
   border-top: 2px solid var(--grey-accent);
 }
 
-.size-guide-section h2 {
+.product-details-page-size-guide-section h2 {
   margin-bottom: 0.5rem;
 }
 
-.size-chart {
+.product-details-page-size-chart {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 2rem;
 }
 
-.size-chart td {
+.product-details-page-size-chart td {
   font-weight: var(--font-weight-500);
 }
 
-.size-chart th {
+.product-details-page-size-chart th {
   font-weight: var(--font-weight-400);
 }
 
-.size-chart th,
-.size-chart td {
+.product-details-page-size-chart th,
+.product-details-page-size-chart td {
   border: 1px solid var(--grey-accent);
   padding: 0.75rem;
   text-align: center;
@@ -3279,33 +3280,33 @@ meter::-moz-meter-bar {
   font-size: var(--text-body);
 }
 
-.size-chart th {
+.product-details-page-size-chart th {
   background-color: var(--grey-accent);
   color: var(--text-colour);
 }
 
-.size-chart tr:nth-child(2),
-.size-chart tr:nth-child(4) {
+.product-details-page-size-chart tr:nth-child(2),
+.product-details-page-size-chart tr:nth-child(4) {
   background-color: var(--grey-accent);
 }
 
-.product-details {
+.product-details-page-details {
   margin-top: 2rem;
   padding: 0;
   border-bottom: 2px solid var(--grey-accent);
   padding-bottom: 1rem;
 }
 
-.product-details h2 {
+.product-details-page-details h2 {
   margin-bottom: 1rem;
 }
 
-.product-details ul {
+.product-details-page-details ul {
   list-style-type: none;
   margin-top: 1rem;
 }
 
-.product-details li {
+.product-details-page-details li {
   margin-bottom: 0.5rem;
   font-family: var(--font-secondary);
   color: var(--text-colour);
@@ -3316,30 +3317,29 @@ meter::-moz-meter-bar {
 
 /* additional info styles */
 
-.additional-info {
+.product-details-page-additional-info {
   width: 100%;
   height: auto;
   margin-top: 1.5rem;
 }
 
-.additional-info-heading {
+.product-details-page-additional-info-heading {
   font-family: var(--font-primary);
   font-size: var(--text-h3);
   font-weight: var(--font-weight-600);
   margin-bottom: 1rem;
 }
 
-.care-instructions{
+.product-details-page-care-instructions {
   padding-bottom: 1rem;
   border-bottom: 2px solid var(--grey-accent);
-
 }
 
-.care-instructions-list {
+.product-details-page-care-instructions-list {
   list-style-type: none;
 }
 
-.care-instructions-list li {
+.product-details-page-care-instructions-list li {
   font-weight: var(--font-weight-400);
   font-family: var(--font-secondary);
   color: var(--text-colour);
@@ -3348,14 +3348,14 @@ meter::-moz-meter-bar {
   opacity: 0.8;
 }
 
-.additional-info-bold {
+.product-details-page-additional-info-bold {
   font-weight: var(--font-weight-500);
   font-family: var(--font-secondary);
   color: var(--text-colour);
   font-size: var(--text-body);
 }
 
-.condition-row {
+.product-details-page-condition-row {
   width: 100%;
   display: flex;
   justify-content: start;
@@ -3363,12 +3363,12 @@ meter::-moz-meter-bar {
   gap: 0.5rem;
 }
 
-.condition-row p {
+.product-details-page-condition-row p {
   font-family: var(--font-secondary);
   opacity: 0.8;
 }
 
-.condition-tag {
+.product-details-page-condition-tag {
   box-sizing: border-box;
   padding: 0.5rem 0.75rem;
   border-radius: 10px;
@@ -3380,55 +3380,55 @@ meter::-moz-meter-bar {
   width: fit-content;
 }
 
-.condition-text {
+.product-details-page-condition-text {
   margin-top: 1rem;
   width: 100%;
   line-height: 1.3;
   margin-bottom: 1.5rem;
 }
 
-.condition-text p {
+.product-details-page-condition-text p {
   color: var(--text-colour);
   opacity: 0.8;
 }
 
 @media (min-width: 768px) {
-  .shirt-product-wrapper {
+  .product-details-page-shirt-product-wrapper {
     flex-direction: row;
     align-items: flex-start;
   }
 
-  .product-image-side {
+  .product-details-page-image-side {
     width: 50%;
   }
 
-  .product-details-side {
+  .product-details-page-details-side {
     width: 50%;
     padding-left: 2rem;
   }
 
-  .product-description h3 {
+  .product-details-page-description h3 {
     margin-bottom: 0.5rem;
   }
 
-  .product-description p {
+  .product-details-page-description p {
     line-height: 1.4;
   }
 }
 
 @media (max-width: 768px) {
-  .product-description h3 {
+  .product-details-page-description h3 {
     margin-bottom: 0.75rem;
   }
 
-  .product-description p {
+  .product-details-page-description p {
     line-height: 1.5;
   }
 
-.size-chart th,
-.size-chart td {
-  font-size: var(--text-small);
-}
+  .product-details-page-size-chart th,
+  .product-details-page-size-chart td {
+    font-size: var(--text-small);
+  }
 }
 
 /* End of Product details page (shirt product design) */
