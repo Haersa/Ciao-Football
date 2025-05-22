@@ -25,7 +25,7 @@ if (isset($_SESSION['Failed']) && $_SESSION['Failed']) {
 ?>
 
 
-<!-- created a billing form component, as it shares the same appearance as the shipping address form -->
+<!-- created a form component, as it shares the same appearance as the shipping address form -->
 
 <section class="shipping-details-container"><!-- start of shipping details container -->
     <div class="shipping-details-card"><!-- start of shipping details card-->

@@ -1,7 +1,7 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const burgerButton = document.querySelector(".burger-button"); // get the burger button
   const adminMenu = document.querySelector(".admin-menu"); // get the admin menu
-  const closeButton = document.querySelector(".close-menu-button"); // get the close button (added . for class)
+  const closeButton = document.querySelector(".close-menu-button"); // get the close button
 
   if (burgerButton && adminMenu) {
     burgerButton.addEventListener("click", () => {

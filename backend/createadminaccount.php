@@ -43,15 +43,15 @@ if(strlen($password) < 10 || strlen($password) > 50) {
 // Check if email (username) already exists
 $checkAdmin = "SELECT * FROM ciaousers WHERE email = ? AND Admin = 1";
 $stmt = mysqli_prepare($conn, $checkAdmin);
-mysqli_stmt_bind_param($stmt, "s", $username); // Make sure $email variable exists and contains the email being registered
+mysqli_stmt_bind_param($stmt, "s", $username); // Make sure $username variable exists and contains the email being registered
 mysqli_stmt_execute($stmt);
 $adminResult = mysqli_stmt_get_result($stmt);
 
 if (mysqli_num_rows($adminResult) > 0) {
     // An admin account with this email already exists
-    $_SESSION['Failed'] = true;
-    $_SESSION['FailMessage'] = "Admin account with this email already exists" . $errorIcon;
-    header("Location: ../admin/createadminaccount.php");
+    $_SESSION['Failed'] = true; // set session failed flag to true
+    $_SESSION['FailMessage'] = "Admin account with this email already exists" . $errorIcon; // display error message to user
+    header("Location: ../admin/createadminaccount.php"); // redirect to admin account creation page to let them try again
     mysqli_stmt_close($stmt);
     exit();
 }

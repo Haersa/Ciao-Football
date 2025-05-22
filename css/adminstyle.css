@@ -1435,7 +1435,7 @@ main {
   transform: translateY(1px);
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 900px) {
   .shirt-form-grid {
     grid-template-columns: repeat(2, 1fr);

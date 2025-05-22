@@ -2,7 +2,7 @@
 session_start();
 include('../backend/conn/conn.php'); // connection to database file
 
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0"); // these make sure the login feedback message on login is only displayed once, and isn't shown again if a user clicks the browser back arrow (found on stack overflow)
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0"); // these make sure the feedback messages areonly displayed once, and isn't shown again if a user clicks the browser back arrow 
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 

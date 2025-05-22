@@ -1,10 +1,10 @@
 <?php session_start();
-$pageTitle = "Add New Equipment"; 
-$pageDescription = "Add a new equipment product to inventory"; 
-$pageKeywords = "Add Equipment, Football Equipment"; 
+$pageTitle = "Add New Equipment"; // This will be used in the title tag
+$pageDescription = "Add a new equipment product to inventory"; // This is used as the page desciption meta tag
+$pageKeywords = "Add Equipment, Football Equipment"; // This is used as the keywords meta tag
 
-include('../components/adminheader.php');
-include('../components/adminmenu.php');
+include('../components/adminheader.php'); // Include the header file
+include('../components/adminmenu.php'); // Inlude the menu file
 ?>
 
 

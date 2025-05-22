@@ -1,8 +1,7 @@
 <?php
-// Default meta values
-$pageTitle = "Product Details"; 
-$pageDescription = "Product Details, get all the relevant info to your favourite product."; 
-$pageKeywords = "Ciao, Football, Ciao Football, Soccer, replica, shirt, football shirts, equipment, store, premium, "; 
+$pageTitle = "Product Details"; // This will be used in the title tag
+$pageDescription = "Product Details, get all the relevant info to your favourite product."; // This is used as the page desciption meta tag
+$pageKeywords = "Ciao, Football, Ciao Football, Soccer, replica, shirt, football shirts, equipment, store, premium, "; // This is used as the keywords meta tag
 
 // Get product ID and type from URL
 $id = isset($_GET['id']) ? $_GET['id'] : null;
@@ -254,9 +253,7 @@ include('../components/backtotopbutton.php');
             <div class="product-details-page-price">
                 <h2>£<?php echo $product['price']; ?></h2> <!-- display the products price -->
             </div>
-            
-            <!-- Size Information - removed for equipment -->
-            
+             
             <!-- Unique Item Note -->
             <div class="product-details-item-quantity">
                 <p>Quantity Remaining: <?php echo $product['quantity']; ?></p>

@@ -58,8 +58,8 @@ if (password_verify($password, $stored_password)) {
     }
 } else {
     // Password is incorrect
-    $_SESSION['Failed'] = true;
-    $_SESSION['FailMessage'] = "Incorrect Password" . $errorIcon;
+    $_SESSION['Failed'] = true; // set session failed flag to true
+    $_SESSION['FailMessage'] = "Incorrect Password" . $errorIcon; // display error message to user
     header("Location: ../frontend/login.php");
 }
 

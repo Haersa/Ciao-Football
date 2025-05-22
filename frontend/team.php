@@ -26,7 +26,7 @@ include('../backend/conn/conn.php');
 
   <section class="product-grid"><!-- product grid section -->
   <?php 
-  // Prepare the SQL statement for non-sale retro products
+  // Prepare the SQL statement for non-sale products
   $sql = "SELECT * FROM shirts WHERE team = ? AND sale = ? AND quantity > 0";
   
   // Add size filter if selected 

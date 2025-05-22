@@ -8,7 +8,7 @@ $successIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" v
 
 // Get shirt id from form
 
-$shirt_ID = $_POST['id'];
+$shirt_ID = $_POST['shirt_id'];
 
 // Get the rest of the shirt fields and store in variable
 
@@ -24,7 +24,7 @@ $shirtDesc = $_POST['description'];
 $currentImage = $_POST['current_image'];
 
 // Validate empty fields
-if(empty($shirtTeam) || empty($shirtCategory) || empty($shirttYear) || empty ($shirtType) || empty($shirtSize) || empty($shirtPrice) || empty($shirtDesc)) {
+if(empty($shirtTeam) || empty($shirtCategory) || empty($shirtYear) || empty ($shirtType) || empty($shirtSize) || empty($shirtPrice) || empty($shirtDesc)) {
     $_SESSION['Failed'] = true; // set failed session flag to true
     $_SESSION['FailMessage'] = "All fields must be filled " . $errorIcon; // display error message
     header('Location: ' . $_SERVER['HTTP_REFERER']); // revert the user back to the same page to let them try again
@@ -96,7 +96,7 @@ if(strlen($shirtDesc) > 200){
 }
 
 // Set database image path to current image
-$dbimagePath = $currentImage;
+$dbImagePath = $currentImage;
 
 // generate a random 4-digit ID for the image (this is to prevent images having the same name)
 $generateNewImageID = rand(1000, 9999);
@@ -149,49 +149,41 @@ if(isset($_FILES['image']) && $_FILES['image'] ['error'] === 0){
     if(!empty($currentImage) && file_exists($old_image_path)){
         unlink($old_image_path); // delete the old image
     }
-
-    // If the rating input is left empty in the form, set a default value of 0
-    if(empty($shirtRating)){
-        $shirtRating = 0.0; // default rating if none is provided
-    }
-
-    // Update shirt item in database
-    $updateQuery = "UPDATE shirts set team = ?, category = ?, year = ?, type = ?, size = ?, sale = ?, price = ?, description = ?, image = ?, rating = ? WHERE shirt_id = ?";
-
-    // Prepare upate statement
-    $stmt = mysqli_prepare($conn, $updateQuery);
-
-    // Bind parameters
-    mysqli_stmt_bind_param($stmt, "ssssssdssdsi", $shirtTeam,  $shirtCategory, $shirtYear, $shirtType, $shirtSize, $isSale, $shirtPrice, $shirtDesc, $dbImagePath, $shirtRating, $shirt_ID
-);
-    
-    // Execute Statement
-    if(mysqli_stmt_execute($stmt)){
-        $_SESSION['Success'] = true; // set success session variable to true for displaying success message
-        $_SESSION['SuccessMessage'] = "Shirt updated successfully" . $successIcon; // display success message to user
-        header('Location: ../admin/ciaoproducts.php'); // redirect to shirt products page incase the admin needs to update more products 
-    } else {
-        // If database insert fails, delete the uploaded image 
-        if (file_exists($uploadPath)) {
-            unlink($uploadPath); // delete the uploaded image
-        }
-        
-        $_SESSION['Failed'] = true; // set failed session variable to true for displaying error message
-        $_SESSION['FailMessage'] = "Error updating shirt data " . $errorIcon; // display error message to user 
-        header('Location: ' . $_SERVER['HTTP_REFERER']); // refresh page to let user try again
-    }
-    
-    // Close the prepared statement
-    mysqli_stmt_close($stmt);
-    
-} else {
-    // No file was uploaded or an error occurred
-    $_SESSION['Failed'] = true; // set failed session variable to true for displaying error message
-    $_SESSION['FailMessage'] = "Please upload an image file" . $errorIcon; // display error message to user
-    header('Location: ' . $_SERVER['HTTP_REFERER']); // refresh page to let user try again
-    exit();
 }
 
+// If the rating input is left empty in the form, set a default value of 0
+if(empty($shirtRating)){
+    $shirtRating = 0.0; // default rating if none is provided
+}
+
+// Update shirt item in database
+$updateQuery = "UPDATE shirts set team = ?, category = ?, year = ?, type = ?, size = ?, sale = ?, price = ?, description = ?, image = ?, rating = ? WHERE shirt_id = ?";
+
+    // Prepare upate statement
+$stmt = mysqli_prepare($conn, $updateQuery);
+
+// Bind parameters
+mysqli_stmt_bind_param($stmt, "ssssssdssdi", $shirtTeam,  $shirtCategory, $shirtYear, $shirtType, $shirtSize, $isSale, $shirtPrice, $shirtDesc, $dbImagePath, $shirtRating, $shirt_ID
+);
+
+// Execute Statement
+if(mysqli_stmt_execute($stmt)){
+    $_SESSION['Success'] = true; // set success session variable to true for displaying success message
+    $_SESSION['SuccessMessage'] = "Shirt updated successfully" . $successIcon; // display success message to user
+    header('Location: ../admin/ciaoproducts.php'); // redirect to shirt products page incase the admin needs to update more products 
+} else {
+    // If database insert fails, delete the uploaded image 
+    if (isset($uploadPath) && file_exists($uploadPath)) {
+        unlink($uploadPath); // delete the uploaded image
+    }
+    
+    $_SESSION['Failed'] = true; // set failed session variable to true for displaying error message
+    $_SESSION['FailMessage'] = "Error updating shirt data " . $errorIcon; // display error message to user 
+    header('Location: ' . $_SERVER['HTTP_REFERER']); // refresh page to let user try again
+}
+
+// Close the prepared statement
+mysqli_stmt_close($stmt);
 
 // Close database connection
 mysqli_close($conn);

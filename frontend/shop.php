@@ -24,7 +24,7 @@ $rangeText = "";
 if (isset($_GET['price'])) {
     $priceRange = $_GET['price'];
     
-    // WHERE clause based on price range
+    // WHERE clause based on price range, update empty varaibles defined above
     if ($priceRange == 'under50') {
         $priceFilter = "WHERE price < 50 AND sale = 'no'";
         $rangeText = "Under £50";
@@ -40,13 +40,6 @@ if (isset($_GET['price'])) {
     }
 } 
 
-// Query for equipment table
-$equipmentSql = "SELECT * FROM equipment " . $priceFilter . " ORDER BY price ASC";
-$equipmentResult = mysqli_query($conn, $equipmentSql);
-
-// Query for shirts table
-$shirtsSql = "SELECT * FROM shirts " . $priceFilter . " ORDER BY price ASC";
-$shirtsResult = mysqli_query($conn, $shirtsSql);
 ?>
 
 <main>

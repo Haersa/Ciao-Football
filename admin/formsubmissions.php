@@ -13,6 +13,8 @@ include('../components/adminmenu.php');
 ?>
 
 
+<!-- This page is still to be developed -->
+
 
 </main><!-- end of main content -->
 

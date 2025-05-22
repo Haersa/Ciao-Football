@@ -102,8 +102,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     // Set success message
-    $_SESSION['Success'] = true;
-    $_SESSION['SuccessMessage'] = "Shipping details saved " . $successIcon;
+    $_SESSION['Success'] = true; // set success session flag to true
+    $_SESSION['SuccessMessage'] = "Shipping details saved " . $successIcon; // display success message to user
     
     // Redirect to payment page to finish checkout process
     header("Location: ../frontend/payment.php");
